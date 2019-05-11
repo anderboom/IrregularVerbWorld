@@ -88,12 +88,11 @@ class TrainingViewController: UIViewController  {
             let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 18.00, height: 18.00))
             textField.delegate = self
             textField.backgroundColor = UIColor.white
-            textField.text = String(value)
+            textField.text = value.uppercased()
             textField.textColor = .white
             textField.textAlignment = NSTextAlignment.center
             textField.layer.cornerRadius = textField.frame.size.height / 5.0
             textField.font = UIFont.boldSystemFont(ofSize: 17)
-            textField.text = textField.text?.uppercased()
             textField.widthAnchor.constraint(equalToConstant: 20).isActive = true
             stackView.insertArrangedSubview(textField, at: index)
         }
