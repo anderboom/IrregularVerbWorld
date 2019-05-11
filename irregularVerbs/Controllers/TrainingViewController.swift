@@ -63,23 +63,20 @@ class TrainingViewController: UIViewController  {
         progressLabel.text = String(DataManager.instance.progressArray.count)
         
         interstitial = createAndLoadInterstitial()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         resetContentToInitialState()
-        if wordArray == DataManager.instance.wordsArray {
-            checkIndexToSkip()
-        }
-        if wordArray == DataManager.instance.learnArray {
-            resetProgressOutlet.isHidden = true
-        }
     }
     
     // MARK: - Public methods
     func setup(words: [Word], startIndex: Int) {
         wordArray = words
         index = startIndex
+        
+        resetContentToInitialState()
+        if wordArray == DataManager.instance.wordsArray {
+            checkIndexToSkip()
+        } else if wordArray == DataManager.instance.learnArray {
+            resetProgressOutlet.isHidden = true
+        }
     }
     
     // MARK: - Private methods
@@ -368,6 +365,7 @@ class TrainingViewController: UIViewController  {
     }
     
     private func resetContentToInitialState() {
+        guard isViewLoaded else { return }
         mistakesCount = 0
         infinitiveStackViewOutlet.removeAllSubViews()
         pastParticipleStackViewOutlet.removeAllSubViews()

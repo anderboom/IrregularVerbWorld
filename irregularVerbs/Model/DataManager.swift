@@ -37,14 +37,14 @@ final class DataManager {
     
     private(set) var choosedLanguage: TranslationLanguage? {
         get {
-            guard let key = UserDefaults.standard.string(forKey: Constants.language) else { return nil }
+            guard let key = UserDefaults.standard.string(forKey: Constants.choosedTranslationLanguageKey) else { return nil }
             return TranslationLanguage(rawValue: key)
         }
         set {
             if let value = newValue?.rawValue {
-                UserDefaults.standard.set(value, forKey: Constants.language)
+                UserDefaults.standard.set(value, forKey: Constants.choosedTranslationLanguageKey)
             } else {
-                UserDefaults.standard.removeObject(forKey: Constants.language)
+                UserDefaults.standard.removeObject(forKey: Constants.choosedTranslationLanguageKey)
             }
         }
     }
