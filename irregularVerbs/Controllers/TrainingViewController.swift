@@ -63,7 +63,9 @@ class TrainingViewController: UIViewController  {
         progressLabel.text = String(DataManager.instance.progressArray.count)
         
         interstitial = createAndLoadInterstitial()
+        
         resetContentToInitialState()
+        setupSelectedModeContent()
     }
     
     // MARK: - Public methods
@@ -72,6 +74,12 @@ class TrainingViewController: UIViewController  {
         index = startIndex
         
         resetContentToInitialState()
+        setupSelectedModeContent()
+    }
+    
+    // MARK: - Private methods
+    private func setupSelectedModeContent() {
+        guard isViewLoaded else { return }
         if wordArray == DataManager.instance.wordsArray {
             checkIndexToSkip()
         } else if wordArray == DataManager.instance.learnArray {
@@ -79,7 +87,6 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    // MARK: - Private methods
     private func makeTextfield(words: String, stackView: UIStackView)  {
         for (index, value) in words.enumerated() {
             let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 18.00, height: 18.00))
