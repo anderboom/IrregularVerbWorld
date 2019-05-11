@@ -208,6 +208,15 @@ class TrainingViewController: UIViewController  {
                                               words: String,
                                               dict: [String : Int]) {
         countLettersForButtonAlgoritm(sender: sender, words: words, dict: dict)
+        
+        let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
+        guard sender.titleLabel?.text == currentLetter else {
+            animateSoldier()
+            mistakesCount += 1
+            mistakesProcessing()
+            return
+        }
+        
         let verbsValue = wordArray[index]
         let firstFormCount = verbsValue.firstForm.count
         let secondFormCount = verbsValue.secondForm.count
@@ -216,83 +225,52 @@ class TrainingViewController: UIViewController  {
         let stackView: UIStackView
         switch arrayCharStep {
         case 0..<firstFormCount:
-            do {
-                let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
-                stackView = infinitiveStackViewOutlet
-                if sender.titleLabel?.text == currentLetter {
-                    if let field = stackView.arrangedSubviews.last {
-                        stackView.removeArrangedSubview(field)
-                        field.removeFromSuperview()
-                        addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
-                    }
-                    arrayCharStep += 1
-                    charStep += 1
-                    if charStep == firstFormCount {
-                        isFirstFormFilled = true
-                        charStep = 0
-                    }
-                    break
-                } else {
-                    animateSoldier()
-                    mistakesCount += 1
-                    mistakesProcessing()
-                    break
-                }
+            stackView = infinitiveStackViewOutlet
+            if let field = stackView.arrangedSubviews.last {
+                stackView.removeArrangedSubview(field)
+                field.removeFromSuperview()
+                addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
+            }
+            arrayCharStep += 1
+            charStep += 1
+            
+            if charStep == firstFormCount {
+                isFirstFormFilled = true
+                charStep = 0
             }
         case firstFormCount...(firstFormCount + secondFormCount) - 1:
-            do {
-                let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
-                stackView = simplePastStackViewOutlet
-                
-                if sender.titleLabel?.text == currentLetter {
-                    if let field = stackView.arrangedSubviews.last {
-                        stackView.removeArrangedSubview(field)
-                        field.removeFromSuperview()
-                        addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
-                    }
-                    arrayCharStep += 1
-                    charStep += 1
-                    if charStep == secondFormCount {
-                        isSecondFormFilled = true
-                        charStep = 0
-                    }
-                    break
-                } else {
-                    animateSoldier()
-                    mistakesCount += 1
-                    mistakesProcessing()
-                    break
-                }
+            stackView = simplePastStackViewOutlet
+            if let field = stackView.arrangedSubviews.last {
+                stackView.removeArrangedSubview(field)
+                field.removeFromSuperview()
+                addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
+            }
+            arrayCharStep += 1
+            charStep += 1
+            
+            if charStep == secondFormCount {
+                isSecondFormFilled = true
+                charStep = 0
             }
         case (firstFormCount + secondFormCount)..<(firstFormCount + secondFormCount + thirdFormCount):
-            do {
-                let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
-                stackView = pastParticipleStackViewOutlet
-                
-                if sender.titleLabel?.text == currentLetter {
-                    if let field = stackView.arrangedSubviews.last {
-                        stackView.removeArrangedSubview(field)
-                        field.removeFromSuperview()
-                        addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
-                    }
-                    arrayCharStep += 1
-                    charStep += 1
-                    if charStep == thirdFormCount {
-                        isThirdFormFilled = true
-                        charStep = 0
-                        arrayCharStep = 0
-                    }
-                    break
-                } else {
-                    animateSoldier()
-                    mistakesCount += 1
-                    mistakesProcessing()
-                    break
-                }
+            stackView = pastParticipleStackViewOutlet
+            if let field = stackView.arrangedSubviews.last {
+                stackView.removeArrangedSubview(field)
+                field.removeFromSuperview()
+                addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
+            }
+            arrayCharStep += 1
+            charStep += 1
+            
+            if charStep == thirdFormCount {
+                isThirdFormFilled = true
+                charStep = 0
+                arrayCharStep = 0
             }
         default:
-            break
+            fatalError("Unknown value")
         }
+        
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
             nextButtonOutlet.isHidden = false
             isFirstFormFilled = false
@@ -348,7 +326,7 @@ class TrainingViewController: UIViewController  {
             return
         }
         guard self.presentedViewController == nil else {
-            print("ERROR: Trying to present Ad failed. There is already presented some controller")
+            print("Trying to present Ad failed. There is already presented some controller")
             return
         }
         if interstitial.isReady {
