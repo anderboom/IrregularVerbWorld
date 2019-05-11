@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3113BEE3AB7246BC33260029 /* Pods_irregularVerbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DDBDF04CD58FE8298C0D16 /* Pods_irregularVerbs.framework */; };
 		838F43772286C000009A284C /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43762286C000009A284C /* Collection+Extension.swift */; };
+		838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */; };
+		838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */; };
+		838F43882286E867009A284C /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43872286E867009A284C /* TranslationLanguage.swift */; };
 		840C4ADC2269C96F009590E9 /* IAPProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4ADB2269C96F009590E9 /* IAPProducts.swift */; };
 		840C4ADE2269CAC6009590E9 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4ADD2269CAC6009590E9 /* IAPManager.swift */; };
 		843C302021F6DAEB0062FF1C /* UIStackView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C301F21F6DAEB0062FF1C /* UIStackView+Extention.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		1990249EC2DDC0D4D78A06F0 /* Pods-irregularVerbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irregularVerbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs.debug.xcconfig"; sourceTree = "<group>"; };
 		838F43762286C000009A284C /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		838F43872286E867009A284C /* TranslationLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLanguage.swift; sourceTree = "<group>"; };
 		840C4ADB2269C96F009590E9 /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
 		840C4ADD2269CAC6009590E9 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		843C301F21F6DAEB0062FF1C /* UIStackView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extention.swift"; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				84DCFC7D21F579EB001F49B2 /* String+Extention.swift */,
 				843C301F21F6DAEB0062FF1C /* UIStackView+Extention.swift */,
 				838F43762286C000009A284C /* Collection+Extension.swift */,
+				838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				84ABC8232206E54000EB2B20 /* Constants.swift */,
 				840C4ADB2269C96F009590E9 /* IAPProducts.swift */,
 				840C4ADD2269CAC6009590E9 /* IAPManager.swift */,
+				838F43872286E867009A284C /* TranslationLanguage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +199,14 @@
 			path = LanguageJSONs;
 			sourceTree = "<group>";
 		};
+		838F43842286DF11009A284C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		84DEF73821DDFE890005E322 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +228,7 @@
 		84DEF74321DDFE890005E322 /* irregularVerbs */ = {
 			isa = PBXGroup;
 			children = (
+				838F43842286DF11009A284C /* Protocols */,
 				838F43792286C013009A284C /* Extensions */,
 				838F437A2286C027009A284C /* Model */,
 				838F437B2286C02E009A284C /* Views */,
@@ -405,8 +422,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				840C4ADE2269CAC6009590E9 /* IAPManager.swift in Sources */,
+				838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */,
 				84871E8F221D7E3A00639012 /* TutorialView.swift in Sources */,
 				84DEF75B21DE00EF0005E322 /* MainMenuViewController.swift in Sources */,
+				838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */,
 				84D7D58A21DFCD0C006D8D19 /* DataManager.swift in Sources */,
 				84BA73EC21E2F798008F9BAE /* TrainingViewController.swift in Sources */,
 				84E85C5D226982D100010446 /* PurchaseTableViewCell.swift in Sources */,
@@ -422,6 +441,7 @@
 				843C302021F6DAEB0062FF1C /* UIStackView+Extention.swift in Sources */,
 				84F7FF2C221B430000C41807 /* TutorialViewController.swift in Sources */,
 				84ABC8242206E54000EB2B20 /* Constants.swift in Sources */,
+				838F43882286E867009A284C /* TranslationLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

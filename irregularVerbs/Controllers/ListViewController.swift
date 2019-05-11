@@ -9,7 +9,11 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
+    static func instantiateVC() -> ListViewController {
+        let vc: ListViewController = UIStoryboard.storyboard(.main).instantiateViewController()
+        return vc
+    }
+    
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var menuButtonOutlet: UIButton!
@@ -37,9 +41,6 @@ class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         tableView.reloadData()
-        if DataManager.instance.isFirstTimeEnter {
-           DataManager.instance.isFirstTimeEnter = false
-        }
         isLearnArrayEmpty()
     }
     
@@ -85,13 +86,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
                                        alpha: 0.5)
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
       
-        cell.addToHistoryAction = { [word] in
+        cell.addToHistoryAction = { [weak self, unowned tableView] in
             if DataManager.instance.learntWordsIdArray.contains(word.id) {
                 DataManager.instance.deleteFromHistory(word)
-                self.isLearnArrayEmpty()
-                } else {
+                self?.isLearnArrayEmpty()
+            } else {
                 DataManager.instance.addWord(word)
-                self.isLearnArrayEmpty()
+                self?.isLearnArrayEmpty()
             }
             DataManager.instance.learntWords(word)
             tableView.reloadData()

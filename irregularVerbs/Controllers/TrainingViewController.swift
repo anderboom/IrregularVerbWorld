@@ -423,7 +423,7 @@ class TrainingViewController: UIViewController  {
     }
     
     @IBAction private func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     private func createAndLoadInterstitial() -> GADInterstitial {

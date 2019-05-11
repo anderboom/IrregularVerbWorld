@@ -9,41 +9,40 @@
 import UIKit
 
 class TutorialViewController: UIViewController, UIScrollViewDelegate {
-    
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet{
-            scrollView.delegate = self
-        }
+    static func instantiateVC() -> TutorialViewController {
+        let vc: TutorialViewController = UIStoryboard.storyboard(.main).instantiateViewController()
+        return vc
     }
-    @IBOutlet weak var pageControl: UIPageControl!
-    var slides:[TutorialView] = []
+    
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var pageControl: UIPageControl!
+    private let slides: [TutorialView] = TutorialViewController.createSlides()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        slides = createSlides()
-        setupSlideScrollView(slides: slides)
+        slides.last?.nextButtonPress = { [weak self] in
+            self?.nextButtonPressed()
+        }
+        slides.forEach { scrollView.addSubview($0) }
+
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
         view.bringSubviewToFront(pageControl)
-       
+        
+        scrollView.delegate = self
+        scrollView.isPagingEnabled = true
+        scrollView.alwaysBounceVertical = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
-        if DataManager.instance.isTutorialChoosen {
-            performSegue(withIdentifier: "MainMenuViewController", sender: nil)
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateScrollViewContentSize()
     }
     
     @IBAction func backToTutorialController(_ segue: UIStoryboardSegue) {
-       DataManager.instance.isTutorialChoosen = false
     }
     
-    func createSlides() -> [TutorialView] {
+    private static func createSlides() -> [TutorialView] {
         
         let slide1:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
         slide1.imageView.image = UIImage(named: "swipe1")
@@ -70,10 +69,7 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         slide5.imageView.image = UIImage(named: "swipe5")
         slide5.tutorialLabel.text = "Training mode. You can listen to the words (Play button). Tap the buttons  with the desired letters to fill the input fields. If you'll make 5 mistakes, the entered words will be displayed again. To reset all settings and progress counting, tap «Reset progress» button. Enjoy your learning!"
         slide5.nextButton.layer.cornerRadius = slide5.nextButton.frame.size.height / 5.0
-        slide5.nextButtonPress = { [weak self] in
-            self?.nextButtonPressed()
-        }
-        
+        slide5.nextButton.isHidden = false
         return [slide1, slide2, slide3, slide4, slide5]
     }
     
@@ -82,13 +78,10 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         performSegue(withIdentifier: "MainMenuViewController", sender: nil)
      }
     
-    func setupSlideScrollView(slides : [TutorialView]) {
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
-        scrollView.isPagingEnabled = true
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
-            scrollView.addSubview(slides[i])
+    func updateScrollViewContentSize() {
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(slides.count), height: scrollView.bounds.height)
+        for i in 0..<slides.count {
+            slides[i].frame = CGRect(x: scrollView.bounds.width * CGFloat(i), y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
         }
     }
     

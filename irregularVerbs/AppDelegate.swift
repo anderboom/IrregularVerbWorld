@@ -15,9 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
+        setupWindow()
         Siren.shared.wail()
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
@@ -29,6 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    
+    private func setupWindow() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        
+        var controllers: [UIViewController] = [TutorialViewController.instantiateVC()]
+        if DataManager.instance.isTutorialChoosen {
+            controllers.append(MainMenuViewController.instantiateVC())
+            
+            if DataManager.instance.choosedLanguage != nil {
+                controllers.append(ListViewController.instantiateVC())
+            }
+        }
+        
+        let navigationVC = UINavigationController(rootViewController: UIViewController())
+        navigationVC.isNavigationBarHidden = true
+        navigationVC.viewControllers = controllers
+        window.rootViewController = navigationVC
+        self.window = window
+        self.window?.makeKeyAndVisible()
+    }
 }
 

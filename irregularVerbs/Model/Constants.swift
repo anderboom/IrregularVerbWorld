@@ -13,8 +13,6 @@ enum Constants {
     static let progress = "progress"
     static let learnArrayId = "learnArrayId"
     static let language = "language"
-    static let isLanguageChoosen = "isLanguageChoosen"
-    static let firstTimeCounting = "firstTimeCounting"
     static let learntWordsDictionary = "learntWordsDictionary"
     static let isTutorialChoosen = "isTutorialChoosen"
     static let isGotNonConsumable = "isGotNonConsumable"

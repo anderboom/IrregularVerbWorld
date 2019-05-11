@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fZR-AX-HVe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="NVF-wh-mzk">
             <objects>
-                <viewController id="fZR-AX-HVe" customClass="TutorialViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="fZR-AX-HVe" customClass="TutorialViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fs3-aa-hFO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                 <color key="pageIndicatorTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <color key="currentPageIndicatorTintColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-kI-PhT">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-kI-PhT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
                         </subviews>
@@ -46,17 +46,17 @@
                     <connections>
                         <outlet property="pageControl" destination="76E-lT-AQ6" id="7wd-DN-6w6"/>
                         <outlet property="scrollView" destination="WFx-kI-PhT" id="WjB-gP-k97"/>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="MainMenuViewController" animates="NO" id="MBQ-ot-dks"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="MainMenuViewController" id="MBQ-ot-dks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgq-gc-0ZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="125"/>
+            <point key="canvasLocation" x="1242" y="125"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,7 +152,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSj-h2-IcE"/>
-                                    <segue destination="pwz-Jq-wUf" kind="show" identifier="ListViewController" animates="NO" id="Ptc-Tq-eby"/>
+                                    <segue destination="pwz-Jq-wUf" kind="show" identifier="ListViewController" id="Ptc-Tq-eby"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -199,12 +199,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="Nci-mP-w56" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1088.8" y="124.58770614692655"/>
+            <point key="canvasLocation" x="2028" y="124.58770614692655"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="e0q-3q-SJ9">
             <objects>
-                <viewController id="pwz-Jq-wUf" customClass="ListViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="pwz-Jq-wUf" customClass="ListViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bA-fd-7gO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -311,7 +311,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YH5-Lv-iGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hZw-34-ylE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="124.58770614692655"/>
+            <point key="canvasLocation" x="2743.1999999999998" y="124.58770614692655"/>
         </scene>
         <!--Purchase View Controller-->
         <scene sceneID="oqk-jC-T59">
@@ -796,7 +796,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="trainingPressed:" destination="4eo-ue-hQg" eventType="touchUpInside" id="y5D-S9-n48"/>
-                                                    <segue destination="y9r-vz-O1S" kind="showDetail" identifier="HistoryToTraining" id="zfN-Dt-swr"/>
+                                                    <segue destination="y9r-vz-O1S" kind="show" identifier="HistoryToTraining" id="zfN-Dt-swr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -848,7 +848,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzj-9Q-iVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Pz2-8K-4Pz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="124.58770614692655"/>
+            <point key="canvasLocation" x="3463.1999999999998" y="124.58770614692655"/>
         </scene>
     </scenes>
     <resources>
