@@ -29,7 +29,7 @@ class MainMenuViewController: UIViewController {
         if let choosedLanguage = DataManager.instance.choosedLanguage {
             selectedIndex = TranslationLanguage.allCases.firstIndex(of: choosedLanguage) ?? 0
         } else {
-            selectedIndex = 0
+            selectedIndex = TranslationLanguage.allCases.firstIndex(of: .ru) ?? 0
         }
         
         pickLanguage.selectRow(selectedIndex, inComponent: 0, animated: false)
