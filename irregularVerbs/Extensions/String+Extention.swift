@@ -1,5 +1,5 @@
 //
-//  StringExtention.swift
+//  String+Extention.swift
 //  irregularVerbs
 //
 //  Created by Admin on 1/21/19.

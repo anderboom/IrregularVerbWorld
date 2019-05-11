@@ -1,19 +1,12 @@
 //
-//  UIViewExtention.swift
+//  Collection+Extension.swift
 //  irregularVerbs
 //
-//  Created by Admin on 1/22/19.
+//  Created by MaksymHusar on 5/11/19.
 //  Copyright © 2019 RK. All rights reserved.
 //
 
 import Foundation
-import  UIKit
-
-extension UIView {
-    public func removeAllSubViews() {
-        self.subviews.forEach({ $0.removeFromSuperview() })
-    }
-}
 
 extension Collection where Element: Hashable {
     var orderedSet: [Element] {

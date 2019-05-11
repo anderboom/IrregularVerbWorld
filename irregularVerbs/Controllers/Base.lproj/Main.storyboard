@@ -94,7 +94,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2z-Hf-a22">
-                                <rect key="frame" x="52.5" y="340" width="270.5" height="27.5"/>
+                                <rect key="frame" x="89.5" y="340" width="196" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27.5" id="LpN-Sl-RgX"/>
                                 </constraints>
@@ -102,7 +102,7 @@
                                     <fragment content="Сhoose language">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="25" name="TrajanPro3-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="25"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -258,7 +258,7 @@
                                         </state>
                                         <connections>
                                             <action selector="trainingPressed:" destination="pwz-Jq-wUf" eventType="touchUpInside" id="brh-tI-1cH"/>
-                                            <segue destination="y9r-vz-O1S" kind="show" identifier="ListToTraining" animates="NO" id="aGQ-cW-ahj"/>
+                                            <segue destination="y9r-vz-O1S" kind="show" identifier="ListToTraining" id="aGQ-cW-ahj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obR-L4-wcf">
@@ -859,6 +859,6 @@
         <image name="soldier" width="118" height="190.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zfN-Dt-swr"/>
+        <segue reference="aGQ-cW-ahj"/>
     </inferredMetricsTieBreakers>
 </document>
