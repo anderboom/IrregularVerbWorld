@@ -12,7 +12,8 @@ import AVFoundation
 
 class TrainingViewController: UIViewController  {
     
-    var interstitial: GADInterstitial!
+    private var interstitial: GADInterstitial!
+    
     @IBOutlet private weak var playButtonOutlet: UIButton!
     @IBOutlet private weak var resetProgressOutlet: UIButton!
     @IBOutlet private weak var progressLabel: UILabel!
@@ -32,7 +33,6 @@ class TrainingViewController: UIViewController  {
     @IBOutlet private weak var pastParticipleStackViewOutlet: UIStackView!
     @IBOutlet private weak var backButtonOutlet: UIButton!
     @IBOutlet private weak var translationLabel: UILabel!
-    var index = 0
     private var charStep = 0
     private var arrayCharStep = 0
     private var repeatedCharsCounter = 0
@@ -43,8 +43,10 @@ class TrainingViewController: UIViewController  {
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
     private let textField: UITextField? = UITextField(frame: CGRect(x: 0, y: 0, width: 20.00, height: 20.00))
-    var wordArray: [Word] = []
     private var stackView: UIStackView?
+    
+    private var wordArray: [Word] = []
+    private var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,33 +63,28 @@ class TrainingViewController: UIViewController  {
         nextButtonOutlet.isHidden = true
         totalProgressLabel.text = String(DataManager.instance.wordsArray.count)
         progressLabel.text = String(DataManager.instance.progressArray.count)
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/8691691433")
-        let request = GADRequest()
-        interstitial.load(request)
         
+        interstitial = createAndLoadInterstitial()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-//        interstitial = createAndLoadInterstitial()
-        infinitiveStackViewOutlet.removeAllSubViews()
-        pastParticipleStackViewOutlet.removeAllSubViews()
-        simplePastStackViewOutlet.removeAllSubViews()
-        infinitiveStackView.removeAllSubViews()
-        simplePastStackView.removeAllSubViews()
-        pastParticipleStackView.removeAllSubViews()
+        super.viewWillAppear(animated)
+        resetContentToInitialState()
         if wordArray == DataManager.instance.wordsArray {
             checkIndexToSkip()
-            fillTestFieldStackViews()
-            addButtonsToStackViews()
         }
         if wordArray == DataManager.instance.learnArray {
             resetProgressOutlet.isHidden = true
-            fillTestFieldStackViews()
-            addButtonsToStackViews()
         }
     }
     
+    // MARK: - Public methods
+    func setup(words: [Word], startIndex: Int) {
+        wordArray = words
+        index = startIndex
+    }
+    
+    // MARK: - Private methods
     private func makeTextfield(words: String, stackView: UIStackView)  {
         for (index, value) in words.enumerated() {
             let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 18.00, height: 18.00))
@@ -110,7 +107,6 @@ class TrainingViewController: UIViewController  {
         makeTextfield(words: verbsValue.firstForm, stackView: infinitiveStackViewOutlet)
         makeTextfield(words: verbsValue.secondForm, stackView: simplePastStackViewOutlet)
         makeTextfield(words: verbsValue.thirdForm, stackView: pastParticipleStackViewOutlet)
-        
     }
     
     private func addLetterByButtonPressed(stackView: UIStackView, char: String, charIndex: Int) {
@@ -219,79 +215,81 @@ class TrainingViewController: UIViewController  {
         let secondFormCount = verbsValue.secondForm.count
         let thirdFormCount = verbsValue.thirdForm.count
         switch arrayCharStep {
-        case 0..<firstFormCount : do {
-            let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
-            stackView = infinitiveStackViewOutlet
-            if sender.titleLabel?.text == currentLetter {
-                if let field = stackView?.arrangedSubviews.last {
-                    stackView?.removeArrangedSubview(field)
-                    field.removeFromSuperview()
-                    addLetterByButtonPressed(stackView: stackView ?? infinitiveStackViewOutlet, char: currentLetter, charIndex: charStep)
+        case 0..<firstFormCount:
+            do {
+                let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
+                stackView = infinitiveStackViewOutlet
+                if sender.titleLabel?.text == currentLetter {
+                    if let field = stackView?.arrangedSubviews.last {
+                        stackView?.removeArrangedSubview(field)
+                        field.removeFromSuperview()
+                        addLetterByButtonPressed(stackView: stackView ?? infinitiveStackViewOutlet, char: currentLetter, charIndex: charStep)
+                    }
+                    arrayCharStep += 1
+                    charStep += 1
+                    if charStep == firstFormCount {
+                        isFirstFormFilled = true
+                        charStep = 0
+                    }
+                    break
+                } else {
+                    animateSoldier()
+                    mistakesCount += 1
+                    mistakesProcessing()
+                    break
                 }
-                arrayCharStep += 1
-                charStep += 1
-                if charStep == firstFormCount {
-                    isFirstFormFilled = true
-                    charStep = 0
+            }
+        case firstFormCount...(firstFormCount + secondFormCount) - 1:
+            do {
+                let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
+                stackView = simplePastStackViewOutlet
+                
+                if sender.titleLabel?.text == currentLetter {
+                    if let field = stackView?.arrangedSubviews.last {
+                        self.stackView?.removeArrangedSubview(field)
+                        field.removeFromSuperview()
+                        addLetterByButtonPressed(stackView: stackView ?? simplePastStackViewOutlet, char: currentLetter, charIndex: charStep)
+                    }
+                    arrayCharStep += 1
+                    charStep += 1
+                    if charStep == secondFormCount {
+                        isSecondFormFilled = true
+                        charStep = 0
+                    }
+                    break
+                } else {
+                    animateSoldier()
+                    mistakesCount += 1
+                    mistakesProcessing()
+                    break
                 }
-                break
-            } else {
-                animateSoldier()
-                mistakesCount += 1
-                mistakesProcessing()
-                break
             }
-            }
-        case firstFormCount...(firstFormCount + secondFormCount) - 1: do {
-            let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
-            stackView = simplePastStackViewOutlet
-            
-            if sender.titleLabel?.text == currentLetter {
-                if let field = stackView?.arrangedSubviews.last {
-                    self.stackView?.removeArrangedSubview(field)
-                    field.removeFromSuperview()
-                    addLetterByButtonPressed(stackView: stackView ?? simplePastStackViewOutlet, char: currentLetter, charIndex: charStep)
+        case (firstFormCount + secondFormCount)..<(firstFormCount + secondFormCount + thirdFormCount):
+            do {
+                let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
+                stackView = pastParticipleStackViewOutlet
+                
+                if sender.titleLabel?.text == currentLetter {
+                    if let field = stackView?.arrangedSubviews.last {
+                        stackView?.removeArrangedSubview(field)
+                        field.removeFromSuperview()
+                        addLetterByButtonPressed(stackView: stackView ?? pastParticipleStackViewOutlet, char: currentLetter, charIndex: charStep)
+                    }
+                    arrayCharStep += 1
+                    charStep += 1
+                    if charStep == thirdFormCount {
+                        isThirdFormFilled = true
+                        charStep = 0
+                        arrayCharStep = 0
+                    }
+                    break
+                } else {
+                    animateSoldier()
+                    mistakesCount += 1
+                    mistakesProcessing()
+                    break
                 }
-                arrayCharStep += 1
-                charStep += 1
-                if charStep == secondFormCount {
-                    isSecondFormFilled = true
-                    charStep = 0
-                }
-                break
-            } else {
-                animateSoldier()
-                mistakesCount += 1
-                mistakesProcessing()
-                break
             }
-            }
-        case (firstFormCount + secondFormCount)..<(firstFormCount + secondFormCount + thirdFormCount): do {
-            let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
-            stackView = pastParticipleStackViewOutlet
-            
-            if sender.titleLabel?.text == currentLetter {
-                if let field = stackView?.arrangedSubviews.last {
-                    stackView?.removeArrangedSubview(field)
-                    field.removeFromSuperview()
-                    addLetterByButtonPressed(stackView: stackView ?? pastParticipleStackViewOutlet, char: currentLetter, charIndex: charStep)
-                }
-                arrayCharStep += 1
-                charStep += 1
-                if charStep == thirdFormCount {
-                    isThirdFormFilled = true
-                    charStep = 0
-                    arrayCharStep = 0
-                }
-                break
-            } else {
-                animateSoldier()
-                mistakesCount += 1
-                mistakesProcessing()
-                break
-            }
-            }
-            
         default:
             break
         }
@@ -303,21 +301,15 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    @IBAction func resetProgressPressed(_ sender: Any) {
+    @IBAction private func resetProgressPressed(_ sender: Any) {
         DataManager.instance.clearProgress()
         progressLabel.text = "0"
         index = 0
-        infinitiveStackViewOutlet.removeAllSubViews()
-        pastParticipleStackViewOutlet.removeAllSubViews()
-        simplePastStackViewOutlet.removeAllSubViews()
-        infinitiveStackView.removeAllSubViews()
-        simplePastStackView.removeAllSubViews()
-        pastParticipleStackView.removeAllSubViews()
-        fillTestFieldStackViews()
-        addButtonsToStackViews()
+        
+        resetContentToInitialState()
     }
     
-    @IBAction func playButtonPressed(_ sender: Any) {
+    @IBAction private func playButtonPressed(_ sender: Any) {
         let verbsValue = wordArray[index]
         DataManager.instance.playSound(verbsValue)
     }
@@ -338,30 +330,33 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    private func reloadIfMistaken() {
+    private func reloadBecauseOfMistakes() {
         charStep = 0
-        mistakesCount = 0
         arrayCharStep = 0
-        infinitiveStackViewOutlet.removeAllSubViews()
-        pastParticipleStackViewOutlet.removeAllSubViews()
-        simplePastStackViewOutlet.removeAllSubViews()
-        infinitiveStackView.removeAllSubViews()
-        simplePastStackView.removeAllSubViews()
-        pastParticipleStackView.removeAllSubViews()
-        addButtonsToStackViews()
-        fillTestFieldStackViews()
-        switchOnLights()
+
+        resetContentToInitialState()
+        
+        incrementAdCounterAndShowAdIfNeeded()
     }
     
-    private func adRun() {
+    private func incrementAdCounterAndShowAdIfNeeded() {
         guard !IAPManager.instance.isGotNonConsumable else { return }
         DataManager.instance.adCounting += 1
-        let stepBeforeAd = DataManager.instance.adCounting
-            if interstitial.isReady, stepBeforeAd % 2 == 0 {
-                interstitial.present(fromRootViewController: self)
-                interstitial = createAndLoadInterstitial()
-                print("Ad running...")
-            }
+        guard DataManager.instance.adCounting % 2 == 0 else { return }
+        guard !interstitial.hasBeenUsed else {
+            assertionFailure("ERROR: Interstitial hasBeenUsed. Object is not recreated")
+            return
+        }
+        guard self.presentedViewController == nil else {
+            print("ERROR: Trying to present Ad failed. There is already presented some controller")
+            return
+        }
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+            print("Ad running...")
+        } else {
+            print("Ad wasn't ready")
+        }
     }
     
     private func checkIndexToSkip(){
@@ -378,7 +373,6 @@ class TrainingViewController: UIViewController  {
     }
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
-    
         index += 1
         checkIndexToSkip()
         if index == wordArray.count {
@@ -386,10 +380,20 @@ class TrainingViewController: UIViewController  {
             index = 0
         }
         let verbsValue = wordArray[index]
-        adRun()
         if wordArray == DataManager.instance.wordsArray {
-        DataManager.instance.indexValue = index
+            DataManager.instance.indexValue = index
         }
+        
+        resetContentToInitialState()
+        
+        nextButtonOutlet.isHidden = true
+        DataManager.instance.progressCount(verbsValue)
+        progressLabel.text = String(DataManager.instance.progressArray.count)
+        
+        incrementAdCounterAndShowAdIfNeeded()
+    }
+    
+    private func resetContentToInitialState() {
         mistakesCount = 0
         infinitiveStackViewOutlet.removeAllSubViews()
         pastParticipleStackViewOutlet.removeAllSubViews()
@@ -399,30 +403,16 @@ class TrainingViewController: UIViewController  {
         pastParticipleStackView.removeAllSubViews()
         addButtonsToStackViews()
         fillTestFieldStackViews()
-        nextButtonOutlet.isHidden = true
         switchOnLights()
-        DataManager.instance.progressCount(verbsValue)
-        progressLabel.text = String(DataManager.instance.progressArray.count)
-        
     }
-    
-   
     
     private func mistakesProcessing() {
-        var lightArray = [light0, light1, light2, light3, light4]
-        lightArray[mistakesCount - 1]?.image = #imageLiteral(resourceName: "lamp.png")
+        let lightArray: [UIImageView] = [light0, light1, light2, light3, light4]
+        lightArray[mistakesCount - 1].image = #imageLiteral(resourceName: "lamp.png")
         AudioServicesPlaySystemSound(1351)
-        if mistakesCount == 5 {
+        if mistakesCount == lightArray.count {
             mistakesCount = 0
             alertAboutMistake()
-            reloadIfMistaken()
-        }
-    }
-    
-    private func mistakesCounting() {
-        if mistakesCount == 5 {
-            mistakesCount = 0
-            reloadIfMistaken()
         }
     }
     
@@ -431,7 +421,9 @@ class TrainingViewController: UIViewController  {
                                         message: "You've made five mistakes. Try again",
                                         preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
+            self?.reloadBecauseOfMistakes()
+        })
         alertVC.addAction(okAction)
         self.present(alertVC, animated: true, completion: nil)
     }
@@ -446,29 +438,29 @@ class TrainingViewController: UIViewController  {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    @objc func pressedButtonAction(sender: UIButton!) {
+    @objc private func pressedButtonAction(sender: UIButton!) {
         sender.showsTouchWhenHighlighted = true
         let verbsValue = wordArray[index]
         let wordsCharacterArray = verbsValue.firstForm + verbsValue.secondForm + verbsValue.thirdForm
         makeAlgoritmForPressedButton(sender: sender,
                                      words: wordsCharacterArray,
                                      dict: makeCharsCountDict(words: wordsCharacterArray))
-        mistakesCounting()
-        
     }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        if wordArray == DataManager.instance.wordsArray {
-            dismiss(animated: true, completion: nil)
-        }
-        if wordArray == DataManager.instance.learnArray {
-            dismiss(animated: true, completion: nil)
-        }
+    @IBAction private func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func createAndLoadInterstitial() -> GADInterstitial {
+        print("GADInterstitial created")
+        let interstitial = GADInterstitial(adUnitID: Constants.AdMob.adUnitID)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
     }
 }
 
 extension TrainingViewController: UITextFieldDelegate {
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return false
     }
@@ -480,16 +472,18 @@ extension TrainingViewController {
     }
 }
 
+// MARK: - GADInterstitialDelegate
 extension TrainingViewController: GADInterstitialDelegate {
-    
-    func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/8691691433")
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-        return interstitial
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
     }
     
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print("=== AD ERROR: \(error.localizedDescription) ===")
+    }
+    
+    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+        print("=== AD ERROR: DidFailToPresentScreen ===")
         interstitial = createAndLoadInterstitial()
     }
 }

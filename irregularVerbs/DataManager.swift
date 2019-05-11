@@ -101,13 +101,7 @@ final class DataManager {
         }
     }
     
-    var adCounting: Int {
-        get {
-            return UserDefaults.standard.integer(forKey: Constants.adCount)
-        } set {
-            UserDefaults.standard.set(newValue , forKey: Constants.adCount)
-        }
-    }
+    var adCounting: Int = 0
     
     var indexValue: Int {
         get {

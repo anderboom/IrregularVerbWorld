@@ -62,10 +62,9 @@ class HistoryViewController: UIViewController {
         guard let destVC = segue.destination as? TrainingViewController else {return}
         let wordArray = DataManager.instance.learnArray
         if wordArray.isEmpty {
-        alertIfArrayIsAmpty()
+            alertIfArrayIsAmpty()
         }
-        destVC.wordArray = wordArray
-        destVC.index = 0
+        destVC.setup(words: wordArray, startIndex: 0)
     }
 }
 

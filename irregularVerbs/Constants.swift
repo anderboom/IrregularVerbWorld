@@ -17,6 +17,15 @@ enum Constants {
     static let firstTimeCounting = "firstTimeCounting"
     static let learntWordsDictionary = "learntWordsDictionary"
     static let isTutorialChoosen = "isTutorialChoosen"
-    static let adCount = "adCount"
     static let isGotNonConsumable = "isGotNonConsumable"
+    
+    enum AdMob {
+        static var adUnitID: String {
+            #if DEBUG
+                return "ca-app-pub-3940256099942544/5135589807" // Test Interstitial Video ID
+            #else
+                return "ca-app-pub-9857481420620374/5808629919" // Real ID
+            #endif
+        }
+    }
 }

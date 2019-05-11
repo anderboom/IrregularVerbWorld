@@ -65,10 +65,8 @@ class ListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ListToTraining" else {return}
-        guard let destVC = segue.destination as? TrainingViewController else {return}
-        let wordArray = DataManager.instance.wordsArray
-        destVC.wordArray = wordArray
-        destVC.index = DataManager.instance.indexValue
+        guard let destVC = segue.destination as? TrainingViewController else { return }
+        destVC.setup(words: DataManager.instance.wordsArray, startIndex: DataManager.instance.indexValue)
      }
 }
 
