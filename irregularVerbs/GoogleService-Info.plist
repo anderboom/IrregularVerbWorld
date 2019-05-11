@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>12769141649-fr1r7tbup4758v4dvq20s2ccv607f5vf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.12769141649-fr1r7tbup4758v4dvq20s2ccv607f5vf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBnYTIvZkelY-UKC8VVLA0DPY9FBw4QaA8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>12769141649</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.andrewgusar.irregularVerbsWorld</string>
+	<key>PROJECT_ID</key>
+	<string>irregular-verbs-world</string>
+	<key>STORAGE_BUCKET</key>
+	<string>irregular-verbs-world.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:12769141649:ios:559fbda4aeac999d</string>
+	<key>DATABASE_URL</key>
+	<string>https://irregular-verbs-world.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-9857481420620374~2847336996</string>
+</dict>
+</plist>
