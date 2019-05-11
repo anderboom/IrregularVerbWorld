@@ -310,10 +310,7 @@ class TrainingViewController: UIViewController  {
     private func reloadBecauseOfMistakes() {
         charStep = 0
         arrayCharStep = 0
-
         resetContentToInitialState()
-        
-        incrementAdCounterAndShowAdIfNeeded()
     }
     
     private func incrementAdCounterAndShowAdIfNeeded() {
@@ -390,6 +387,7 @@ class TrainingViewController: UIViewController  {
         if mistakesCount == lightArray.count {
             mistakesCount = 0
             alertAboutMistake()
+            reloadBecauseOfMistakes()
         }
     }
     
@@ -399,7 +397,7 @@ class TrainingViewController: UIViewController  {
                                         preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
-            self?.reloadBecauseOfMistakes()
+            self?.incrementAdCounterAndShowAdIfNeeded()
         })
         alertVC.addAction(okAction)
         self.present(alertVC, animated: true, completion: nil)
