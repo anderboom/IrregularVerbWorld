@@ -42,8 +42,6 @@ class TrainingViewController: UIViewController  {
     private var isThirdFormFilled = false
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
-    private let textField: UITextField? = UITextField(frame: CGRect(x: 0, y: 0, width: 20.00, height: 20.00))
-    private var stackView: UIStackView?
     
     private var wordArray: [Word] = []
     private var index = 0
@@ -214,16 +212,18 @@ class TrainingViewController: UIViewController  {
         let firstFormCount = verbsValue.firstForm.count
         let secondFormCount = verbsValue.secondForm.count
         let thirdFormCount = verbsValue.thirdForm.count
+        
+        let stackView: UIStackView
         switch arrayCharStep {
         case 0..<firstFormCount:
             do {
                 let currentLetter = String(words[String.Index(utf16Offset: arrayCharStep, in: words)])
                 stackView = infinitiveStackViewOutlet
                 if sender.titleLabel?.text == currentLetter {
-                    if let field = stackView?.arrangedSubviews.last {
-                        stackView?.removeArrangedSubview(field)
+                    if let field = stackView.arrangedSubviews.last {
+                        stackView.removeArrangedSubview(field)
                         field.removeFromSuperview()
-                        addLetterByButtonPressed(stackView: stackView ?? infinitiveStackViewOutlet, char: currentLetter, charIndex: charStep)
+                        addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
                     }
                     arrayCharStep += 1
                     charStep += 1
@@ -245,10 +245,10 @@ class TrainingViewController: UIViewController  {
                 stackView = simplePastStackViewOutlet
                 
                 if sender.titleLabel?.text == currentLetter {
-                    if let field = stackView?.arrangedSubviews.last {
-                        self.stackView?.removeArrangedSubview(field)
+                    if let field = stackView.arrangedSubviews.last {
+                        stackView.removeArrangedSubview(field)
                         field.removeFromSuperview()
-                        addLetterByButtonPressed(stackView: stackView ?? simplePastStackViewOutlet, char: currentLetter, charIndex: charStep)
+                        addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
                     }
                     arrayCharStep += 1
                     charStep += 1
@@ -270,10 +270,10 @@ class TrainingViewController: UIViewController  {
                 stackView = pastParticipleStackViewOutlet
                 
                 if sender.titleLabel?.text == currentLetter {
-                    if let field = stackView?.arrangedSubviews.last {
-                        stackView?.removeArrangedSubview(field)
+                    if let field = stackView.arrangedSubviews.last {
+                        stackView.removeArrangedSubview(field)
                         field.removeFromSuperview()
-                        addLetterByButtonPressed(stackView: stackView ?? pastParticipleStackViewOutlet, char: currentLetter, charIndex: charStep)
+                        addLetterByButtonPressed(stackView: stackView, char: currentLetter, charIndex: charStep)
                     }
                     arrayCharStep += 1
                     charStep += 1
