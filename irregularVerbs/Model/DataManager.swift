@@ -15,7 +15,8 @@ final class DataManager {
     private init() { }
     
     private(set) lazy var wordsArray: [Word] = {
-        return loadChoosedLanguageWordsFromJson() ?? []
+        guard let language = self.choosedLanguage else { return [] }
+        return loadWordsFromJson(for: language) ?? []
     }()
     lazy var learnArray = addWordToLearn()
     private var audioPlayer = AVAudioPlayer()
@@ -23,7 +24,7 @@ final class DataManager {
     
     func chooseLanguage(_ lng: TranslationLanguage) {
         choosedLanguage = lng
-        wordsArray = loadChoosedLanguageWordsFromJson() ?? []
+        wordsArray = loadWordsFromJson(for: lng) ?? []
     }
     
     var isTutorialChoosen: Bool {
@@ -84,20 +85,6 @@ final class DataManager {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Constants.learntWordsDictionary)
-        }
-    }
-    
-    private func loadChoosedLanguageWordsFromJson() -> [Word]? {
-        guard let jsonName = choosedLanguage?.jsonName else { return nil }
-        guard let url = Bundle.main.url(forResource: jsonName, withExtension: "json") else { return nil }
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let jsonData = try decoder.decode(AllWords.self, from: data)
-            return jsonData.words
-        } catch {
-            debugPrint("error:\(error)")
-            return nil
         }
     }
     
@@ -162,5 +149,19 @@ final class DataManager {
         learntWordsIdArray = []
         indexValue = 0
         adCounting = 0
+    }
+    
+    // MARK: - Private methods
+    private func loadWordsFromJson(for language: TranslationLanguage) -> [Word]? {
+        guard let url = Bundle.main.url(forResource: language.jsonName, withExtension: "json") else { return nil }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let jsonData = try decoder.decode(AllWords.self, from: data)
+            return jsonData.words
+        } catch {
+            debugPrint("error:\(error)")
+            return nil
+        }
     }
 }

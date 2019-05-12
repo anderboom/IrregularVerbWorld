@@ -62,14 +62,14 @@ class TrainingViewController: UIViewController  {
         totalProgressLabel.text = String(DataManager.instance.wordsArray.count)
         progressLabel.text = String(DataManager.instance.progressArray.count)
         interstitial = createAndLoadInterstitial()
-        skipWorldsAndReloadContent()
+        skipWordsAndReloadContent()
     }
     
     // MARK: - Public methods
     func setup(words: [Word], startIndex: Int) {
         wordArray = words
         index = startIndex
-        skipWorldsAndReloadContent()
+        skipWordsAndReloadContent()
     }
     
     // MARK: - Private methods
@@ -82,7 +82,7 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    private func skipWorldsAndReloadContent() {
+    private func skipWordsAndReloadContent() {
         setupSelectedModeContent()
         resetContentToInitialState()
     }
