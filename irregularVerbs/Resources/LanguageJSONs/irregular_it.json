@@ -1,10 +1,10 @@
 {
    "version":1,
-   "language":"pl",
+   "language":"it",
    "data":[
        {
            "id":"0",
-           "translation":"powstać",
+           "translation":"sorgere",
            "first_form":"arise",
            "second_form":"arose",
            "third_form":"arisen",
@@ -12,7 +12,7 @@
        },
      {
          "id":"1",
-         "translation":"być",
+         "translation":"essere",
          "first_form":"be",
          "second_form":"was/were",
          "third_form":"been",
@@ -20,7 +20,7 @@
       },
      {
          "id":"2",
-         "translation":"ponieść",
+         "translation":"sopportare",
          "first_form":"bear",
          "second_form":"bore",
          "third_form":"born",
@@ -28,7 +28,7 @@
      },
       {
          "id":"3",
-         "translation":"pokonać",
+         "translation":"battere",
          "first_form":"beat",
          "second_form":"beat",
          "third_form":"bitten",
@@ -36,7 +36,7 @@
       },
       {
          "id":"4",
-         "translation":"zostać",
+         "translation":"diventare",
          "first_form":"become",
          "second_form":"became",
          "third_form":"become",
@@ -44,7 +44,7 @@
       },
       {
          "id":"5",
-         "translation":"zaczynać",
+         "translation":"iniziare",
          "first_form":"begin",
          "second_form":"began",
          "third_form":"begun",
@@ -52,7 +52,7 @@
       },
       {
          "id":"6",
-         "translation":"wygiąć",
+         "translation":"piegare",
          "first_form":"bend",
          "second_form":"bent",
          "third_form":"bent",
@@ -60,7 +60,7 @@
       },
       {
          "id":"7",
-         "translation":"zakładać się",
+         "translation":"scommettere",
          "first_form":"bet",
          "second_form":"bet",
          "third_form":"bet",
@@ -68,7 +68,7 @@
       },
       {
          "id":"8",
-         "translation":"ugryźć",
+         "translation":"mordere",
          "first_form":"bite",
          "second_form":"bit",
          "third_form":"bitten",
@@ -76,7 +76,7 @@
       },
       {
          "id":"9",
-         "translation":"krwawić",
+         "translation":"sanguinare",
          "first_form":"bleed",
          "second_form":"bled",
          "third_form":"bled",
@@ -84,7 +84,7 @@
       },
       {
          "id":"10",
-         "translation":"dmuchać",
+         "translation":"soffiare",
          "first_form":"blow",
          "second_form":"blew",
          "third_form":"blown",
@@ -92,7 +92,7 @@
       },
       {
          "id":"11",
-         "translation":"złamać",
+         "translation":"rompere",
          "first_form":"break",
          "second_form":"broke",
          "third_form":"broken",
@@ -100,7 +100,7 @@
       },
       {
          "id":"12",
-         "translation":"nosić",
+         "translation":"portare",
          "first_form":"bring",
          "second_form":"brought",
          "third_form":"brought",
@@ -108,7 +108,7 @@
       },
       {
          "id":"13",
-         "translation":"budować",
+         "translation":"costruire",
          "first_form":"build",
          "second_form":"built",
          "third_form":"built",
@@ -116,7 +116,7 @@
       },
        {
          "id":"14",
-         "translation":"palić",
+         "translation":"bruciare",
          "first_form":"burn",
          "second_form":"burned/burnt",
          "third_form":"burned/burnt",
@@ -124,7 +124,7 @@
       },
       {
          "id":"15",
-         "translation":"kupić",
+         "translation":"acquistare",
          "first_form":"buy",
          "second_form":"bought",
          "third_form":"bought",
@@ -132,7 +132,7 @@
       },
       {
           "id":"16",
-          "translation":"być w stanie",
+          "translation":"potere",
           "first_form":"can",
           "second_form":"could",
           "third_form":"could",
@@ -140,7 +140,7 @@
       },
       {
          "id":"17",
-         "translation":"złapać",
+         "translation":"catturare",
          "first_form":"catch",
          "second_form":"caught",
          "third_form":"caught",
@@ -148,7 +148,7 @@
       },
       {
           "id":"18",
-          "translation":"wybrać",
+          "translation":"scegliere",
           "first_form":"choose",
           "second_form":"choose",
           "third_form":"chosen",
@@ -156,7 +156,7 @@
       },
       {
           "id":"19",
-          "translation":"przyjść",
+          "translation":"venire",
           "first_form":"come",
           "second_form":"came",
           "third_form":"come",
@@ -164,7 +164,7 @@
       },
       {
           "id":"20",
-          "translation":"kosztować",
+          "translation":"costare",
           "first_form":"cost",
           "second_form":"cost",
           "third_form":"cost",
@@ -172,7 +172,7 @@
       },
       {
           "id":"21",
-          "translation":"ciąć",
+          "translation":"tagliare",
           "first_form":"cut",
           "second_form":"cut",
           "third_form":"cut",
@@ -180,7 +180,7 @@
       },
       {
           "id":"22",
-          "translation":"radzić sobie",
+          "translation":"trattare",
           "first_form":"deal",
           "second_form":"dealt",
           "third_form":"dealt",
@@ -188,7 +188,7 @@
       },
       {
           "id":"23",
-          "translation":"kopać",
+          "translation":"scavare",
           "first_form":"dig",
           "second_form":"dug",
           "third_form":"dug",
@@ -196,7 +196,7 @@
       },
       {
           "id":"24",
-          "translation":"zrobić",
+          "translation":"fare",
           "first_form":"do",
           "second_form":"did",
           "third_form":"done",
@@ -204,7 +204,7 @@
       },
       {
           "id":"25",
-          "translation":"rysować",
+          "translation":"disegnare",
           "first_form":"draw",
           "second_form":"drew",
           "third_form":"drawn",
@@ -212,7 +212,7 @@
       },
       {
           "id":"26",
-          "translation":"marzyć",
+          "translation":"sognare",
           "first_form":"dream",
           "second_form":"dreamed/dreamt",
           "third_form":"dreamed/dreamt",
@@ -220,7 +220,7 @@
       },
       {
           "id":"27",
-          "translation":"pić",
+          "translation":"bere",
           "first_form":"drink",
           "second_form":"drank",
           "third_form":"drunk",
@@ -228,7 +228,7 @@
       },
       {
           "id":"28",
-          "translation":"zarządzać",
+          "translation":"guidare",
           "first_form":"drive",
           "second_form":"drove",
           "third_form":"driven",
@@ -236,7 +236,7 @@
       },
       {
           "id":"29",
-          "translation":"jeść",
+          "translation":"mangiare",
           "first_form":"eat",
           "second_form":"ate",
           "third_form":"eaten",
@@ -244,7 +244,7 @@
       },
       {
           "id":"30",
-          "translation":"upaść",
+          "translation":"cadere",
           "first_form":"fall",
           "second_form":"fell",
           "third_form":"fallen",
@@ -252,7 +252,7 @@
       },
       {
           "id":"31",
-          "translation":"karmić",
+          "translation":"nutrire",
           "first_form":"feed",
           "second_form":"fed",
           "third_form":"fed",
@@ -260,7 +260,7 @@
       },
       {
           "id":"32",
-          "translation":"czuć",
+          "translation":"sentire",
           "first_form":"feel",
           "second_form":"felt",
           "third_form":"felt",
@@ -268,7 +268,7 @@
       },
       {
           "id":"33",
-          "translation":"walczyć",
+          "translation":"combattere",
           "first_form":"fight",
           "second_form":"fought",
           "third_form":"fought",
@@ -276,7 +276,7 @@
       },
       {
           "id":"34",
-          "translation":"znaleźć",
+          "translation":"trovare",
           "first_form":"find",
           "second_form":"found",
           "third_form":"found",
@@ -284,7 +284,7 @@
       },
       {
           "id":"35",
-          "translation":"latać",
+          "translation":"volare",
           "first_form":"fly",
           "second_form":"flew",
           "third_form":"flown",
@@ -292,7 +292,7 @@
       },
       {
           "id":"36",
-          "translation":"zapomnieć",
+          "translation":"dimenticare",
           "first_form":"forget",
           "second_form":"forgot",
           "third_form":"forgotten",
@@ -300,7 +300,7 @@
       },
       {
           "id":"37",
-          "translation":"wybacz",
+          "translation":"perdonare",
           "first_form":"forgive",
           "second_form":"forgave",
           "third_form":"forgiven",
@@ -308,7 +308,7 @@
       },
       {
           "id":"38",
-          "translation":"zamrozić",
+          "translation":"congelare",
           "first_form":"freeze",
           "second_form":"froze",
           "third_form":"frozen",
@@ -316,7 +316,7 @@
       },
       {
           "id":"39",
-          "translation":"otrzymywać",
+          "translation":"ricevere",
           "first_form":"get",
           "second_form":"got",
           "third_form":"got",
@@ -324,7 +324,7 @@
       },
       {
           "id":"40",
-          "translation":"dać",
+          "translation":"dare",
           "first_form":"give",
           "second_form":"gave",
           "third_form":"given",
@@ -332,7 +332,7 @@
       },
       {
           "id":"41",
-          "translation":"iść",
+          "translation":"andare",
           "first_form":"go",
           "second_form":"went",
           "third_form":"gone",
@@ -341,7 +341,7 @@
       },
       {
           "id":"42",
-          "translation":"dorastać",
+          "translation":"crescere",
           "first_form":"grow",
           "second_form":"grew",
           "third_form":"grown",
@@ -349,7 +349,7 @@
       },
       {
           "id":"43",
-          "translation":"powiesić",
+          "translation":"appendere",
           "first_form":"hang",
           "second_form":"hung",
           "third_form":"hung",
@@ -357,7 +357,7 @@
       },
       {
           "id":"44",
-          "translation":"mieć",
+          "translation":"avere",
           "first_form":"have/has",
           "second_form":"had",
           "third_form":"had",
@@ -365,7 +365,7 @@
       },
       {
           "id":"45",
-          "translation":"usłyszeć",
+          "translation":"sentire",
           "first_form":"hear",
           "second_form":"heard",
           "third_form":"heard",
@@ -373,7 +373,7 @@
       },
       {
           "id":"46",
-          "translation":"ukryć",
+          "translation":"nascondere",
           "first_form":"hide",
           "second_form":"hid",
           "third_form":"hidden",
@@ -381,7 +381,7 @@
       },
       {
           "id":"47",
-          "translation":"uderzyć",
+          "translation":"colpire",
           "first_form":"hit",
           "second_form":"hit",
           "third_form":"hit",
@@ -389,7 +389,7 @@
       },
       {
           "id":"48",
-          "translation":"trzymać",
+          "translation":"tenere",
           "first_form":"hold",
           "second_form":"held",
           "third_form":"held",
@@ -397,7 +397,7 @@
       },
       {
           "id":"49",
-          "translation":"zranić",
+          "translation":"male",
           "first_form":"hurt",
           "second_form":"hurt",
           "third_form":"hurt",
@@ -405,7 +405,7 @@
       },
       {
           "id":"50",
-          "translation":"trzymać",
+          "translation":"tenere",
           "first_form":"keep",
           "second_form":"kept",
           "third_form":"kept",
@@ -413,7 +413,7 @@
       },
       {
           "id":"51",
-          "translation":"wiedzieć",
+          "translation":"sapere",
           "first_form":"know",
           "second_form":"knew",
           "third_form":"known",
@@ -421,7 +421,7 @@
       },
       {
           "id":"52",
-          "translation":"kłamać",
+          "translation":"posare",
           "first_form":"lay",
           "second_form":"laid",
           "third_form":"laid",
@@ -429,7 +429,7 @@
       },
       {
           "id":"53",
-          "translation":"prowadzić",
+          "translation":"condurre",
           "first_form":"lead",
           "second_form":"led",
           "third_form":"led",
@@ -437,7 +437,7 @@
       },
       {
           "id":"54",
-          "translation":"uczyć się",
+          "translation":"imparare",
           "first_form":"learn",
           "second_form":"learnt/learned",
           "third_form":"learnt/learned",
@@ -445,7 +445,7 @@
       },
       {
           "id":"55",
-          "translation":"odejść",
+          "translation":"lasciare",
           "first_form":"leave",
           "second_form":"left",
           "third_form":"left",
@@ -453,7 +453,7 @@
       },
       {
           "id":"56",
-          "translation":"pożyczyć",
+          "translation":"prestare",
           "first_form":"lend",
           "second_form":"lent",
           "third_form":"lent",
@@ -461,7 +461,7 @@
       },
       {
           "id":"57",
-          "translation":"pozwól",
+          "translation":"permettere",
           "first_form":"let",
           "second_form":"let",
           "third_form":"let",
@@ -469,7 +469,7 @@
       },
       {
           "id":"58",
-          "translation":"kłamać",
+          "translation":"mentire",
           "first_form":"lie",
           "second_form":"lay",
           "third_form":"lain",
@@ -477,7 +477,7 @@
       },
       {
           "id":"59",
-          "translation":"kłamać",
+          "translation":"mentire",
           "first_form":"lie",
           "second_form":"lied",
           "third_form":"lied",
@@ -485,7 +485,7 @@
       },
       {
           "id":"60",
-          "translation":"zapalać",
+          "translation":"illuminare",
           "first_form":"light",
           "second_form":"lit/lighted",
           "third_form":"lit/lighted",
@@ -493,7 +493,7 @@
       },
       {
           "id":"61",
-          "translation":"stracić",
+          "translation":"perdere",
           "first_form":"lose",
           "second_form":"lost",
           "third_form":"lost",
@@ -501,7 +501,7 @@
       },
       {
           "id":"62",
-          "translation":"zrobić",
+          "translation":"fare",
           "first_form":"make",
           "second_form":"made",
           "third_form":"made",
@@ -509,7 +509,7 @@
       },
       {
           "id":"63",
-          "translation":"móc",
+          "translation":"potrebbe",
           "first_form":"may",
           "second_form":"might",
           "third_form":"might",
@@ -517,7 +517,7 @@
       },
       {
           "id":"64",
-          "translation":"oznaczać",
+          "translation":"significare",
           "first_form":"mean",
           "second_form":"meant",
           "third_form":"meant",
@@ -525,7 +525,7 @@
       },
       {
           "id":"65",
-          "translation":"spotkać się",
+          "translation":"incontrare",
           "first_form":"meet",
           "second_form":"met",
           "third_form":"met",
@@ -533,7 +533,7 @@
       },
       {
           "id":"66",
-          "translation":"pomylić",
+          "translation":"confondere",
           "first_form":"mistake",
           "second_form":"mistook",
           "third_form":"mistaken",
@@ -541,7 +541,7 @@
       },
       {
           "id":"67",
-          "translation":"zapłacić",
+          "translation":"pagare",
           "first_form":"pay",
           "second_form":"paid",
           "third_form":"paid",
@@ -549,7 +549,7 @@
       },
       {
           "id":"68",
-          "translation":"położyć",
+          "translation":"mettere",
           "first_form":"put",
           "second_form":"put",
           "third_form":"put",
@@ -557,7 +557,7 @@
       },
       {
           "id":"69",
-          "translation":"czytać",
+          "translation":"leggere",
           "first_form":"read",
           "second_form":"read",
           "third_form":"read",
@@ -565,7 +565,7 @@
       },
       {
           "id":"70",
-          "translation":"podjechać",
+          "translation":"giro",
           "first_form":"ride",
           "second_form":"rode",
           "third_form":"ridden",
@@ -573,7 +573,7 @@
       },
       {
           "id":"71",
-          "translation":"dzwonić",
+          "translation":"squillare",
           "first_form":"ring",
           "second_form":"rang",
           "third_form":"rung",
@@ -581,7 +581,7 @@
       },
       {
           "id":"72",
-          "translation":"podnieść się",
+          "translation":"alzarsi",
           "first_form":"rise",
           "second_form":"rose",
           "third_form":"risen",
@@ -589,7 +589,7 @@
       },
       {
           "id":"73",
-          "translation":"biegać",
+          "translation":"correre",
           "first_form":"run",
           "second_form":"ran",
           "third_form":"run",
@@ -597,7 +597,7 @@
       },
       {
           "id":"74",
-          "translation":"powiedzieć",
+          "translation":"dire",
           "first_form":"say",
           "second_form":"said",
           "third_form":"said",
@@ -605,7 +605,7 @@
       },
       {
           "id":"75",
-          "translation":"zobaczyć",
+          "translation":"vedere",
           "first_form":"see",
           "second_form":"saw",
           "third_form":"seen",
@@ -613,7 +613,7 @@
       },
       {
           "id":"76",
-          "translation":"sprzedać",
+          "translation":"vendere",
           "first_form":"sell",
           "second_form":"sold",
           "third_form":"sold",
@@ -621,7 +621,7 @@
       },
       {
           "id":"77",
-          "translation":"wysyłać",
+          "translation":"inviare",
           "first_form":"send",
           "second_form":"sent",
           "third_form":"sent",
@@ -629,7 +629,7 @@
       },
       {
           "id":"78",
-          "translation":"ustawić",
+          "translation":"mettere",
           "first_form":"set",
           "second_form":"set",
           "third_form":"set",
@@ -637,7 +637,7 @@
       },
       {
           "id":"79",
-          "translation":"wstrząsnąć",
+          "translation":"scuotere",
           "first_form":"shake",
           "second_form":"shook",
           "third_form":"shaken",
@@ -645,7 +645,7 @@
       },
       {
           "id":"80",
-          "translation":"świecić",
+          "translation":"brillare",
           "first_form":"shine",
           "second_form":"shone",
           "third_form":"shone",
@@ -653,7 +653,7 @@
       },
       {
           "id":"81",
-          "translation":"strzelać",
+          "translation":"sparare",
           "first_form":"shoot",
           "second_form":"shot",
           "third_form":"shot",
@@ -661,7 +661,7 @@
       },
       {
           "id":"82",
-          "translation":"pokazywać",
+          "translation":"mostrare",
           "first_form":"show",
           "second_form":"showed",
           "third_form":"shown",
@@ -669,7 +669,7 @@
       },
       {
           "id":"83",
-          "translation":"zamknąć",
+          "translation":"chiudere",
           "first_form":"shut",
           "second_form":"shut",
           "third_form":"shut",
@@ -677,7 +677,7 @@
       },
       {
           "id":"84",
-          "translation":"śpiewać",
+          "translation":"cantare",
           "first_form":"sing",
           "second_form":"sang",
           "third_form":"sung",
@@ -685,7 +685,7 @@
       },
       {
           "id":"85",
-          "translation":"tonąć",
+          "translation":"affondare",
           "first_form":"sink",
           "second_form":"sank",
           "third_form":"sunk",
@@ -693,7 +693,7 @@
       },
       {
           "id":"86",
-          "translation":"siedzieć",
+          "translation":"sedersi",
           "first_form":"sit",
           "second_form":"sat",
           "third_form":"sat",
@@ -701,7 +701,7 @@
       },
       {
           "id":"87",
-          "translation":"spać",
+          "translation":"dormire",
           "first_form":"sleep",
           "second_form":"slept",
           "third_form":"slept",
@@ -709,7 +709,7 @@
       },
       {
           "id":"88",
-          "translation":"smierdziec",
+          "translation":"odorare",
           "first_form":"smell",
           "second_form":"smelled/smelt",
           "third_form":"smelled/smelt",
@@ -717,7 +717,7 @@
       },
       {
           "id":"89",
-          "translation":"mówić",
+          "translation":"parlare",
           "first_form":"speak",
           "second_form":"spoke",
           "third_form":"spoken",
@@ -725,7 +725,7 @@
       },
       {
           "id":"90",
-          "translation":"przeliterować",
+          "translation":"significare",
           "first_form":"spell",
           "second_form":"spelled/spelt",
           "third_form":"spelled/spelt",
@@ -733,7 +733,7 @@
       },
       {
           "id":"91",
-          "translation":"wydać",
+          "translation":"trascorrere",
           "first_form":"spend",
           "second_form":"spent",
           "third_form":"spent",
@@ -741,7 +741,7 @@
       },
       {
           "id":"92",
-          "translation":"podzielić",
+          "translation":"dividere",
           "first_form":"split",
           "second_form":"split",
           "third_form":"split",
@@ -749,7 +749,7 @@
       },
       {
           "id":"93",
-          "translation":"zepsuć",
+          "translation":"rovinare",
           "first_form":"spoil",
           "second_form":"spoiled/spoilt",
           "third_form":"spoiled/spoilt",
@@ -757,7 +757,7 @@
       },
       {
           "id":"94",
-          "translation":"rozprzestrzeniać",
+          "translation":"diffusione",
           "first_form":"spread",
           "second_form":"spread",
           "third_form":"spread",
@@ -765,7 +765,7 @@
       },
       {
           "id":"95",
-          "translation":"stać",
+          "translation":"stare",
           "first_form":"stand",
           "second_form":"stood",
           "third_form":"stood",
@@ -773,7 +773,7 @@
       },
       {
           "id":"96",
-          "translation":"kraść",
+          "translation":"rubare",
           "first_form":"steal",
           "second_form":"stole",
           "third_form":"stolen",
@@ -781,7 +781,7 @@
       },
       {
           "id":"97",
-          "translation":"przyklejać",
+          "translation":"attaccare",
           "first_form":"stick",
           "second_form":"stuck",
           "third_form":"stuck",
@@ -789,7 +789,7 @@
       },
       {
           "id":"98",
-          "translation":"uderzyć",
+          "translation":"colpire",
           "first_form":"strike",
           "second_form":"struck",
           "third_form":"struck",
@@ -797,7 +797,7 @@
       },
       {
           "id":"99",
-          "translation":"zamiatać",
+          "translation":"spazzare",
           "first_form":"sweep",
           "second_form":"swept",
           "third_form":"swept",
@@ -805,7 +805,7 @@
       },
       {
           "id":"100",
-          "translation":"pływać",
+          "translation":"nuotare",
           "first_form":"swim",
           "second_form":"swam",
           "third_form":"swum",
@@ -813,7 +813,7 @@
       },
       {
           "id":"101",
-          "translation":"brać",
+          "translation":"prendere",
           "first_form":"take",
           "second_form":"took",
           "third_form":"taken",
@@ -821,7 +821,7 @@
       },
       {
           "id":"102",
-          "translation":"uczyć",
+          "translation":"insegnare",
           "first_form":"teach",
           "second_form":"taught",
           "third_form":"taught",
@@ -829,7 +829,7 @@
       },
       {
           "id":"103",
-          "translation":"rozerwać",
+          "translation":"strappare",
           "first_form":"tear",
           "second_form":"tore",
           "third_form":"torn",
@@ -837,7 +837,7 @@
       },
       {
           "id":"104",
-          "translation":"powiedzieć",
+          "translation":"raccontare",
           "first_form":"tell",
           "second_form":"told",
           "third_form":"told",
@@ -845,7 +845,7 @@
       },
       {
           "id":"105",
-          "translation":"myśleć",
+          "translation":"pensare",
           "first_form":"think",
           "second_form":"thought",
           "third_form":"thought",
@@ -853,7 +853,7 @@
       },
       {
           "id":"106",
-          "translation":"rzucić",
+          "translation":"gettare",
           "first_form":"throw",
           "second_form":"threw",
           "third_form":"thrown",
@@ -861,7 +861,7 @@
       },
       {
           "id":"107",
-          "translation":"rozumieć",
+          "translation":"capire",
           "first_form":"understand",
           "second_form":"understood",
           "third_form":"understood",
@@ -869,7 +869,7 @@
       },
       {
           "id":"108",
-          "translation":"budzić",
+          "translation":"svegliare",
           "first_form":"wake",
           "second_form":"woke/waked",
           "third_form":"woken/waked",
@@ -877,7 +877,7 @@
       },
       {
           "id":"109",
-          "translation":"носить одежду",
+          "translation":"indossare",
           "first_form":"wear",
           "second_form":"wore",
           "third_form":"worn",
@@ -885,7 +885,7 @@
       },
       {
           "id":"110",
-          "translation":"wygrać",
+          "translation":"vincere",
           "first_form":"win",
           "second_form":"won",
           "third_form":"won",
@@ -893,7 +893,7 @@
       },
       {
           "id":"111",
-          "translation":"pisać",
+          "translation":"scrivere",
           "first_form":"write",
           "second_form":"wrote",
           "third_form":"written",

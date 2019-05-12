@@ -42,6 +42,7 @@
 		84DEF75D21DE02070005E322 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DEF75C21DE02070005E322 /* ListViewController.swift */; };
 		84E85C5D226982D100010446 /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E85C5B226982D100010446 /* PurchaseTableViewCell.swift */; };
 		84E85C5E226982D100010446 /* PurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E85C5C226982D100010446 /* PurchaseTableViewCell.xib */; };
+		84F7EB3A228832D90049BE95 /* irregular_it.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F7EB39228832D90049BE95 /* irregular_it.json */; };
 		84F7FF2C221B430000C41807 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7FF2B221B430000C41807 /* TutorialViewController.swift */; };
 		84FE695121E7EF9500EDCA7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FE695021E7EF9500EDCA7B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		84F0D51A221291D900BFB564 /* Newfont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Newfont.otf; sourceTree = "<group>"; };
 		84F0D51B221291E100BFB564 /* TrajanPro3-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TrajanPro3-Bold.otf"; sourceTree = "<group>"; };
 		84F0D51C221291E800BFB564 /* TrajanPro3-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TrajanPro3-Regular.otf"; sourceTree = "<group>"; };
+		84F7EB39228832D90049BE95 /* irregular_it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_it.json; sourceTree = "<group>"; };
 		84F7FF2B221B430000C41807 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		84FE695021E7EF9500EDCA7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		904CDC369AD0E4123B71C81D /* Pods-irregularVerbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irregularVerbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				84D511CD2211894000EC9691 /* irregular_de.json */,
 				84D511CF2211894700EC9691 /* irregular_fr.json */,
 				84D511D122119A4600EC9691 /* irregular_sp.json */,
+				84F7EB39228832D90049BE95 /* irregular_it.json */,
 			);
 			path = LanguageJSONs;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				84DB4CDB21DF32DB0049D287 /* ListTableViewCell.xib in Resources */,
 				84D511CE2211894000EC9691 /* irregular_de.json in Resources */,
 				84D1AD592284BE8F003BA07A /* irregular_ua.json in Resources */,
+				84F7EB3A228832D90049BE95 /* irregular_it.json in Resources */,
 				84E85C5E226982D100010446 /* PurchaseTableViewCell.xib in Resources */,
 				84871E91221D7E5400639012 /* TutorialView.xib in Resources */,
 				84C6928E2205F27F00AB18CE /* voice in Resources */,

@@ -61,20 +61,15 @@ class TrainingViewController: UIViewController  {
         nextButtonOutlet.isHidden = true
         totalProgressLabel.text = String(DataManager.instance.wordsArray.count)
         progressLabel.text = String(DataManager.instance.progressArray.count)
-        
         interstitial = createAndLoadInterstitial()
-        
-        resetContentToInitialState()
-        setupSelectedModeContent()
+        skipWorldsAndReloadContent()
     }
     
     // MARK: - Public methods
     func setup(words: [Word], startIndex: Int) {
         wordArray = words
         index = startIndex
-        
-        resetContentToInitialState()
-        setupSelectedModeContent()
+        skipWorldsAndReloadContent()
     }
     
     // MARK: - Private methods
@@ -85,6 +80,11 @@ class TrainingViewController: UIViewController  {
         } else if wordArray == DataManager.instance.learnArray {
             resetProgressOutlet.isHidden = true
         }
+    }
+    
+    private func skipWorldsAndReloadContent() {
+        setupSelectedModeContent()
+        resetContentToInitialState()
     }
     
     private func makeTextfield(words: String, stackView: UIStackView)  {
@@ -286,7 +286,6 @@ class TrainingViewController: UIViewController  {
         DataManager.instance.clearProgress()
         progressLabel.text = "0"
         index = 0
-        
         resetContentToInitialState()
     }
     
@@ -320,7 +319,7 @@ class TrainingViewController: UIViewController  {
     private func incrementAdCounterAndShowAdIfNeeded() {
         guard !IAPManager.instance.isGotNonConsumable else { return }
         DataManager.instance.adCounting += 1
-        guard DataManager.instance.adCounting % 2 == 0 else { return }
+        guard DataManager.instance.adCounting % 3 == 0 else { return }
         guard !interstitial.hasBeenUsed else {
             assertionFailure("ERROR: Interstitial hasBeenUsed. Object is not recreated")
             return
@@ -342,6 +341,7 @@ class TrainingViewController: UIViewController  {
         for _ in learntArray {
             if learntArray.contains(String(index)), wordArray == DataManager.instance.wordsArray {
                 index += 1
+                print(learntArray)
             }
             if index == wordArray.count {
                 congratulationPopUp()
@@ -353,7 +353,8 @@ class TrainingViewController: UIViewController  {
     @IBAction private func nextButtonPressed(_ sender: Any) {
         index += 1
         checkIndexToSkip()
-        if index == wordArray.count {
+        
+         if index == wordArray.count {
             congratulationPopUp()
             index = 0
         }
@@ -361,9 +362,7 @@ class TrainingViewController: UIViewController  {
         if wordArray == DataManager.instance.wordsArray {
             DataManager.instance.indexValue = index
         }
-        
         resetContentToInitialState()
-        
         nextButtonOutlet.isHidden = true
         DataManager.instance.progressCount(verbsValue)
         progressLabel.text = String(DataManager.instance.progressArray.count)

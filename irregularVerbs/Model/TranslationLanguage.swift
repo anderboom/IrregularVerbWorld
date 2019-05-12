@@ -9,7 +9,7 @@
 import Foundation
 
 enum TranslationLanguage: String, CaseIterable {
-    case ua, ru, pl, de, fr, sp
+    case ua, ru, pl, de, fr, sp, it
     
     var jsonName: String {
         return "irregular_\(rawValue)"
@@ -23,6 +23,8 @@ enum TranslationLanguage: String, CaseIterable {
         case .de: return "Deutsch"
         case .fr: return "French"
         case .sp: return "Spanish"
+        case .it: return "Italian"
+            
         }
     }
 }
