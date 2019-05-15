@@ -155,12 +155,12 @@ final class DataManager {
         progressArray.append(word.id)
     }
     
-    func clearProgress() {
-        progressArray = []
-        learnArray = []
-        learntWordIds = []
-        learntWordsIdArray = []
-        indexValue = 0
-        adCounting = 0
-    }
+//    func clearProgress() {
+//        progressArray = []
+//        learnArray = []
+//        learntWordIds = []
+//        learntWordsIdArray = []
+//        indexValue = 0
+//        adCounting = 0
+//    }
 }
