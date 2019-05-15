@@ -13,11 +13,8 @@ import AVFoundation
 class TrainingViewController: UIViewController  {
     
     private var interstitial: GADInterstitial!
-    
     @IBOutlet private weak var playButtonOutlet: UIButton!
-    @IBOutlet private weak var resetProgressOutlet: UIButton!
     @IBOutlet private weak var progressLabel: UILabel!
-    @IBOutlet private weak var totalProgressLabel: UILabel!
     @IBOutlet private weak var light0: UIImageView!
     @IBOutlet private weak var light1: UIImageView!
     @IBOutlet private weak var light2: UIImageView!
@@ -42,34 +39,29 @@ class TrainingViewController: UIViewController  {
     private var isThirdFormFilled = false
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
-    
     private var wordArray: [Word] = []
     private var index = 0
+    @IBOutlet private weak var starView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
-        resetProgressOutlet.layer.cornerRadius = resetProgressOutlet.frame.size.height / 5.0
         progressLabel.layer.cornerRadius = 5
         progressLabel.layer.borderColor = UIColor.lightGray.cgColor
         progressLabel.layer.borderWidth = 1
-        totalProgressLabel.layer.cornerRadius = 5
-        totalProgressLabel.layer.borderColor = UIColor.lightGray.cgColor
-        totalProgressLabel.layer.borderWidth = 1
         nextButtonOutlet.isHidden = true
-        totalProgressLabel.text = String(DataManager.instance.wordsArray.count)
         progressLabel.text = String(DataManager.instance.progressArray.count)
         interstitial = createAndLoadInterstitial()
-        skipWorldsAndReloadContent()
+        skipWordsAndReloadContent()
     }
     
     // MARK: - Public methods
     func setup(words: [Word], startIndex: Int) {
         wordArray = words
         index = startIndex
-        skipWorldsAndReloadContent()
+        skipWordsAndReloadContent()
     }
     
     // MARK: - Private methods
@@ -78,11 +70,11 @@ class TrainingViewController: UIViewController  {
         if wordArray == DataManager.instance.wordsArray {
             checkIndexToSkip()
         } else if wordArray == DataManager.instance.learnArray {
-            resetProgressOutlet.isHidden = true
+//            resetProgressOutlet.isHidden = true
         }
     }
     
-    private func skipWorldsAndReloadContent() {
+    private func skipWordsAndReloadContent() {
         setupSelectedModeContent()
         resetContentToInitialState()
     }
@@ -282,12 +274,12 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    @IBAction private func resetProgressPressed(_ sender: Any) {
-        DataManager.instance.clearProgress()
-        progressLabel.text = "0"
-        index = 0
-        resetContentToInitialState()
-    }
+//    @IBAction private func resetProgressPressed(_ sender: Any) {
+//        DataManager.instance.clearProgress()
+//        progressLabel.text = "0"
+//        index = 0
+//        resetContentToInitialState()
+//    }
     
     @IBAction private func playButtonPressed(_ sender: Any) {
         let verbsValue = wordArray[index]
@@ -351,6 +343,16 @@ class TrainingViewController: UIViewController  {
     }
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
+        let move = CGAffineTransform(translationX: -self.view.bounds.width / 2, y: 30 * 10)
+        starView.transform = move
+            UIView.animate(withDuration: 1.7, delay: 0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 0.7,
+                           options: .curveEaseInOut,
+                           animations: {
+            self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, completion: nil)
+        
         index += 1
         checkIndexToSkip()
         
