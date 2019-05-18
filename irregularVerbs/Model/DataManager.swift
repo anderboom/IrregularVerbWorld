@@ -141,8 +141,7 @@ final class DataManager {
         guard !progressArray.contains(word.id) else { return }
         progressArray.append(word.id)
     }
-    
-<<<<<<< HEAD
+//    
 //    func clearProgress() {
 //        progressArray = []
 //        learnArray = []
@@ -151,15 +150,6 @@ final class DataManager {
 //        indexValue = 0
 //        adCounting = 0
 //    }
-=======
-    func clearProgress() {
-        progressArray = []
-        learnArray = []
-        learntWordIds = []
-        learntWordsIdArray = []
-        indexValue = 0
-        adCounting = 0
-    }
     
     // MARK: - Private methods
     private func loadWordsFromJson(for language: TranslationLanguage) -> [Word]? {
@@ -174,5 +164,4 @@ final class DataManager {
             return nil
         }
     }
->>>>>>> b67744de92461f0de6344ebcd4ab446a4e612120
 }

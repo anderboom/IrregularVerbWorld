@@ -17,18 +17,17 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet private weak var secondFormLabel: UILabel!
     @IBOutlet private weak var thirdFormLabel: UILabel!
     @IBOutlet private weak var translatingLabel: UILabel!
-    @IBOutlet weak var addLearnButtonOutlet: UIButton!
     @IBOutlet private weak var playButtonOutlet: UIButton!
-    var addToHistoryAction: (() -> Void)?
+//    var addToHistoryAction: (() -> Void)?
     var playCurrentWordAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    @IBAction private func addToHistory(_ sender: UIButton) {
-        addToHistoryAction?()
-    }
+//    @IBAction private func addToHistory(_ sender: UIButton) {
+//        addToHistoryAction?()
+//    }
     
     @IBAction private func playCurrentWords(_ sender: UIButton) {
         playCurrentWordAction?()

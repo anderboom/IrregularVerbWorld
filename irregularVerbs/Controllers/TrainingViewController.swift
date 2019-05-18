@@ -48,9 +48,6 @@ class TrainingViewController: UIViewController  {
         backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
-        progressLabel.layer.cornerRadius = 5
-        progressLabel.layer.borderColor = UIColor.lightGray.cgColor
-        progressLabel.layer.borderWidth = 1
         nextButtonOutlet.isHidden = true
         progressLabel.text = String(DataManager.instance.progressArray.count)
         interstitial = createAndLoadInterstitial()

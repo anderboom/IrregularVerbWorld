@@ -12,9 +12,8 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var mainListButtonOutlet: UIButton!
-    @IBOutlet private weak var trainingButtonOutlet: UIButton!
-    @IBOutlet private weak var clearListButtonOutlet: UIButton!
+    @IBOutlet private weak var backButtonOutlet: UIButton!
+    @IBOutlet private weak var startButtonOutlet: UIButton!
     private var filteredWords = [Word]()
     private var isSearchActive = false
     
@@ -24,9 +23,8 @@ class HistoryViewController: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
         tableView.register(ListTableViewCell.nib, forCellReuseIdentifier: ListTableViewCell.identifier)
-        trainingButtonOutlet.layer.cornerRadius = trainingButtonOutlet.frame.size.height / 5.0
-        mainListButtonOutlet.layer.cornerRadius = mainListButtonOutlet.frame.size.height / 5.0
-        clearListButtonOutlet.layer.cornerRadius = clearListButtonOutlet.frame.size.height / 5.0
+        backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
+        startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.size.height / 5.0
         view.backgroundColor = UIColor(red: 236.0/255.0,
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
@@ -34,9 +32,6 @@ class HistoryViewController: UIViewController {
     }
     
     
-    @IBAction func trainingPressed(_ sender: Any) {
-       
-    }
     
     private func alertIfArrayIsAmpty() {
         let alertVC = UIAlertController(title: "Empty list!",
@@ -81,7 +76,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
                                        blue: 246.0/255.0,
                                        alpha: 0.5)
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.learnArray[indexPath.row]
-        cell.addLearnButtonOutlet.isHidden = true
+//        cell.addLearnButtonOutlet.isHidden = true
         cell.update(firstForm: word.firstForm, secondForm: word.secondForm, thirdForm: word.thirdForm, translation: word.translation)
         cell.playCurrentWordAction = { [word] in
             DataManager.instance.playSound(word)

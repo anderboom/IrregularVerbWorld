@@ -20,6 +20,7 @@
 		84871E8F221D7E3A00639012 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84871E8E221D7E3A00639012 /* TutorialView.swift */; };
 		84871E91221D7E5400639012 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84871E90221D7E5400639012 /* TutorialView.xib */; };
 		848BB9552243678200A8BABB /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB9542243678200A8BABB /* PurchaseViewController.swift */; };
+		848C19E4228FBFD000558595 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C19E3228FBFD000558595 /* ModeViewController.swift */; };
 		84A5FABC2201A413005A24AE /* irregular_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 84A5FABB2201A413005A24AE /* irregular_ru.json */; };
 		84ABC8242206E54000EB2B20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABC8232206E54000EB2B20 /* Constants.swift */; };
 		84BA73EC21E2F798008F9BAE /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */; };
@@ -61,6 +62,7 @@
 		84871E8E221D7E3A00639012 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		84871E90221D7E5400639012 /* TutorialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialView.xib; sourceTree = "<group>"; };
 		848BB9542243678200A8BABB /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		848C19E3228FBFD000558595 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
 		84A5FABB2201A413005A24AE /* irregular_ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_ru.json; sourceTree = "<group>"; };
 		84ABC8232206E54000EB2B20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				84F7FF2B221B430000C41807 /* TutorialViewController.swift */,
 				84DEF75A21DE00EF0005E322 /* MainMenuViewController.swift */,
 				84DEF75C21DE02070005E322 /* ListViewController.swift */,
+				848C19E3228FBFD000558595 /* ModeViewController.swift */,
 				845E0FE921E0B5FB008A25E0 /* HistoryViewController.swift */,
 				84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */,
 				848BB9542243678200A8BABB /* PurchaseViewController.swift */,
@@ -438,6 +441,7 @@
 				848BB9552243678200A8BABB /* PurchaseViewController.swift in Sources */,
 				84DEF74521DDFE890005E322 /* AppDelegate.swift in Sources */,
 				84DEF75D21DE02070005E322 /* ListViewController.swift in Sources */,
+				848C19E4228FBFD000558595 /* ModeViewController.swift in Sources */,
 				845E0FEA21E0B5FB008A25E0 /* HistoryViewController.swift in Sources */,
 				840C4ADC2269C96F009590E9 /* IAPProducts.swift in Sources */,
 				84DCFC7E21F579EB001F49B2 /* String+Extention.swift in Sources */,
