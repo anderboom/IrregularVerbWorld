@@ -772,6 +772,21 @@
                                     <constraint firstItem="Iys-fa-P0M" firstAttribute="width" secondItem="L3Q-Mp-nzB" secondAttribute="width" id="y7F-j0-QUG"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCx-oz-8uw">
+                                <rect key="frame" x="20" y="40" width="45" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="QVv-sf-h0E"/>
+                                    <constraint firstAttribute="height" constant="30" id="eYs-Db-zbW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="txL-H9-j6r" kind="unwind" unwindAction="backToListController:" id="tos-l9-F7c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -789,10 +804,13 @@
                             <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="Lay-Mu-vI4" secondAttribute="trailing" constant="40" id="Xjv-Df-OJX"/>
                             <constraint firstItem="Gn7-RK-Y5M" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zat-vw-xBu" secondAttribute="bottom" constant="20" id="aRj-5H-Nit"/>
                             <constraint firstItem="Zyt-GY-IbY" firstAttribute="top" secondItem="3Em-GV-UpC" secondAttribute="bottom" constant="40" id="b2O-0z-W9q"/>
+                            <constraint firstItem="mCx-oz-8uw" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="20" id="dev-07-XFg"/>
                             <constraint firstItem="zat-vw-xBu" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="e96-Xi-HAg"/>
                             <constraint firstItem="zat-vw-xBu" firstAttribute="top" secondItem="Lay-Mu-vI4" secondAttribute="bottom" constant="40" id="n7s-DE-g4Y"/>
                             <constraint firstItem="3Em-GV-UpC" firstAttribute="trailing" secondItem="Gn7-RK-Y5M" secondAttribute="trailing" id="nht-5n-gkY"/>
                             <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="f3f-hy-nQL" secondAttribute="trailing" constant="40" id="vTQ-Qk-Z7P"/>
+                            <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mCx-oz-8uw" secondAttribute="trailing" constant="310" id="wPO-yQ-Ihg"/>
+                            <constraint firstItem="mCx-oz-8uw" firstAttribute="top" secondItem="QD1-Ur-iCj" secondAttribute="top" constant="20" id="yGG-qb-rpn"/>
                             <constraint firstItem="Lay-Mu-vI4" firstAttribute="top" secondItem="f3f-hy-nQL" secondAttribute="bottom" constant="40" id="yh6-ki-MNi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QD1-Ur-iCj"/>
@@ -801,12 +819,14 @@
                         <outlet property="allOneByOneOutlet" destination="Zyt-GY-IbY" id="t36-k5-YDf"/>
                         <outlet property="allRandomlyOutlet" destination="f3f-hy-nQL" id="x4r-EA-Ene"/>
                         <outlet property="allWithSkippingOutlet" destination="Lay-Mu-vI4" id="6ZU-6s-qde"/>
+                        <outlet property="backButtonOutlet" destination="mCx-oz-8uw" id="tOE-OX-Lmi"/>
                         <outlet property="leaderBoardOutlet" destination="L3Q-Mp-nzB" id="r0E-MN-eMW"/>
                         <outlet property="onlySelectedOutlet" destination="zat-vw-xBu" id="lHf-Hr-j5J"/>
                         <outlet property="removeAdsOutlet" destination="Iys-fa-P0M" id="9ZC-Zj-7EB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ev-6r-fy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="txL-H9-j6r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3432.8000000000002" y="124.58770614692655"/>
         </scene>

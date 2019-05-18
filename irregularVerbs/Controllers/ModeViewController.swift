@@ -16,6 +16,7 @@ class ModeViewController: UIViewController {
     @IBOutlet private weak var onlySelectedOutlet: UIButton!
     @IBOutlet private weak var removeAdsOutlet: UIButton!
     @IBOutlet private weak var leaderBoardOutlet: UIButton!
+    @IBOutlet private weak var backButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class ModeViewController: UIViewController {
         onlySelectedOutlet.layer.cornerRadius = onlySelectedOutlet.frame.size.height / 5.0
         removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
         leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
+        backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
     }
     
 @IBAction func backToModeController(_ segue: UIStoryboardSegue) { }
