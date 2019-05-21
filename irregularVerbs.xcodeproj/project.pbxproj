@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3113BEE3AB7246BC33260029 /* Pods_irregularVerbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DDBDF04CD58FE8298C0D16 /* Pods_irregularVerbs.framework */; };
+		8305DD4A22946A9A00B780E7 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */; };
 		838F43772286C000009A284C /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43762286C000009A284C /* Collection+Extension.swift */; };
 		838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */; };
 		838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1990249EC2DDC0D4D78A06F0 /* Pods-irregularVerbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irregularVerbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs.debug.xcconfig"; sourceTree = "<group>"; };
+		8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
 		838F43762286C000009A284C /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				845E0FE921E0B5FB008A25E0 /* HistoryViewController.swift */,
 				84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */,
 				848BB9542243678200A8BABB /* PurchaseViewController.swift */,
+				8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				84871E8F221D7E3A00639012 /* TutorialView.swift in Sources */,
 				84DEF75B21DE00EF0005E322 /* MainMenuViewController.swift in Sources */,
 				838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */,
+				8305DD4A22946A9A00B780E7 /* TrainingViewModel.swift in Sources */,
 				84D7D58A21DFCD0C006D8D19 /* DataManager.swift in Sources */,
 				84BA73EC21E2F798008F9BAE /* TrainingViewController.swift in Sources */,
 				84E85C5D226982D100010446 /* PurchaseTableViewCell.swift in Sources */,
