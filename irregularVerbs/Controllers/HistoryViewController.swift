@@ -33,7 +33,7 @@ class HistoryViewController: UIViewController {
     
     
     
-    private func alertIfArrayIsAmpty() {
+    private func alertIfArrayIsEmpty() {
         let alertVC = UIAlertController(title: "Empty list!",
                                         message: "Back to Main list and choose words to learn",
                                         preferredStyle: .alert)
@@ -44,7 +44,7 @@ class HistoryViewController: UIViewController {
     }
     
     @IBAction func clearListButtonPressed(_ sender: UIButton) {
-        DataManager.instance.clearHistory()
+//        DataManager.instance.clearHistory()
         tableView.reloadData()
     }
     
@@ -52,14 +52,22 @@ class HistoryViewController: UIViewController {
     
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "HistoryToTraining" else {return}
-        guard let destVC = segue.destination as? TrainingViewController else {return}
-        let wordArray = DataManager.instance.learnArray
-        if wordArray.isEmpty {
-            alertIfArrayIsAmpty()
+    @IBAction private func startPressed(_ sender: Any) {
+        let words = DataManager.instance.learnArray
+        guard !words.isEmpty else {
+            alertIfArrayIsEmpty()
+            return
         }
-        destVC.setup(words: wordArray, startIndex: 0)
+        let currentIndex = 0
+        let viewModel = TrainingViewModel(words: words,
+                                          iterateMode: .consistently(currentIndex: currentIndex))
+        startTraining(with: viewModel)
+    }
+    
+    private func startTraining(with viewModel: TrainingViewModel) {
+        let destVC = TrainingViewController.instantiateVC()
+        destVC.viewModel = viewModel
+        navigationController?.pushViewController(destVC, animated: true)
     }
 }
 

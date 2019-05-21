@@ -9,11 +9,6 @@
 import UIKit
 
 class TutorialViewController: UIViewController, UIScrollViewDelegate {
-    static func instantiateVC() -> TutorialViewController {
-        let vc: TutorialViewController = UIStoryboard.storyboard(.main).instantiateViewController()
-        return vc
-    }
-    
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
     private let slides: [TutorialView] = TutorialViewController.createSlides()

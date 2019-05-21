@@ -9,11 +9,6 @@
 import UIKit
 
 class ListViewController: UIViewController {
-    static func instantiateVC() -> ListViewController {
-        let vc: ListViewController = UIStoryboard.storyboard(.main).instantiateViewController()
-        return vc
-    }
-    
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var menuButtonOutlet: UIButton!

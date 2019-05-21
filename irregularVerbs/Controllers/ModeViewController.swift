@@ -29,11 +29,30 @@ class ModeViewController: UIViewController {
         backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
     }
     
-@IBAction func backToModeController(_ segue: UIStoryboardSegue) { }
+    @IBAction func backToModeController(_ segue: UIStoryboardSegue) { }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "OneByOneToTraining" else {return}
-        guard let destVC = segue.destination as? TrainingViewController else { return }
-        destVC.setup(words: DataManager.instance.wordsArray, startIndex: DataManager.instance.indexValue)
+    @IBAction private func startAllOneByOnePressed(_ sender: Any) {
+        let words = DataManager.instance.wordsArray
+        let currentIndex = DataManager.instance.indexValue
+        let saveNewIndexAction: (Int) -> Void = { newIndex in
+            DataManager.instance.indexValue = newIndex
+        }
+        let viewModel = TrainingViewModel(words: words,
+                                          iterateMode: .consistently(currentIndex: currentIndex),
+                                          saveCurrentIndexChangeAction: saveNewIndexAction)
+        startTraining(with: viewModel)
     }
+
+    @IBAction private func startAllRandomlyPressed(_ sender: Any) {
+        let words = DataManager.instance.wordsArray
+        let viewModel = TrainingViewModel(words: words, iterateMode: .randomly)
+        startTraining(with: viewModel)
+    }
+    
+    private func startTraining(with viewModel: TrainingViewModel) {
+        let destVC = TrainingViewController.instantiateVC()
+        destVC.viewModel = viewModel
+        navigationController?.pushViewController(destVC, animated: true)
+    }
+    
 }

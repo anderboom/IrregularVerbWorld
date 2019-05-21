@@ -8,12 +8,7 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
-    static func instantiateVC() -> MainMenuViewController {
-        let vc: MainMenuViewController = UIStoryboard.storyboard(.main).instantiateViewController()
-        return vc
-    }
-    
+class MainMenuViewController: UIViewController {    
     @IBOutlet private weak var chooseLaguageTextField: UITextField!
     @IBOutlet private weak var pickLanguage: UIPickerView!
     @IBOutlet private weak var confirmButtonOutlet: UIButton!

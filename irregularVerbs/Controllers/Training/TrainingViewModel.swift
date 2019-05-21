@@ -39,9 +39,9 @@ struct TrainingViewModel {
             isRestartedFromBeggining = false
         case .consistently(let currentIndex):
             let isLastItem = currentIndex == words.count - 1
+            isRestartedFromBeggining = isLastItem
             let newIndex = isLastItem ? 0 : currentIndex + 1
             iterateMode = .consistently(currentIndex: newIndex)
-            isRestartedFromBeggining = !isLastItem
         }
         self.currentIndex = TrainingViewModel.calculateCurrentIndex(for: iterateMode, arraySize: words.count)
         saveCurrentIndexChangeAction?(self.currentIndex)

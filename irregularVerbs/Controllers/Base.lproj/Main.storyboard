@@ -193,7 +193,7 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="511"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListTableViewCell" id="1zo-l5-89y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListTableViewCell" id="1zo-l5-89y">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1zo-l5-89y" id="vM7-Yh-mRl">
@@ -285,7 +285,7 @@
                                 <rect key="frame" x="0.0" y="40" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PurchaseTableViewCell" id="w85-K8-zeV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PurchaseTableViewCell" id="w85-K8-zeV">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w85-K8-zeV" id="UT6-NR-9E8">
@@ -355,7 +355,7 @@
         <!--Training View Controller-->
         <scene sceneID="49c-8y-KkG">
             <objects>
-                <viewController id="y9r-vz-O1S" customClass="TrainingViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainingViewController" id="y9r-vz-O1S" customClass="TrainingViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HMx-Sg-4U5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -664,7 +664,7 @@
                         <outlet property="pastParticipleStackView" destination="iCy-UM-V9r" id="Bza-SR-KIg"/>
                         <outlet property="pastParticipleStackViewOutlet" destination="bWv-dS-sib" id="68u-Dv-Q8a"/>
                         <outlet property="playButtonOutlet" destination="NBc-AV-Bir" id="dms-1g-2dP"/>
-                        <outlet property="progressLabel" destination="1jH-HB-Z6n" id="Q6Y-gv-lpH"/>
+                        <outlet property="scoreLabel" destination="1jH-HB-Z6n" id="Q6Y-gv-lpH"/>
                         <outlet property="simplePastStackView" destination="Ldn-qY-FKZ" id="wC2-Ha-XL2"/>
                         <outlet property="simplePastStackViewOutlet" destination="ZXm-7r-I6H" id="N0c-pN-qng"/>
                         <outlet property="soldier" destination="ZFN-cT-FBD" id="3Lg-vE-qXH"/>
@@ -702,7 +702,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="y9r-vz-O1S" kind="show" identifier="OneByOneToTraining" id="yal-wR-JIe"/>
+                                    <action selector="startAllOneByOnePressed:" destination="Yqd-7m-2MU" eventType="touchUpInside" id="j6h-MV-3W6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-Mu-vI4">
@@ -740,6 +740,9 @@
                                 <state key="normal" title="All randomly">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startAllRandomlyPressed:" destination="Yqd-7m-2MU" eventType="touchUpInside" id="CWZ-PQ-M1a"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Gn7-RK-Y5M">
                                 <rect key="frame" x="20" y="602" width="335" height="45"/>
@@ -871,6 +874,9 @@
                                         <state key="normal" title="Start">
                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startPressed:" destination="4eo-ue-hQg" eventType="touchUpInside" id="P1O-jS-vps"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

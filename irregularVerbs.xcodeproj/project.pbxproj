@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3113BEE3AB7246BC33260029 /* Pods_irregularVerbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DDBDF04CD58FE8298C0D16 /* Pods_irregularVerbs.framework */; };
 		8305DD4A22946A9A00B780E7 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */; };
+		8305DD4D22946F2E00B780E7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305DD4C22946F2E00B780E7 /* UIViewController+Extension.swift */; };
 		838F43772286C000009A284C /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43762286C000009A284C /* Collection+Extension.swift */; };
 		838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */; };
 		838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		1990249EC2DDC0D4D78A06F0 /* Pods-irregularVerbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irregularVerbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs.debug.xcconfig"; sourceTree = "<group>"; };
 		8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
+		8305DD4C22946F2E00B780E7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		838F43762286C000009A284C /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
@@ -121,6 +123,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8305DD4B22946EAD00B780E7 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */,
+				8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
 		838F43792286C013009A284C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +139,7 @@
 				843C301F21F6DAEB0062FF1C /* UIStackView+Extention.swift */,
 				838F43762286C000009A284C /* Collection+Extension.swift */,
 				838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */,
+				8305DD4C22946F2E00B780E7 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,14 +174,13 @@
 			isa = PBXGroup;
 			children = (
 				84DEF74821DDFE890005E322 /* Main.storyboard */,
+				8305DD4B22946EAD00B780E7 /* Training */,
 				84F7FF2B221B430000C41807 /* TutorialViewController.swift */,
 				84DEF75A21DE00EF0005E322 /* MainMenuViewController.swift */,
 				84DEF75C21DE02070005E322 /* ListViewController.swift */,
 				848C19E3228FBFD000558595 /* ModeViewController.swift */,
 				845E0FE921E0B5FB008A25E0 /* HistoryViewController.swift */,
-				84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */,
 				848BB9542243678200A8BABB /* PurchaseViewController.swift */,
-				8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -365,7 +376,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -382,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		800EA3873E02D15DEDF79F21 /* [CP] Check Pods Manifest.lock */ = {
@@ -431,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8305DD4D22946F2E00B780E7 /* UIViewController+Extension.swift in Sources */,
 				840C4ADE2269CAC6009590E9 /* IAPManager.swift in Sources */,
 				838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */,
 				84871E8F221D7E3A00639012 /* TutorialView.swift in Sources */,

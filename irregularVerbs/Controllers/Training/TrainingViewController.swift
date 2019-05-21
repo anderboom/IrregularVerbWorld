@@ -11,10 +11,13 @@ import GoogleMobileAds
 import AVFoundation
 
 class TrainingViewController: UIViewController  {
+    // MARK: - Public properties
+    var viewModel: TrainingViewModel!
     
+    // MARK: - Private properties
     private var interstitial: GADInterstitial!
     @IBOutlet private weak var playButtonOutlet: UIButton!
-    @IBOutlet private weak var progressLabel: UILabel!
+    @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var light0: UIImageView!
     @IBOutlet private weak var light1: UIImageView!
     @IBOutlet private weak var light2: UIImageView!
@@ -39,8 +42,6 @@ class TrainingViewController: UIViewController  {
     private var isThirdFormFilled = false
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
-    private var wordArray: [Word] = []
-    private var index = 0
     @IBOutlet private weak var starView: UIImageView!
     
     override func viewDidLoad() {
@@ -49,33 +50,12 @@ class TrainingViewController: UIViewController  {
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.isHidden = true
-        progressLabel.text = String(DataManager.instance.progressArray.count)
+        scoreLabel.text = String(DataManager.instance.progressArray.count)
         interstitial = createAndLoadInterstitial()
-        skipWordsAndReloadContent()
-    }
-    
-    // MARK: - Public methods
-    func setup(words: [Word], startIndex: Int) {
-        wordArray = words
-        index = startIndex
-        skipWordsAndReloadContent()
-    }
-    
-    // MARK: - Private methods
-    private func setupSelectedModeContent() {
-        guard isViewLoaded else { return }
-        if wordArray == DataManager.instance.wordsArray {
-            checkIndexToSkip()
-        } else if wordArray == DataManager.instance.learnArray {
-//            resetProgressOutlet.isHidden = true
-        }
-    }
-    
-    private func skipWordsAndReloadContent() {
-        setupSelectedModeContent()
         resetContentToInitialState()
     }
     
+    // MARK: - Private methods
     private func makeTextfield(words: String, stackView: UIStackView)  {
         for (index, value) in words.enumerated() {
             let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 18.00, height: 18.00))
@@ -92,11 +72,11 @@ class TrainingViewController: UIViewController  {
     }
     
     private func fillTestFieldStackViews() {
-        translationLabel.text = wordArray[index].translation
-        let verbsValue = wordArray[index]
-        makeTextfield(words: verbsValue.firstForm, stackView: infinitiveStackViewOutlet)
-        makeTextfield(words: verbsValue.secondForm, stackView: simplePastStackViewOutlet)
-        makeTextfield(words: verbsValue.thirdForm, stackView: pastParticipleStackViewOutlet)
+        let word = viewModel.currentWord
+        translationLabel.text = word.translation
+        makeTextfield(words: word.firstForm, stackView: infinitiveStackViewOutlet)
+        makeTextfield(words: word.secondForm, stackView: simplePastStackViewOutlet)
+        makeTextfield(words: word.thirdForm, stackView: pastParticipleStackViewOutlet)
     }
     
     private func addLetterByButtonPressed(stackView: UIStackView, char: String, charIndex: Int) {
@@ -114,7 +94,7 @@ class TrainingViewController: UIViewController  {
     }
     
     private func addButtonsToStackViews() {
-        let verbsValue = wordArray[index]
+        let verbsValue = viewModel.currentWord
         let wordsCharacterArray = verbsValue.firstForm + verbsValue.secondForm + verbsValue.thirdForm
         makeButtons(words: wordsCharacterArray, stackView1: infinitiveStackView, stackView2: simplePastStackView, stackView3: pastParticipleStackView, action: #selector(pressedButtonAction))
     }
@@ -209,7 +189,7 @@ class TrainingViewController: UIViewController  {
             return
         }
         
-        let verbsValue = wordArray[index]
+        let verbsValue = viewModel.currentWord
         let firstFormCount = verbsValue.firstForm.count
         let secondFormCount = verbsValue.secondForm.count
         let thirdFormCount = verbsValue.thirdForm.count
@@ -272,15 +252,8 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-//    @IBAction private func resetProgressPressed(_ sender: Any) {
-//        DataManager.instance.clearProgress()
-//        progressLabel.text = "0"
-//        index = 0
-//        resetContentToInitialState()
-//    }
-    
     @IBAction private func playButtonPressed(_ sender: Any) {
-        let verbsValue = wordArray[index]
+        let verbsValue = viewModel.currentWord
         DataManager.instance.playSound(verbsValue)
     }
     
@@ -326,20 +299,6 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    private func checkIndexToSkip(){
-        let learntArray = DataManager.instance.learntWordsIdArray
-        for _ in learntArray {
-            if learntArray.contains(String(index)), wordArray == DataManager.instance.wordsArray {
-                index += 1
-                print(learntArray)
-            }
-            if index == wordArray.count {
-                congratulationPopUp()
-                index = 0
-            }
-        }
-    }
-    
     private func startToFlyStar() {
         let move = CGAffineTransform(translationX: -self.view.bounds.width / 2, y: 30 * 10)
         starView.transform = move
@@ -354,23 +313,13 @@ class TrainingViewController: UIViewController  {
     }
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
-       
-        index += 1
-        checkIndexToSkip()
-        
-         if index == wordArray.count {
+        let result = viewModel.moveNext()
+        if result.isRestartedFromBeggining {
             congratulationPopUp()
-            index = 0
         }
-        let verbsValue = wordArray[index]
-        if wordArray == DataManager.instance.wordsArray {
-            DataManager.instance.indexValue = index
-        }
+        
         resetContentToInitialState()
         nextButtonOutlet.isHidden = true
-        DataManager.instance.progressCount(verbsValue)
-        progressLabel.text = String(DataManager.instance.progressArray.count)
-        
         incrementAdCounterAndShowAdIfNeeded()
     }
     
@@ -423,7 +372,7 @@ class TrainingViewController: UIViewController  {
     
     @objc private func pressedButtonAction(sender: UIButton!) {
         sender.showsTouchWhenHighlighted = true
-        let verbsValue = wordArray[index]
+        let verbsValue = viewModel.currentWord
         let wordsCharacterArray = verbsValue.firstForm + verbsValue.secondForm + verbsValue.thirdForm
         makeAlgoritmForPressedButton(sender: sender,
                                      words: wordsCharacterArray,

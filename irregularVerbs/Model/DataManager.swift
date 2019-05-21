@@ -18,9 +18,8 @@ final class DataManager {
         guard let language = self.choosedLanguage else { return [] }
         return loadWordsFromJson(for: language) ?? []
     }()
-    lazy var learnArray = addWordToLearn()
+    private(set) lazy var learnArray = formWordsToLearn()
     private var audioPlayer = AVAudioPlayer()
-    private var learntIndex = 0
     
     func chooseLanguage(_ lng: TranslationLanguage) {
         choosedLanguage = lng
@@ -50,7 +49,7 @@ final class DataManager {
         }
     }
     
-    var learntWordsIdArray: [String] {
+    private var learntWordsIdArray: [String] {
         get {
             return UserDefaults.standard.stringArray(forKey: Constants.learnArrayId) ?? []
         }
@@ -79,34 +78,18 @@ final class DataManager {
         }
     }
     
-    var learntWordIds: [String] {
+    private var learntWordIds: [String] {
         get {
-            return UserDefaults.standard.array(forKey: Constants.learntWordsDictionary) as? [String] ?? ["0"]
+            return UserDefaults.standard.array(forKey: Constants.learntWordsDictionary) as? [String] ?? []
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Constants.learntWordsDictionary)
         }
     }
     
-    func learntWords(_ word: Word){
-        if learntWordIds.contains(word.id) {
-           
-        } else {
-            learntWordIds.append(word.id)
-        }
-    }
-    
-    func addWordToLearn() -> [Word] {
-        var learnArray: [Word] = []
-        for i in learntWordsIdArray {
-            for word in wordsArray {
-                if word.id == i {
-                    learnArray.append(word)
-                    break
-                }
-            }
-        }
-        return learnArray
+    func addWordToLearnt(_ word: Word){
+        guard !learntWordIds.contains(word.id) else { return }
+        learntWordIds.append(word.id)
     }
     
     func addWord(_ word: Word) {
@@ -119,12 +102,6 @@ final class DataManager {
         guard let learntIndex = learnArray.firstIndex(of: word) else {return}
         learnArray.remove(at: learntIndex)
         learntWordsIdArray.remove(at: learntIndex)
-    }
-    
-    func clearHistory() {
-        learnArray = []
-        learntWordsIdArray = []
-        learntWordIds = []
     }
     
     func playSound(_ word: Word) {
@@ -141,17 +118,25 @@ final class DataManager {
         guard !progressArray.contains(word.id) else { return }
         progressArray.append(word.id)
     }
-//    
-//    func clearProgress() {
-//        progressArray = []
-//        learnArray = []
-//        learntWordIds = []
-//        learntWordsIdArray = []
-//        indexValue = 0
-//        adCounting = 0
-//    }
-    
+
     // MARK: - Private methods
+    private func formWordsToLearn() -> [Word] {
+        var learnArray: [Word] = []
+        for word in wordsArray {
+            for id in learntWordsIdArray {
+                if word.id == id {
+                    learnArray.append(word)
+                    break
+                }
+            }
+            if learntWordsIdArray.count == learnArray.count {
+                break
+            }
+        }
+        
+        return learnArray
+    }
+    
     private func loadWordsFromJson(for language: TranslationLanguage) -> [Word]? {
         guard let url = Bundle.main.url(forResource: language.jsonName, withExtension: "json") else { return nil }
         do {
