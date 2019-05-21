@@ -264,6 +264,7 @@ class TrainingViewController: UIViewController  {
         }
         
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
+            startToFlyStar()
             nextButtonOutlet.isHidden = false
             isFirstFormFilled = false
             isSecondFormFilled = false
@@ -308,7 +309,7 @@ class TrainingViewController: UIViewController  {
     private func incrementAdCounterAndShowAdIfNeeded() {
         guard !IAPManager.instance.isGotNonConsumable else { return }
         DataManager.instance.adCounting += 1
-        guard DataManager.instance.adCounting % 3 == 0 else { return }
+        guard DataManager.instance.adCounting % 120 == 0 else { return }
         guard !interstitial.hasBeenUsed else {
             assertionFailure("ERROR: Interstitial hasBeenUsed. Object is not recreated")
             return
@@ -339,17 +340,21 @@ class TrainingViewController: UIViewController  {
         }
     }
     
-    @IBAction private func nextButtonPressed(_ sender: Any) {
+    private func startToFlyStar() {
         let move = CGAffineTransform(translationX: -self.view.bounds.width / 2, y: 30 * 10)
         starView.transform = move
-            UIView.animate(withDuration: 1.7, delay: 0,
-                           usingSpringWithDamping: 0.7,
-                           initialSpringVelocity: 0.7,
-                           options: .curveEaseInOut,
-                           animations: {
-            self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
-            }, completion: nil)
+        UIView.animate(withDuration: 1.7, delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.7,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
         
+    }
+    
+    @IBAction private func nextButtonPressed(_ sender: Any) {
+       
         index += 1
         checkIndexToSkip()
         
