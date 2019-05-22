@@ -15,6 +15,7 @@ class TrainingViewController: UIViewController  {
     var viewModel: TrainingViewModel!
     
     // MARK: - Private properties
+   
     private var interstitial: GADInterstitial!
     @IBOutlet private weak var playButtonOutlet: UIButton!
     @IBOutlet private weak var scoreLabel: UILabel!
@@ -50,7 +51,7 @@ class TrainingViewController: UIViewController  {
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.isHidden = true
-        scoreLabel.text = String(DataManager.instance.progressArray.count)
+        scoreLabel.text = String(DataManager.instance.commonScore)
         interstitial = createAndLoadInterstitial()
         resetContentToInitialState()
     }
@@ -245,6 +246,8 @@ class TrainingViewController: UIViewController  {
         
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
             startToFlyStar()
+            DataManager.instance.commonScore += 1
+            scoreLabel.text = String(DataManager.instance.commonScore)
             nextButtonOutlet.isHidden = false
             isFirstFormFilled = false
             isSecondFormFilled = false
@@ -309,8 +312,9 @@ class TrainingViewController: UIViewController  {
                        animations: {
                         self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
-        
+       
     }
+    
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
         let result = viewModel.moveNext()

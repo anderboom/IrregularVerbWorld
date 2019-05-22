@@ -10,7 +10,7 @@ import Foundation
 
 enum Constants {
     static let index = "index"
-    static let progress = "progress"
+    static let score = "score"
     static let learnArrayId = "learnArrayId"
     static let choosedTranslationLanguageKey = "choosedTranslationLanguageKey"
     static let learntWordsDictionary = "learntWordsDictionary"

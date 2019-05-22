@@ -58,12 +58,14 @@ final class DataManager {
         }
     }
     
-    var progressArray: [String] {
+    var currentScore: Int = 0
+    
+    var commonScore: Int {
         get {
-            return UserDefaults.standard.stringArray(forKey: Constants.progress) ?? []
+            return UserDefaults.standard.integer(forKey: Constants.score)
         }
         set {
-            UserDefaults.standard.set(newValue , forKey: Constants.progress)
+            UserDefaults.standard.set(newValue , forKey: Constants.score)
         }
     }
     
@@ -114,10 +116,10 @@ final class DataManager {
         }
     }
     
-    func progressCount(_ word:Word) {
-        guard !progressArray.contains(word.id) else { return }
-        progressArray.append(word.id)
-    }
+//    func progressCount(_ word:Word) {
+//        guard !progressArray.contains(word.id) else { return }
+//        progressArray.append(word.id)
+//    }
 
     // MARK: - Private methods
     private func formWordsToLearn() -> [Word] {
