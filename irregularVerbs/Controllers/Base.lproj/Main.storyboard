@@ -786,12 +786,9 @@
                                             <constraint firstAttribute="height" constant="45" id="hbo-AK-meS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Back">
+                                        <state key="normal" title="Clear list">
                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="Pz2-8K-4Pz" kind="unwind" unwindAction="backToModeController:" id="d31-AX-d6Z"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDk-iD-y93">
                                         <rect key="frame" x="178" y="0.0" width="147" height="45"/>
@@ -827,13 +824,13 @@
                     </view>
                     <connections>
                         <outlet property="backButtonOutlet" destination="iRM-mO-h7a" id="aCH-5O-j9y"/>
+                        <outlet property="clearListButtonOutlet" destination="iRM-mO-h7a" id="8dY-ck-bL7"/>
                         <outlet property="searchBar" destination="w8l-hy-DFb" id="kbh-Z9-9uf"/>
                         <outlet property="startButtonOutlet" destination="LDk-iD-y93" id="O4j-Bc-YJp"/>
                         <outlet property="tableView" destination="7ZU-dx-z2w" id="op2-l1-e6W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzj-9Q-iVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Pz2-8K-4Pz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6119.1999999999998" y="124.58770614692655"/>
         </scene>
@@ -874,12 +871,9 @@
                                             <constraint firstAttribute="height" constant="45" id="LPi-rX-lZI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Back">
+                                        <state key="normal" title="Clear list">
                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="fBb-LO-3Xn" kind="unwind" unwindAction="backToModeController:" id="OxW-Rs-Cz6"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnk-Tu-ZLO">
                                         <rect key="frame" x="178" y="0.0" width="147" height="45"/>
@@ -915,13 +909,13 @@
                     </view>
                     <connections>
                         <outlet property="backButtonOutlet" destination="xU0-cE-K6e" id="Hgn-Nr-u2s"/>
+                        <outlet property="clearListButtonOutlet" destination="xU0-cE-K6e" id="fYN-9u-LWB"/>
                         <outlet property="searchBar" destination="o9a-5m-QNJ" id="JGA-Op-G2m"/>
                         <outlet property="startButtonOutlet" destination="wnk-Tu-ZLO" id="dLp-7P-U7g"/>
                         <outlet property="tableView" destination="BlB-41-2NA" id="64w-o6-yrz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQF-eJ-Q2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="fBb-LO-3Xn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5308" y="908"/>
         </scene>
