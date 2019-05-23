@@ -34,9 +34,6 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         updateScrollViewContentSize()
     }
     
-    @IBAction func backToTutorialController(_ segue: UIStoryboardSegue) {
-    }
-    
     private static func createSlides() -> [TutorialView] {
         
         let slide1:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView

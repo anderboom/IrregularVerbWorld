@@ -17,8 +17,8 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet private weak var secondFormLabel: UILabel!
     @IBOutlet private weak var thirdFormLabel: UILabel!
     @IBOutlet private weak var translatingLabel: UILabel!
-    @IBOutlet private weak var playButtonOutlet: UIButton!
-//    var addToHistoryAction: (() -> Void)?
+    @IBOutlet weak var imageViewCell: UIImageView!
+    //    var addToHistoryAction: (() -> Void)?
     var playCurrentWordAction: (() -> Void)?
     
     override func awakeFromNib() {

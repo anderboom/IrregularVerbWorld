@@ -12,12 +12,10 @@ class MainMenuViewController: UIViewController {
     @IBOutlet private weak var chooseLaguageTextField: UITextField!
     @IBOutlet private weak var pickLanguage: UIPickerView!
     @IBOutlet private weak var confirmButtonOutlet: UIButton!
-    @IBOutlet private weak var tutorialButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         confirmButtonOutlet.layer.cornerRadius = confirmButtonOutlet.frame.size.height / 5.0
-        tutorialButtonOutlet.layer.cornerRadius = tutorialButtonOutlet.frame.size.height / 5.0
         let selectedIndex: Int
         if let choosedLanguage = DataManager.instance.choosedLanguage {
             selectedIndex = TranslationLanguage.allCases.firstIndex(of: choosedLanguage) ?? 0
@@ -29,8 +27,6 @@ class MainMenuViewController: UIViewController {
         chooseLaguageTextField.text = TranslationLanguage.allCases[selectedIndex].name
         chooseLaguageTextField.isEnabled = false
     }
-    
-    @IBAction func backToMainMenuController(_ segue: UIStoryboardSegue) { }
     
     @IBAction private func confirmButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true

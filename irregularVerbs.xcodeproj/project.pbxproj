@@ -16,9 +16,10 @@
 		838F43882286E867009A284C /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43872286E867009A284C /* TranslationLanguage.swift */; };
 		840C4ADC2269C96F009590E9 /* IAPProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4ADB2269C96F009590E9 /* IAPProducts.swift */; };
 		840C4ADE2269CAC6009590E9 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4ADD2269CAC6009590E9 /* IAPManager.swift */; };
+		8423AC8A2295816400BE43E3 /* SkipWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423AC892295816400BE43E3 /* SkipWordsViewController.swift */; };
+		8423AC8C2295829300BE43E3 /* LearnWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423AC8B2295829300BE43E3 /* LearnWordsViewController.swift */; };
 		843C302021F6DAEB0062FF1C /* UIStackView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C301F21F6DAEB0062FF1C /* UIStackView+Extention.swift */; };
 		845050CF2284CE2400BBC20A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845050CE2284CE2400BBC20A /* GoogleService-Info.plist */; };
-		845E0FEA21E0B5FB008A25E0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E0FE921E0B5FB008A25E0 /* HistoryViewController.swift */; };
 		84871E8F221D7E3A00639012 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84871E8E221D7E3A00639012 /* TutorialView.swift */; };
 		84871E91221D7E5400639012 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84871E90221D7E5400639012 /* TutorialView.xib */; };
 		848BB9552243678200A8BABB /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB9542243678200A8BABB /* PurchaseViewController.swift */; };
@@ -60,9 +61,10 @@
 		838F43872286E867009A284C /* TranslationLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLanguage.swift; sourceTree = "<group>"; };
 		840C4ADB2269C96F009590E9 /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
 		840C4ADD2269CAC6009590E9 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		8423AC892295816400BE43E3 /* SkipWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipWordsViewController.swift; sourceTree = "<group>"; };
+		8423AC8B2295829300BE43E3 /* LearnWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordsViewController.swift; sourceTree = "<group>"; };
 		843C301F21F6DAEB0062FF1C /* UIStackView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extention.swift"; sourceTree = "<group>"; };
 		845050CE2284CE2400BBC20A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		845E0FE921E0B5FB008A25E0 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		84871E8E221D7E3A00639012 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		84871E90221D7E5400639012 /* TutorialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialView.xib; sourceTree = "<group>"; };
 		848BB9542243678200A8BABB /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +181,8 @@
 				84DEF75A21DE00EF0005E322 /* MainMenuViewController.swift */,
 				84DEF75C21DE02070005E322 /* ListViewController.swift */,
 				848C19E3228FBFD000558595 /* ModeViewController.swift */,
-				845E0FE921E0B5FB008A25E0 /* HistoryViewController.swift */,
+				8423AC892295816400BE43E3 /* SkipWordsViewController.swift */,
+				8423AC8B2295829300BE43E3 /* LearnWordsViewController.swift */,
 				848BB9542243678200A8BABB /* PurchaseViewController.swift */,
 			);
 			path = Controllers;
@@ -449,6 +452,7 @@
 				84DEF75B21DE00EF0005E322 /* MainMenuViewController.swift in Sources */,
 				838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */,
 				8305DD4A22946A9A00B780E7 /* TrainingViewModel.swift in Sources */,
+				8423AC8A2295816400BE43E3 /* SkipWordsViewController.swift in Sources */,
 				84D7D58A21DFCD0C006D8D19 /* DataManager.swift in Sources */,
 				84BA73EC21E2F798008F9BAE /* TrainingViewController.swift in Sources */,
 				84E85C5D226982D100010446 /* PurchaseTableViewCell.swift in Sources */,
@@ -458,13 +462,13 @@
 				84DEF74521DDFE890005E322 /* AppDelegate.swift in Sources */,
 				84DEF75D21DE02070005E322 /* ListViewController.swift in Sources */,
 				848C19E4228FBFD000558595 /* ModeViewController.swift in Sources */,
-				845E0FEA21E0B5FB008A25E0 /* HistoryViewController.swift in Sources */,
 				840C4ADC2269C96F009590E9 /* IAPProducts.swift in Sources */,
 				84DCFC7E21F579EB001F49B2 /* String+Extention.swift in Sources */,
 				84DB4CDA21DF32DB0049D287 /* ListTableViewCell.swift in Sources */,
 				843C302021F6DAEB0062FF1C /* UIStackView+Extention.swift in Sources */,
 				84F7FF2C221B430000C41807 /* TutorialViewController.swift in Sources */,
 				84ABC8242206E54000EB2B20 /* Constants.swift in Sources */,
+				8423AC8C2295829300BE43E3 /* LearnWordsViewController.swift in Sources */,
 				838F43882286E867009A284C /* TranslationLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

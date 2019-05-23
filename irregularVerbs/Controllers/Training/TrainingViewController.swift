@@ -32,7 +32,6 @@ class TrainingViewController: UIViewController  {
     @IBOutlet private weak var simplePastStackViewOutlet: UIStackView!
     @IBOutlet private weak var infinitiveStackViewOutlet: UIStackView!
     @IBOutlet private weak var pastParticipleStackViewOutlet: UIStackView!
-    @IBOutlet private weak var backButtonOutlet: UIButton!
     @IBOutlet private weak var translationLabel: UILabel!
     private var charStep = 0
     private var arrayCharStep = 0
@@ -47,7 +46,6 @@ class TrainingViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.isHidden = true
