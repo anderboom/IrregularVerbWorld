@@ -23,7 +23,7 @@ class LearnWordsViewController: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
         tableView.register(ListTableViewCell.nib, forCellReuseIdentifier: ListTableViewCell.identifier)
-        clearListButtonOutlet.layer.cornerRadius = clearListButtonOutlet.frame.size.height / 5.0
+//        clearListButtonOutlet.layer.cornerRadius = clearListButtonOutlet.frame.size.height / 5.0
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.size.height / 5.0
         view.backgroundColor = UIColor(red: 236.0/255.0,
                                        green: 247.0/255.0,
@@ -46,10 +46,6 @@ class LearnWordsViewController: UIViewController {
     @IBAction func clearListButtonPressed(_ sender: UIButton) {
         //        DataManager.instance.clearHistory()
         tableView.reloadData()
-    }
-    
-    @IBAction func backToHistoryController(_ segue: UIStoryboardSegue) {
-        
     }
     
     @IBAction private func startPressed(_ sender: Any) {

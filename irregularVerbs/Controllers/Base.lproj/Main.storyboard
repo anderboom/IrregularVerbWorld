@@ -318,28 +318,28 @@
                                 <color key="backgroundColor" red="0.61614459753036499" green="0.84835851192474365" blue="0.82064300775527954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JO-wjJ">
-                                <rect key="frame" x="148" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="148" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="djp-C1-DSF"/>
                                     <constraint firstAttribute="height" constant="35" id="vmA-Sv-RD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-RT-gA9">
-                                <rect key="frame" x="164" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="164" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cvD-Cz-pX4"/>
                                     <constraint firstAttribute="height" constant="35" id="xzB-0g-XIM"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-9A-tHK">
-                                <rect key="frame" x="180" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="180" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AbF-b1-tyT"/>
                                     <constraint firstAttribute="width" constant="15" id="YIX-05-IZN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="3av-FZ-Chn">
-                                <rect key="frame" x="196" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="196" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="Lpa-40-6Uv"/>
                                     <constraint firstAttribute="height" constant="35" id="xF3-2d-02M"/>
@@ -468,7 +468,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Mp-E6u">
-                                <rect key="frame" x="212" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="212" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="0m1-k5-BIT"/>
                                     <constraint firstAttribute="height" constant="35" id="axT-xj-RL9"/>
@@ -777,21 +777,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Oln-Sz-pvJ">
-                                <rect key="frame" x="25" y="602" width="325" height="45"/>
+                                <rect key="frame" x="25" y="615" width="325" height="32"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRM-mO-h7a">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="45"/>
-                                        <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="hbo-AK-meS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Clear list">
-                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDk-iD-y93">
-                                        <rect key="frame" x="178" y="0.0" width="147" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="32"/>
                                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Start">
@@ -802,9 +791,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="iRM-mO-h7a" firstAttribute="width" secondItem="LDk-iD-y93" secondAttribute="width" id="ebc-KD-E8o"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -823,8 +809,6 @@
                         <viewLayoutGuide key="safeArea" id="brQ-JQ-5It"/>
                     </view>
                     <connections>
-                        <outlet property="backButtonOutlet" destination="iRM-mO-h7a" id="aCH-5O-j9y"/>
-                        <outlet property="clearListButtonOutlet" destination="iRM-mO-h7a" id="8dY-ck-bL7"/>
                         <outlet property="searchBar" destination="w8l-hy-DFb" id="kbh-Z9-9uf"/>
                         <outlet property="startButtonOutlet" destination="LDk-iD-y93" id="O4j-Bc-YJp"/>
                         <outlet property="tableView" destination="7ZU-dx-z2w" id="op2-l1-e6W"/>
@@ -862,21 +846,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-c0-GVh">
-                                <rect key="frame" x="25" y="602" width="325" height="45"/>
+                                <rect key="frame" x="25" y="615" width="325" height="32"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xU0-cE-K6e">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="45"/>
-                                        <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="LPi-rX-lZI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Clear list">
-                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnk-Tu-ZLO">
-                                        <rect key="frame" x="178" y="0.0" width="147" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="32"/>
                                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Start">
@@ -887,9 +860,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="xU0-cE-K6e" firstAttribute="width" secondItem="wnk-Tu-ZLO" secondAttribute="width" id="q2G-fX-yXm"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -908,8 +878,6 @@
                         <viewLayoutGuide key="safeArea" id="SLh-7p-e18"/>
                     </view>
                     <connections>
-                        <outlet property="backButtonOutlet" destination="xU0-cE-K6e" id="Hgn-Nr-u2s"/>
-                        <outlet property="clearListButtonOutlet" destination="xU0-cE-K6e" id="fYN-9u-LWB"/>
                         <outlet property="searchBar" destination="o9a-5m-QNJ" id="JGA-Op-G2m"/>
                         <outlet property="startButtonOutlet" destination="wnk-Tu-ZLO" id="dLp-7P-U7g"/>
                         <outlet property="tableView" destination="BlB-41-2NA" id="64w-o6-yrz"/>
