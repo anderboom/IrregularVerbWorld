@@ -25,6 +25,8 @@ class ModeViewController: UIViewController {
         onlySelectedOutlet.layer.cornerRadius = onlySelectedOutlet.frame.size.height / 5.0
         removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
         leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
+        
+        StoreReviewHelper.checkAndAskForReview()
     }
     
     @IBAction func backToModeController(_ segue: UIStoryboardSegue) { }

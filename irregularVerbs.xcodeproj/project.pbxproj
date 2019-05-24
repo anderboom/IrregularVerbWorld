@@ -10,6 +10,7 @@
 		3113BEE3AB7246BC33260029 /* Pods_irregularVerbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DDBDF04CD58FE8298C0D16 /* Pods_irregularVerbs.framework */; };
 		8305DD4A22946A9A00B780E7 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */; };
 		8305DD4D22946F2E00B780E7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305DD4C22946F2E00B780E7 /* UIViewController+Extension.swift */; };
+		838CD46D22987357003FECBE /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CD46C22987357003FECBE /* StoreReviewHelper.swift */; };
 		838F43772286C000009A284C /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43762286C000009A284C /* Collection+Extension.swift */; };
 		838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */; };
 		838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */; };
@@ -55,6 +56,7 @@
 		1990249EC2DDC0D4D78A06F0 /* Pods-irregularVerbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-irregularVerbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs.debug.xcconfig"; sourceTree = "<group>"; };
 		8305DD4922946A9A00B780E7 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
 		8305DD4C22946F2E00B780E7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		838CD46C22987357003FECBE /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		838F43762286C000009A284C /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		838F43822286DEE7009A284C /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		838F43852286DF1C009A284C /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
@@ -134,6 +136,24 @@
 			path = Training;
 			sourceTree = "<group>";
 		};
+		838CD46B22987348003FECBE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				838CD46C22987357003FECBE /* StoreReviewHelper.swift */,
+				84ABC8232206E54000EB2B20 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		838CD46E22987424003FECBE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				838F43872286E867009A284C /* TranslationLanguage.swift */,
+				84DB4CD421DF2BAC0049D287 /* Word.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		838F43792286C013009A284C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,12 +169,10 @@
 		838F437A2286C027009A284C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84DB4CD421DF2BAC0049D287 /* Word.swift */,
+				838CD46E22987424003FECBE /* Entities */,
 				84D7D58921DFCD0C006D8D19 /* DataManager.swift */,
-				84ABC8232206E54000EB2B20 /* Constants.swift */,
 				840C4ADB2269C96F009590E9 /* IAPProducts.swift */,
 				840C4ADD2269CAC6009590E9 /* IAPManager.swift */,
-				838F43872286E867009A284C /* TranslationLanguage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 		84DEF74321DDFE890005E322 /* irregularVerbs */ = {
 			isa = PBXGroup;
 			children = (
+				838CD46B22987348003FECBE /* Helpers */,
 				838F43842286DF11009A284C /* Protocols */,
 				838F43792286C013009A284C /* Extensions */,
 				838F437A2286C027009A284C /* Model */,
@@ -379,7 +398,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -396,7 +415,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		800EA3873E02D15DEDF79F21 /* [CP] Check Pods Manifest.lock */ = {
@@ -450,6 +469,7 @@
 				838F43832286DEE7009A284C /* UIStoryboard+Extension.swift in Sources */,
 				84871E8F221D7E3A00639012 /* TutorialView.swift in Sources */,
 				84DEF75B21DE00EF0005E322 /* MainMenuViewController.swift in Sources */,
+				838CD46D22987357003FECBE /* StoreReviewHelper.swift in Sources */,
 				838F43862286DF1C009A284C /* StoryboardIdentifiable.swift in Sources */,
 				8305DD4A22946A9A00B780E7 /* TrainingViewModel.swift in Sources */,
 				8423AC8A2295816400BE43E3 /* SkipWordsViewController.swift in Sources */,

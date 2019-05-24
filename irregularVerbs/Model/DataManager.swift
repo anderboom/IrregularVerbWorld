@@ -28,33 +28,33 @@ final class DataManager {
     
     var isTutorialChoosen: Bool {
         get {
-            return UserDefaults.standard.bool(forKey: Constants.isTutorialChoosen)
+            return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isTutorialChoosen)
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Constants.isTutorialChoosen)
+            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.isTutorialChoosen)
         }
     }
     
     private(set) var choosedLanguage: TranslationLanguage? {
         get {
-            guard let key = UserDefaults.standard.string(forKey: Constants.choosedTranslationLanguageKey) else { return nil }
+            guard let key = UserDefaults.standard.string(forKey: Constants.StorageKeys.choosedTranslationLanguageKey) else { return nil }
             return TranslationLanguage(rawValue: key)
         }
         set {
             if let value = newValue?.rawValue {
-                UserDefaults.standard.set(value, forKey: Constants.choosedTranslationLanguageKey)
+                UserDefaults.standard.set(value, forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
             } else {
-                UserDefaults.standard.removeObject(forKey: Constants.choosedTranslationLanguageKey)
+                UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
             }
         }
     }
     
     private var learntWordsIdArray: [String] {
         get {
-            return UserDefaults.standard.stringArray(forKey: Constants.learnArrayId) ?? []
+            return UserDefaults.standard.stringArray(forKey: Constants.StorageKeys.learnArrayId) ?? []
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Constants.learnArrayId)
+            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learnArrayId)
         }
     }
     
@@ -62,10 +62,10 @@ final class DataManager {
     
     var commonScore: Int {
         get {
-            return UserDefaults.standard.integer(forKey: Constants.score)
+            return UserDefaults.standard.integer(forKey: Constants.StorageKeys.score)
         }
         set {
-            UserDefaults.standard.set(newValue , forKey: Constants.score)
+            UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.score)
         }
     }
     
@@ -73,19 +73,19 @@ final class DataManager {
     
     var indexValue: Int {
         get {
-            return UserDefaults.standard.integer(forKey: Constants.index)
+            return UserDefaults.standard.integer(forKey: Constants.StorageKeys.index)
         }
         set {
-            UserDefaults.standard.set(newValue , forKey: Constants.index)
+            UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.index)
         }
     }
     
     private var learntWordIds: [String] {
         get {
-            return UserDefaults.standard.array(forKey: Constants.learntWordsDictionary) as? [String] ?? []
+            return UserDefaults.standard.array(forKey: Constants.StorageKeys.learntWordsDictionary) as? [String] ?? []
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Constants.learntWordsDictionary)
+            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learntWordsDictionary)
         }
     }
     
@@ -115,11 +115,6 @@ final class DataManager {
             debugPrint("error:\(error)")
         }
     }
-    
-//    func progressCount(_ word:Word) {
-//        guard !progressArray.contains(word.id) else { return }
-//        progressArray.append(word.id)
-//    }
 
     // MARK: - Private methods
     private func formWordsToLearn() -> [Word] {

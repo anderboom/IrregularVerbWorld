@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupWindow()
+        StoreReviewHelper.incrementAppOpenedCount()
         Siren.shared.wail()
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
