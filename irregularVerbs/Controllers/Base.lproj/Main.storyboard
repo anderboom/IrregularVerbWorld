@@ -248,23 +248,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGs-Zm-V1h">
-                                <rect key="frame" x="40" y="607" width="85" height="40"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ymN-0E-S2P"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="z2a-mT-CrB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="OLD-xJ-vVF" kind="unwind" unwindAction="backToModeController:" id="6j8-Ya-TG8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b2-rN-JJG">
-                                <rect key="frame" x="250" y="607" width="85" height="40"/>
+                                <rect key="frame" x="145" y="607" width="85" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="G01-nC-NPE"/>
@@ -281,27 +266,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kW0-R0-vcg" firstAttribute="trailing" secondItem="9b2-rN-JJG" secondAttribute="trailing" constant="40" id="2wN-nA-C1g"/>
                             <constraint firstItem="sfS-Zy-vDI" firstAttribute="top" secondItem="3pg-Kl-yE9" secondAttribute="top" constant="40" id="5Mc-1b-uvz"/>
                             <constraint firstItem="sfS-Zy-vDI" firstAttribute="leading" secondItem="kW0-R0-vcg" secondAttribute="leading" id="Kqi-SV-ZM6"/>
                             <constraint firstItem="kW0-R0-vcg" firstAttribute="trailing" secondItem="sfS-Zy-vDI" secondAttribute="trailing" id="MCC-mj-RuJ"/>
                             <constraint firstItem="kW0-R0-vcg" firstAttribute="bottom" secondItem="sfS-Zy-vDI" secondAttribute="bottom" constant="80" id="XWr-PF-RSh"/>
+                            <constraint firstItem="9b2-rN-JJG" firstAttribute="centerX" secondItem="3pg-Kl-yE9" secondAttribute="centerX" id="qP5-fS-3CG"/>
                             <constraint firstItem="kW0-R0-vcg" firstAttribute="bottom" secondItem="9b2-rN-JJG" secondAttribute="bottom" constant="20" id="tyr-NS-BT9"/>
-                            <constraint firstItem="kW0-R0-vcg" firstAttribute="bottom" secondItem="oGs-Zm-V1h" secondAttribute="bottom" constant="20" id="uqn-XH-Sce"/>
-                            <constraint firstItem="9b2-rN-JJG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oGs-Zm-V1h" secondAttribute="trailing" constant="40" id="yWZ-JT-4Ao"/>
-                            <constraint firstItem="oGs-Zm-V1h" firstAttribute="leading" secondItem="kW0-R0-vcg" secondAttribute="leading" constant="40" id="zrs-hN-oBN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kW0-R0-vcg"/>
                     </view>
                     <navigationItem key="navigationItem" id="TYg-I0-hq3"/>
                     <connections>
-                        <outlet property="backButtonOutlet" destination="oGs-Zm-V1h" id="M3q-1m-YRm"/>
                         <outlet property="restoreButtonOutlet" destination="9b2-rN-JJG" id="EzY-I5-1JI"/>
                         <outlet property="tableView" destination="sfS-Zy-vDI" id="MDB-pp-Zb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrG-xr-Qdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="OLD-xJ-vVF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4476" y="908"/>
         </scene>
@@ -318,28 +298,28 @@
                                 <color key="backgroundColor" red="0.61614459753036499" green="0.84835851192474365" blue="0.82064300775527954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JO-wjJ">
-                                <rect key="frame" x="148" y="40" width="15" height="35"/>
+                                <rect key="frame" x="148" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="djp-C1-DSF"/>
                                     <constraint firstAttribute="height" constant="35" id="vmA-Sv-RD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-RT-gA9">
-                                <rect key="frame" x="164" y="40" width="15" height="35"/>
+                                <rect key="frame" x="164" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cvD-Cz-pX4"/>
                                     <constraint firstAttribute="height" constant="35" id="xzB-0g-XIM"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-9A-tHK">
-                                <rect key="frame" x="180" y="40" width="15" height="35"/>
+                                <rect key="frame" x="180" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AbF-b1-tyT"/>
                                     <constraint firstAttribute="width" constant="15" id="YIX-05-IZN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="3av-FZ-Chn">
-                                <rect key="frame" x="196" y="40" width="15" height="35"/>
+                                <rect key="frame" x="196" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="Lpa-40-6Uv"/>
                                     <constraint firstAttribute="height" constant="35" id="xF3-2d-02M"/>
@@ -468,7 +448,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Mp-E6u">
-                                <rect key="frame" x="212" y="40" width="15" height="35"/>
+                                <rect key="frame" x="212" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="0m1-k5-BIT"/>
                                     <constraint firstAttribute="height" constant="35" id="axT-xj-RL9"/>
@@ -749,10 +729,10 @@
             </objects>
             <point key="canvasLocation" x="5308" y="124.58770614692655"/>
         </scene>
-        <!--Skip Words View Controller-->
+        <!--Check words to skip-->
         <scene sceneID="snZ-IN-cYP">
             <objects>
-                <viewController id="4eo-ue-hQg" customClass="SkipWordsViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Check words to skip" id="4eo-ue-hQg" customClass="SkipWordsViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fuz-Mh-BC9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -777,11 +757,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Oln-Sz-pvJ">
-                                <rect key="frame" x="25" y="615" width="325" height="32"/>
+                                <rect key="frame" x="25" y="602" width="325" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDk-iD-y93">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="45"/>
                                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ViP-m3-5ub"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -818,10 +801,10 @@
             </objects>
             <point key="canvasLocation" x="6119.1999999999998" y="124.58770614692655"/>
         </scene>
-        <!--Learn Words View Controller-->
+        <!--Select words to learn-->
         <scene sceneID="l3r-8F-n2G">
             <objects>
-                <viewController id="DE6-ng-M6K" customClass="LearnWordsViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Select words to learn" id="DE6-ng-M6K" customClass="LearnWordsViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFh-2l-G6C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,11 +829,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-c0-GVh">
-                                <rect key="frame" x="25" y="615" width="325" height="32"/>
+                                <rect key="frame" x="25" y="602" width="325" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnk-Tu-ZLO">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="45"/>
                                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ELb-ok-PNK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>

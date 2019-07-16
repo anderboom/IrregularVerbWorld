@@ -95,7 +95,7 @@ extension SkipWordsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let word = DataManager.instance.wordsArray[indexPath.row]
+        
         
     }
     

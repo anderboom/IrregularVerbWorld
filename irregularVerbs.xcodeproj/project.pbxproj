@@ -284,11 +284,11 @@
 		84DEF75621DDFE9D0005E322 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				84DEF74421DDFE890005E322 /* AppDelegate.swift */,
+				84DEF74D21DDFE8B0005E322 /* LaunchScreen.storyboard */,
 				84FE695021E7EF9500EDCA7B /* Assets.xcassets */,
 				84DEF75021DDFE8B0005E322 /* Info.plist */,
 				845050CE2284CE2400BBC20A /* GoogleService-Info.plist */,
-				84DEF74D21DDFE8B0005E322 /* LaunchScreen.storyboard */,
-				84DEF74421DDFE890005E322 /* AppDelegate.swift */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";

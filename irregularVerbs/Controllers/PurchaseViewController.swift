@@ -13,7 +13,6 @@ class PurchaseViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var restoreButtonOutlet: UIButton!
-    @IBOutlet private weak var backButtonOutlet: UIButton!
     let iapManager = IAPManager.instance
     let notificationCenter = NotificationCenter.default
     
@@ -22,7 +21,6 @@ class PurchaseViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(PurchaseTableViewCell.nib, forCellReuseIdentifier: PurchaseTableViewCell.identifier)
-        backButtonOutlet.layer.cornerRadius = backButtonOutlet.frame.size.height / 5.0
         restoreButtonOutlet.layer.cornerRadius = restoreButtonOutlet.frame.size.height / 5.0
         notificationCenter.addObserver(self,
                                        selector: #selector(reload),
