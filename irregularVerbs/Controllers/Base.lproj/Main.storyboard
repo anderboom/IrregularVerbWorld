@@ -298,28 +298,28 @@
                                 <color key="backgroundColor" red="0.61614459753036499" green="0.84835851192474365" blue="0.82064300775527954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JO-wjJ">
-                                <rect key="frame" x="148" y="40" width="15" height="35"/>
+                                <rect key="frame" x="148" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="djp-C1-DSF"/>
                                     <constraint firstAttribute="height" constant="35" id="vmA-Sv-RD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-RT-gA9">
-                                <rect key="frame" x="164" y="40" width="15" height="35"/>
+                                <rect key="frame" x="164" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cvD-Cz-pX4"/>
                                     <constraint firstAttribute="height" constant="35" id="xzB-0g-XIM"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-9A-tHK">
-                                <rect key="frame" x="180" y="40" width="15" height="35"/>
+                                <rect key="frame" x="180" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AbF-b1-tyT"/>
                                     <constraint firstAttribute="width" constant="15" id="YIX-05-IZN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="3av-FZ-Chn">
-                                <rect key="frame" x="196" y="40" width="15" height="35"/>
+                                <rect key="frame" x="196" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="Lpa-40-6Uv"/>
                                     <constraint firstAttribute="height" constant="35" id="xF3-2d-02M"/>
@@ -448,7 +448,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Mp-E6u">
-                                <rect key="frame" x="212" y="40" width="15" height="35"/>
+                                <rect key="frame" x="212" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="0m1-k5-BIT"/>
                                     <constraint firstAttribute="height" constant="35" id="axT-xj-RL9"/>
@@ -598,18 +598,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Modes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-GV-UpC">
-                                <rect key="frame" x="20" y="84" width="335" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="40" y="84" width="295" height="44.5"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-GY-IbY">
-                                <rect key="frame" x="40" y="133" width="295" height="60"/>
+                                <rect key="frame" x="40" y="148.5" width="295" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Sol-bL-im0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <state key="normal" title="All One by One">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -618,12 +618,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zat-vw-xBu">
-                                <rect key="frame" x="40" y="313" width="295" height="60"/>
+                                <rect key="frame" x="40" y="328.5" width="295" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="I6w-F4-iiU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <state key="normal" title="Only selected">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -632,12 +632,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-hy-nQL">
-                                <rect key="frame" x="40" y="223" width="295" height="60"/>
+                                <rect key="frame" x="40" y="238.5" width="295" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WVr-bF-Dx0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <state key="normal" title="All randomly">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -646,16 +646,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Gn7-RK-Y5M">
-                                <rect key="frame" x="20" y="602" width="335" height="45"/>
+                                <rect key="frame" x="40" y="602" width="295" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iys-fa-P0M">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="45"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="EnF-az-TFs"/>
                                             <constraint firstAttribute="height" constant="45" id="nKW-C8-oW3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
                                         <state key="normal" title="Remove ads">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -666,13 +666,13 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-Mu-vI4">
-                                <rect key="frame" x="40" y="403" width="295" height="60"/>
+                                <rect key="frame" x="40" y="418.5" width="295" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mar-So-WSw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <state key="normal" title="Leaderboard">
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <state key="normal" title="Game Center">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -685,14 +685,14 @@
                             <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="Zyt-GY-IbY" secondAttribute="trailing" constant="40" id="6NY-vR-lH3"/>
                             <constraint firstItem="Lay-Mu-vI4" firstAttribute="top" secondItem="zat-vw-xBu" secondAttribute="bottom" constant="30" id="93Z-2l-tjr"/>
                             <constraint firstItem="zat-vw-xBu" firstAttribute="top" secondItem="f3f-hy-nQL" secondAttribute="bottom" constant="30" id="DLo-wD-bAA"/>
-                            <constraint firstItem="Gn7-RK-Y5M" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="20" id="Ebo-XY-sHZ"/>
+                            <constraint firstItem="Gn7-RK-Y5M" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="Ebo-XY-sHZ"/>
                             <constraint firstItem="f3f-hy-nQL" firstAttribute="top" secondItem="Zyt-GY-IbY" secondAttribute="bottom" constant="30" id="Gdz-wY-ZLF"/>
                             <constraint firstItem="3Em-GV-UpC" firstAttribute="top" secondItem="QD1-Ur-iCj" secondAttribute="top" constant="20" id="HJk-56-h7g"/>
                             <constraint firstItem="f3f-hy-nQL" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="IxM-RO-Yd2"/>
                             <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="zat-vw-xBu" secondAttribute="trailing" constant="40" id="Pe2-2S-pVv"/>
                             <constraint firstItem="Lay-Mu-vI4" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="T9J-wz-7er"/>
                             <constraint firstItem="Zyt-GY-IbY" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="Vqo-Ph-qZf"/>
-                            <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="Gn7-RK-Y5M" secondAttribute="trailing" constant="20" id="Wma-Ka-FgZ"/>
+                            <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="Gn7-RK-Y5M" secondAttribute="trailing" constant="40" id="Wma-Ka-FgZ"/>
                             <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" secondItem="Lay-Mu-vI4" secondAttribute="trailing" constant="40" id="Xjv-Df-OJX"/>
                             <constraint firstItem="Zyt-GY-IbY" firstAttribute="top" secondItem="3Em-GV-UpC" secondAttribute="bottom" constant="20" id="b2O-0z-W9q"/>
                             <constraint firstItem="zat-vw-xBu" firstAttribute="leading" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="e96-Xi-HAg"/>
