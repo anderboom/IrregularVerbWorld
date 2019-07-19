@@ -130,7 +130,6 @@ final class DataManager {
                 break
             }
         }
-        
         return learnArray
     }
     

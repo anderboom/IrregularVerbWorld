@@ -337,6 +337,7 @@ class TrainingViewController: UIViewController  {
         addButtonsToStackViews()
         fillTestFieldStackViews()
         switchOnLights()
+        scoreLabel.text = String(DataManager.instance.commonScore)
     }
     
     private func mistakesProcessing() {
@@ -346,7 +347,11 @@ class TrainingViewController: UIViewController  {
         if mistakesCount == lightArray.count {
             mistakesCount = 0
             alertAboutMistake()
-            reloadBecauseOfMistakes()
+            if DataManager.instance.commonScore > 1 {
+                DataManager.instance.commonScore -= 1
+            }
+           reloadBecauseOfMistakes()
+            
         }
     }
     
