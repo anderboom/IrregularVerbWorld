@@ -59,31 +59,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.imageViewCell.image = #imageLiteral(resourceName: "play-button white.png")
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
       
-//        cell.addToHistoryAction = { [weak self, unowned tableView] in
-//            if DataManager.instance.learntWordsIdArray.contains(word.id) {
-//                DataManager.instance.deleteFromHistory(word)
-//                self?.isLearnArrayEmpty()
-//            } else {
-//                DataManager.instance.addWord(word)
-//                self?.isLearnArrayEmpty()
-//            }
-//            DataManager.instance.learntWords(word)
-//            tableView.reloadData()
-//        }
-//        if DataManager.instance.learntWordsIdArray.contains(word.id) {
-//            cell.addLearnButtonOutlet.setImage(UIImage(named: "checked on.png"), for: .normal)
-//        } else {
-//            cell.addLearnButtonOutlet.setImage(UIImage(named: "checked.png"), for: .normal)
-//        }
-//        cell.playCurrentWordAction = { [word] in
-//            DataManager.instance.playSound(word)
-//        }
         cell.update(firstForm: word.firstForm , secondForm: word.secondForm , thirdForm: word.thirdForm , translation: word.translation)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          let word = DataManager.instance.wordsArray[indexPath.row]
+          let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
           DataManager.instance.playSound(word)
           tableView.deselectRow(at: indexPath, animated: true)
        
