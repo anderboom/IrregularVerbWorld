@@ -123,7 +123,7 @@ extension LearnWordsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearchActive = !searchText.isEmpty
         filteredWords = []
-        for item in DataManager.instance.learnArray {
+        for item in DataManager.instance.wordsArray {
             if item.firstForm.lowercased().contains(searchText.lowercased()) ||
                 item.translation.lowercased().contains(searchText.lowercased()) {
                 filteredWords.append(item)
