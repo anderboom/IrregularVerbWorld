@@ -85,23 +85,42 @@ extension LearnWordsViewController: UITableViewDelegate, UITableViewDataSource {
                                        blue: 246.0/255.0,
                                        alpha: 0.5)
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
-        //        cell.addLearnButtonOutlet.isHidden = true
+            if DataManager.instance.learntWordsIdArray.contains(word.id) {
+                cell.imageViewCell.image = #imageLiteral(resourceName: "checked on.png")
+            } else {
+                cell.imageViewCell.image = #imageLiteral(resourceName: "checked.png")
+            }
         cell.update(firstForm: word.firstForm, secondForm: word.secondForm, thirdForm: word.thirdForm, translation: word.translation)
-        cell.playCurrentWordAction = { [word] in
-            DataManager.instance.playSound(word)
-        }
         return cell
     }
     
-    func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-        let wordForDelete = DataManager.instance.learnArray[indexPath.row]
-        DataManager.instance.deleteFromHistory(wordForDelete)
-        tableView.deleteRows(at: [indexPath], with: .fade)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {fatalError("ListTableViewCell creation failed")}
+        let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
+      
+            if DataManager.instance.learntWordsIdArray.contains(word.id) {
+                DataManager.instance.deleteFromHistory(word)
+            } else {
+                DataManager.instance.addWord(word)
+            }
+
+        if DataManager.instance.learntWordsIdArray.contains(word.id) {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "checked on.png")
+        } else {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "checked.png")
+        }
+        tableView.reloadData()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+//    func tableView(_ tableView: UITableView,
+//                   commit editingStyle: UITableViewCell.EditingStyle,
+//                   forRowAt indexPath: IndexPath) {
+//        guard editingStyle == .delete else { return }
+//        let wordForDelete = DataManager.instance.learnArray[indexPath.row]
+//        DataManager.instance.deleteFromHistory(wordForDelete)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
+//
 }
 
 extension LearnWordsViewController: UISearchBarDelegate {

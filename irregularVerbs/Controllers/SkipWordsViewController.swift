@@ -95,18 +95,18 @@ extension SkipWordsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-        let wordForDelete = DataManager.instance.learnArray[indexPath.row]
-        DataManager.instance.deleteFromHistory(wordForDelete)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-    }
+//    func tableView(_ tableView: UITableView,
+//                   commit editingStyle: UITableViewCell.EditingStyle,
+//                   forRowAt indexPath: IndexPath) {
+//        guard editingStyle == .delete else { return }
+//        let wordForDelete = DataManager.instance.learnArray[indexPath.row]
+//        DataManager.instance.deleteFromHistory(wordForDelete)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
     
 }
 

@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="2050" y="125"/>
         </scene>
-        <!--Select language-->
+        <!--Language menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainMenuViewController" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,8 +150,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select language" id="TnS-Mw-tOs">
-                        <barButtonItem key="backBarButtonItem" title="Select language" id="MYp-HV-8hr"/>
+                    <navigationItem key="navigationItem" title="Language menu" id="TnS-Mw-tOs">
+                        <barButtonItem key="backBarButtonItem" title="Language " id="MYp-HV-8hr"/>
                     </navigationItem>
                     <connections>
                         <outlet property="chooseLaguageTextField" destination="5fq-2b-QMq" id="KkA-Yf-d6h"/>
@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="3668" y="124.58770614692655"/>
         </scene>
-        <!--Main List-->
+        <!--Learn and listen-->
         <scene sceneID="e0q-3q-SJ9">
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="pwz-Jq-wUf" customClass="ListViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,7 +213,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uhj-f0-rO9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main List" id="erp-xU-awq">
+                    <navigationItem key="navigationItem" title="Learn and listen" id="erp-xU-awq">
                         <barButtonItem key="backBarButtonItem" title="Main List" id="cDf-Ec-uBt"/>
                     </navigationItem>
                     <connections>
@@ -298,28 +298,28 @@
                                 <color key="backgroundColor" red="0.61614459753036499" green="0.84835851192474365" blue="0.82064300775527954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JO-wjJ">
-                                <rect key="frame" x="148" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="148" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="djp-C1-DSF"/>
                                     <constraint firstAttribute="height" constant="35" id="vmA-Sv-RD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-RT-gA9">
-                                <rect key="frame" x="164" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="164" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cvD-Cz-pX4"/>
                                     <constraint firstAttribute="height" constant="35" id="xzB-0g-XIM"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-9A-tHK">
-                                <rect key="frame" x="180" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="180" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AbF-b1-tyT"/>
                                     <constraint firstAttribute="width" constant="15" id="YIX-05-IZN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="3av-FZ-Chn">
-                                <rect key="frame" x="196" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="196" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="Lpa-40-6Uv"/>
                                     <constraint firstAttribute="height" constant="35" id="xF3-2d-02M"/>
@@ -448,7 +448,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Mp-E6u">
-                                <rect key="frame" x="212" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="212" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="0m1-k5-BIT"/>
                                     <constraint firstAttribute="height" constant="35" id="axT-xj-RL9"/>

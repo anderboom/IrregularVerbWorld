@@ -33,17 +33,7 @@ class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         tableView.reloadData()
-//        isLearnArrayEmpty()
     }
-    
-//    private func isLearnArrayEmpty() {
-//        if DataManager.instance.learnArray.isEmpty {
-//            historyButtonOutlet.alpha = 0.6
-//        } else {
-//            historyButtonOutlet.alpha = 1.0
-//        }
-//        tableView.reloadData()
-//    }
     
     @IBAction func backToListController(_ segue: UIStoryboardSegue) {
         tableView.reloadData()
@@ -95,6 +85,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           let word = DataManager.instance.wordsArray[indexPath.row]
           DataManager.instance.playSound(word)
+          tableView.deselectRow(at: indexPath, animated: true)
        
     }
 }

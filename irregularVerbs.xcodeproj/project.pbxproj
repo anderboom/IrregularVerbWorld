@@ -398,7 +398,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -415,7 +415,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-irregularVerbs/Pods-irregularVerbs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		800EA3873E02D15DEDF79F21 /* [CP] Check Pods Manifest.lock */ = {

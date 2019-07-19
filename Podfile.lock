@@ -2,65 +2,65 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - Firebase/AdMob (6.0.0):
+  - Firebase/AdMob (6.5.0):
     - Firebase/CoreOnly
-    - Google-Mobile-Ads-SDK (~> 7.43)
-  - Firebase/Analytics (6.0.0):
+    - Google-Mobile-Ads-SDK (~> 7.47)
+  - Firebase/Analytics (6.5.0):
     - Firebase/Core
-  - Firebase/Core (6.0.0):
+  - Firebase/Core (6.5.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.0.0)
-  - Firebase/CoreOnly (6.0.0):
-    - FirebaseCore (= 6.0.0)
-  - FirebaseAnalytics (6.0.0):
-    - FirebaseCore (~> 6.0)
-    - FirebaseInstanceID (~> 4.0)
-    - GoogleAppMeasurement (= 6.0.0)
+    - FirebaseAnalytics (= 6.0.4)
+  - Firebase/CoreOnly (6.5.0):
+    - FirebaseCore (= 6.1.0)
+  - FirebaseAnalytics (6.0.4):
+    - FirebaseCore (~> 6.1)
+    - FirebaseInstanceID (~> 4.2)
+    - GoogleAppMeasurement (= 6.0.4)
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
-  - FirebaseCore (6.0.0):
+  - FirebaseCore (6.1.0):
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/Logger (~> 6.0)
-  - FirebaseInstanceID (4.0.0):
+  - FirebaseInstanceID (4.2.2):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
-  - Google-Mobile-Ads-SDK (7.44.0):
+  - Google-Mobile-Ads-SDK (7.47.0):
     - GoogleAppMeasurement (~> 6.0)
-  - GoogleAppMeasurement (6.0.0):
+  - GoogleAppMeasurement (6.0.4):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
-  - GoogleUtilities/AppDelegateSwizzler (6.0.0):
+  - GoogleUtilities/AppDelegateSwizzler (6.2.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.0.0)
-  - GoogleUtilities/Logger (6.0.0):
+  - GoogleUtilities/Environment (6.2.3)
+  - GoogleUtilities/Logger (6.2.3):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.0.0):
+  - GoogleUtilities/MethodSwizzler (6.2.3):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.0.0):
+  - GoogleUtilities/Network (6.2.3):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.0.0)"
-  - GoogleUtilities/Reachability (6.0.0):
+  - "GoogleUtilities/NSData+zlib (6.2.3)"
+  - GoogleUtilities/Reachability (6.2.3):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.0.0):
+  - GoogleUtilities/UserDefaults (6.2.3):
     - GoogleUtilities/Logger
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - Siren (5.0.1)
-  - SwiftLint (0.32.0)
+  - Siren (5.1.0)
+  - SwiftLint (0.34.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -92,16 +92,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
-  FirebaseAnalytics: 1743c5f4de3687d0745709dfdc4b1dea1484f44c
-  FirebaseCore: e38f025287b413255a53acc1945d048a112047f7
-  FirebaseInstanceID: 0e0348a3c00a734fa376a070f5ad4533ad975cb5
-  Google-Mobile-Ads-SDK: 1e72b4f438d997ab0f2ee62b3a7b0cbcc87c47cb
-  GoogleAppMeasurement: 7f028ea162b72c8f326daec74afc95d94f7a47d6
-  GoogleUtilities: f1faafc033ea203adf1783ce00af455bb99d0e5b
+  Firebase: dedc9e48ea3f3649ad5f6b982f8a0c73508a14b5
+  FirebaseAnalytics: 3fb375bc9d13779add4039716f868d233a473fad
+  FirebaseCore: aecf02fb2274ec361b9bebeac112f5daa18273bd
+  FirebaseInstanceID: 662b8108a09fe9ed01aafdedba100fde8536b0f6
+  Google-Mobile-Ads-SDK: a10b30f4a51a3283df7df3c9ea7e84553b508e4b
+  GoogleAppMeasurement: 183bd916af7f80deb67c01888368f1108d641832
+  GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  Siren: 7ebe56fbd69b335cbe4329bcde985253be0e2d61
-  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
+  Siren: 1dbdbd5dccd55865369a83f3d57c8eb818ac1556
+  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
 PODFILE CHECKSUM: c53e8321959b5a700dbd50113299b6c1f31dfce8

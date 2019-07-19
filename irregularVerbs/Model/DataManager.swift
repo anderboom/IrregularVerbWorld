@@ -49,7 +49,7 @@ final class DataManager {
         }
     }
     
-    private var learntWordsIdArray: [String] {
+    var learntWordsIdArray: [String] {
         get {
             return UserDefaults.standard.stringArray(forKey: Constants.StorageKeys.learnArrayId) ?? []
         }
