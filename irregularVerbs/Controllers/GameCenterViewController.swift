@@ -56,7 +56,6 @@ class GameCenterViewController: UIViewController {
     
     @IBAction private func addScorePressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
-        scoreLabel.text = "\(score)"
         // Submit score to GC leaderboard
         let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
         bestScoreInt.value = Int64(score)
@@ -67,7 +66,6 @@ class GameCenterViewController: UIViewController {
                 print("Best Score submitted to your Leaderboard!")
             }
         }
-        
     }
     
     @IBAction private func gameCenterPressed(_ sender: UIButton) {
