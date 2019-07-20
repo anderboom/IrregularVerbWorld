@@ -51,15 +51,15 @@ class ModeViewController: UIViewController {
         startTraining(with: viewModel)
     }
     
-    @IBAction func onlySelectedButtonPressed(_ sender: UIButton) {
+    @IBAction private func onlySelectedButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
     }
     
-    @IBAction func gameCenterButtonPressed(_ sender: UIButton) {
+    @IBAction private func gameCenterButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
     }
     
-    @IBAction func removeAdsButtonPressed(_ sender: UIButton) {
+    @IBAction private func removeAdsButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
     }
     

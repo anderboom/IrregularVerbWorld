@@ -18,21 +18,11 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet private weak var thirdFormLabel: UILabel!
     @IBOutlet private weak var translatingLabel: UILabel!
     @IBOutlet weak var imageViewCell: UIImageView!
-    var addToHistoryAction: (() -> Void)?
-    var playCurrentWordAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-//    @IBAction private func addToHistory(_ sender: UIButton) {
-//        addToHistoryAction?()
-//    }
-    
-//    @IBAction private func playCurrentWords(_ sender: UIButton) {
-//        playCurrentWordAction?()
-//    }
-    
+ 
     func update(firstForm: String, secondForm: String,
                 thirdForm: String, translation: String) {
         firstFormLabel.text = firstForm

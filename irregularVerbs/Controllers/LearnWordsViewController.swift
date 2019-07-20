@@ -109,15 +109,6 @@ extension LearnWordsViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
-//    func tableView(_ tableView: UITableView,
-//                   commit editingStyle: UITableViewCell.EditingStyle,
-//                   forRowAt indexPath: IndexPath) {
-//        guard editingStyle == .delete else { return }
-//        let wordForDelete = DataManager.instance.learnArray[indexPath.row]
-//        DataManager.instance.deleteFromHistory(wordForDelete)
-//        tableView.deleteRows(at: [indexPath], with: .fade)
-//    }
-//
 }
 
 extension LearnWordsViewController: UISearchBarDelegate {
