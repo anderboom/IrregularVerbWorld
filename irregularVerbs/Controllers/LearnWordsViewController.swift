@@ -42,7 +42,8 @@ class LearnWordsViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    @IBAction private func startPressed(_ sender: Any) {
+    @IBAction private func startPressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
         let words = DataManager.instance.learnArray.sorted { (word1, word2) -> Bool in
             word1.id < word2.id
         }

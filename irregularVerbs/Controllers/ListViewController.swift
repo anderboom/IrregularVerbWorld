@@ -34,10 +34,13 @@ class ListViewController: UIViewController {
         super.viewWillAppear(false)
         tableView.reloadData()
     }
-    
-    @IBAction func backToListController(_ segue: UIStoryboardSegue) {
-        tableView.reloadData()
+    @IBAction func exersiseButtonPressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
     }
+    
+//    @IBAction func backToListController(_ segue: UIStoryboardSegue) {
+//        tableView.reloadData()
+//    }
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {

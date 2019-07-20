@@ -193,6 +193,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="exersiseButtonPressed:" destination="pwz-Jq-wUf" eventType="touchUpInside" id="t11-ei-QQK"/>
                                     <segue destination="Yqd-7m-2MU" kind="show" id="lVC-W5-eKV"/>
                                 </connections>
                             </button>
@@ -298,28 +299,28 @@
                                 <color key="backgroundColor" red="0.61614459753036499" green="0.84835851192474365" blue="0.82064300775527954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JO-wjJ">
-                                <rect key="frame" x="148" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="148" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="djp-C1-DSF"/>
                                     <constraint firstAttribute="height" constant="35" id="vmA-Sv-RD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-RT-gA9">
-                                <rect key="frame" x="164" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="164" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cvD-Cz-pX4"/>
                                     <constraint firstAttribute="height" constant="35" id="xzB-0g-XIM"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-9A-tHK">
-                                <rect key="frame" x="180" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="180" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AbF-b1-tyT"/>
                                     <constraint firstAttribute="width" constant="15" id="YIX-05-IZN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="3av-FZ-Chn">
-                                <rect key="frame" x="196" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="196" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="Lpa-40-6Uv"/>
                                     <constraint firstAttribute="height" constant="35" id="xF3-2d-02M"/>
@@ -448,7 +449,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Mp-E6u">
-                                <rect key="frame" x="212" y="40" width="15.000000000000057" height="35"/>
+                                <rect key="frame" x="212" y="40" width="15" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="0m1-k5-BIT"/>
                                     <constraint firstAttribute="height" constant="35" id="axT-xj-RL9"/>
@@ -628,6 +629,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="onlySelectedButtonPressed:" destination="Yqd-7m-2MU" eventType="touchUpInside" id="7zn-lo-J7M"/>
                                     <segue destination="DE6-ng-M6K" kind="show" id="HlN-a9-PpP"/>
                                 </connections>
                             </button>
@@ -660,6 +662,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="removeAdsButtonPressed:" destination="Yqd-7m-2MU" eventType="touchUpInside" id="7X2-Kk-8eR"/>
                                             <segue destination="661-Ac-2lT" kind="show" id="nd4-7r-d88"/>
                                         </connections>
                                     </button>
@@ -675,6 +678,9 @@
                                 <state key="normal" title="Game Center">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="gameCenterButtonPressed:" destination="Yqd-7m-2MU" eventType="touchUpInside" id="h5T-SJ-Klr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

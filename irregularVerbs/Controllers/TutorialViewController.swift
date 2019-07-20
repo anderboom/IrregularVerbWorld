@@ -44,22 +44,23 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         
         let slide2:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
         slide2.imageView.image = UIImage(named: "swipe2")
-        slide2.tutorialLabel.text = "2. There are three ways to organize your learning.\n" + " First way. Don't tap any «empty square» buttons. You will learn words in dictation  mode («Training» button) in the order of the list."
+        slide2.tutorialLabel.text = "2. On this screen you can listen and learn words. Tap Exersise button in the Main list. You will open the mode selection menu."
         slide2.nextButton.isHidden = true
         
         let slide3:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
         slide3.imageView.image = UIImage(named: "swipe3")
-        slide3.tutorialLabel.text = "Second way. Tap words you already know using «empty square» buttons. In training mode these words will be skipped in the main list. To cancel word skipping - uncheck the button."
+        slide3.tutorialLabel.text = "Select the desired mode. All One by One-you will learn words in the order of the list. All randomly-you will learn words in the random mode. Only selected-you will learn only selected words."
+
         slide3.nextButton.isHidden = true
         
         let slide4:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
         slide4.imageView.image = UIImage(named: "swipe4")
-        slide4.tutorialLabel.text = "Third way. Add words you want to learn using «empty square» buttons. Tap «Learn» button to choose your own list of words. Tap «Training» button  on this screen, and you will  learn words from your custom list. You can delete word from the list or completely clear the list («Clear list» button). Progress of learning isn't saved in this method."
+        slide4.tutorialLabel.text = "Only selected mode - you will learn only selected words in the training mode. Just check words you want to learn. If you want to remove words from the list -  uncheck required words."
         slide4.nextButton.isHidden = true
         
         let slide5:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
         slide5.imageView.image = UIImage(named: "swipe5")
-        slide5.tutorialLabel.text = "Training mode. You can listen to the words (Play button). Tap the buttons  with the desired letters to fill the input fields. If you'll make 5 mistakes, the entered words will be displayed again. To reset all settings and progress counting, tap «Reset progress» button. Enjoy your learning!"
+        slide5.tutorialLabel.text = "Training mode. You can listen to the words (Play button). Tap the buttons  with the desired letters to fill the input fields. If you'll make 5 mistakes, the entered words will be displayed again. Enjoy your learning!"
         slide5.nextButton.layer.cornerRadius = slide5.nextButton.frame.size.height / 5.0
         slide5.nextButton.isHidden = false
         return [slide1, slide2, slide3, slide4, slide5]

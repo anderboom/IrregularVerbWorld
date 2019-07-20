@@ -29,9 +29,10 @@ class ModeViewController: UIViewController {
         StoreReviewHelper.checkAndAskForReview()
     }
     
-    @IBAction func backToModeController(_ segue: UIStoryboardSegue) { }
+//    @IBAction func backToModeController(_ segue: UIStoryboardSegue) { }
     
-    @IBAction private func startAllOneByOnePressed(_ sender: Any) {
+    @IBAction private func startAllOneByOnePressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
         let words = DataManager.instance.wordsArray
         let currentIndex = DataManager.instance.indexValue
         let saveNewIndexAction: (Int) -> Void = { newIndex in
@@ -43,10 +44,23 @@ class ModeViewController: UIViewController {
         startTraining(with: viewModel)
     }
 
-    @IBAction private func startAllRandomlyPressed(_ sender: Any) {
+    @IBAction private func startAllRandomlyPressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
         let words = DataManager.instance.wordsArray
         let viewModel = TrainingViewModel(words: words, iterateMode: .randomly)
         startTraining(with: viewModel)
+    }
+    
+    @IBAction func onlySelectedButtonPressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
+    }
+    
+    @IBAction func gameCenterButtonPressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
+    }
+    
+    @IBAction func removeAdsButtonPressed(_ sender: UIButton) {
+        sender.showsTouchWhenHighlighted = true
     }
     
     private func startTraining(with viewModel: TrainingViewModel) {
