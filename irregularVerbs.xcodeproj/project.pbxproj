@@ -24,6 +24,8 @@
 		84871E91221D7E5400639012 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84871E90221D7E5400639012 /* TutorialView.xib */; };
 		848BB9552243678200A8BABB /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB9542243678200A8BABB /* PurchaseViewController.swift */; };
 		848C19E4228FBFD000558595 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C19E3228FBFD000558595 /* ModeViewController.swift */; };
+		849047A922E391BB00F06137 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849047A822E391BB00F06137 /* GameKit.framework */; };
+		849047AE22E39B0100F06137 /* GameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849047AD22E39B0100F06137 /* GameCenterViewController.swift */; };
 		84A5FABC2201A413005A24AE /* irregular_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 84A5FABB2201A413005A24AE /* irregular_ru.json */; };
 		84ABC8242206E54000EB2B20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABC8232206E54000EB2B20 /* Constants.swift */; };
 		84BA73EC21E2F798008F9BAE /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */; };
@@ -69,6 +71,8 @@
 		84871E90221D7E5400639012 /* TutorialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialView.xib; sourceTree = "<group>"; };
 		848BB9542243678200A8BABB /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		848C19E3228FBFD000558595 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
+		849047A822E391BB00F06137 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		849047AD22E39B0100F06137 /* GameCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterViewController.swift; sourceTree = "<group>"; };
 		84A5FABB2201A413005A24AE /* irregular_ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_ru.json; sourceTree = "<group>"; };
 		84ABC8232206E54000EB2B20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849047A922E391BB00F06137 /* GameKit.framework in Frameworks */,
 				3113BEE3AB7246BC33260029 /* Pods_irregularVerbs.framework in Frameworks */,
 				84CE0344223419EA00EC03EC /* StoreKit.framework in Frameworks */,
 			);
@@ -199,6 +204,7 @@
 				848C19E3228FBFD000558595 /* ModeViewController.swift */,
 				8423AC8B2295829300BE43E3 /* LearnWordsViewController.swift */,
 				848BB9542243678200A8BABB /* PurchaseViewController.swift */,
+				849047AD22E39B0100F06137 /* GameCenterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 		DE1B017A0D80C29569265E4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				849047A822E391BB00F06137 /* GameKit.framework */,
 				84CE0343223419EA00EC03EC /* StoreKit.framework */,
 				F9DDBDF04CD58FE8298C0D16 /* Pods_irregularVerbs.framework */,
 			);
@@ -336,6 +343,9 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -480,6 +490,7 @@
 				848C19E4228FBFD000558595 /* ModeViewController.swift in Sources */,
 				840C4ADC2269C96F009590E9 /* IAPProducts.swift in Sources */,
 				84DCFC7E21F579EB001F49B2 /* String+Extention.swift in Sources */,
+				849047AE22E39B0100F06137 /* GameCenterViewController.swift in Sources */,
 				84DB4CDA21DF32DB0049D287 /* ListTableViewCell.swift in Sources */,
 				843C302021F6DAEB0062FF1C /* UIStackView+Extention.swift in Sources */,
 				84F7FF2C221B430000C41807 /* TutorialViewController.swift in Sources */,
