@@ -45,7 +45,7 @@ class LearnWordsViewController: UIViewController {
     @IBAction private func startPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
         let words = DataManager.instance.learnArray.sorted { (word1, word2) -> Bool in
-            word1.id < word2.id
+            word1.firstForm < word2.firstForm
         }
         guard !words.isEmpty else {
             alertIfArrayIsEmpty()

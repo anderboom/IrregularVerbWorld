@@ -20,7 +20,7 @@ class ModeViewController: UIViewController {
     @IBOutlet private weak var leaderBoardOutlet: UIButton!
     var gcEnabled = Bool()
     var gcDefaultLeaderBoard = String()
-    var score = DataManager.instance.commonScore
+    var score = 0
     let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class ModeViewController: UIViewController {
         removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
         leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
         StoreReviewHelper.checkAndAskForReview()
-        
+        score = DataManager.instance.commonScore
     }
     
     @IBAction private func startAllOneByOnePressed(_ sender: UIButton) {
@@ -68,7 +68,7 @@ class ModeViewController: UIViewController {
     private func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.local
         
-        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+        localPlayer.authenticateHandler = {[unowned self](ViewController, error) -> Void in
             if((ViewController) != nil) {
                 // 1. Show login if player is not logged in
                 self.present(ViewController!, animated: true, completion: nil)
@@ -78,9 +78,9 @@ class ModeViewController: UIViewController {
                 self.addScoreToGameCenter()
                 self.gameCenterLeaderBoardShow()
                 // Get the default leaderboard ID
-                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[weak self] (leaderboardIdentifer, error) in
                     if error != nil { print(error ?? "Error")
-                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
+                    } else { self?.gcDefaultLeaderBoard = leaderboardIdentifer! }
                 })
                 
             } else {
@@ -96,7 +96,7 @@ class ModeViewController: UIViewController {
         // Submit score to GC leaderboard
         let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
         bestScoreInt.value = Int64(score)
-        GKScore.report([bestScoreInt]) { (error) in
+        GKScore.report([bestScoreInt]) {(error) in
             if error != nil {
                 print(error!.localizedDescription)
             } else {
