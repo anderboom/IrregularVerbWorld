@@ -299,28 +299,28 @@
                                 <color key="backgroundColor" red="0.61614459753036499" green="0.84835851192474365" blue="0.82064300775527954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JO-wjJ">
-                                <rect key="frame" x="148" y="40" width="15" height="35"/>
+                                <rect key="frame" x="148" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="djp-C1-DSF"/>
                                     <constraint firstAttribute="height" constant="35" id="vmA-Sv-RD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-RT-gA9">
-                                <rect key="frame" x="164" y="40" width="15" height="35"/>
+                                <rect key="frame" x="164" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cvD-Cz-pX4"/>
                                     <constraint firstAttribute="height" constant="35" id="xzB-0g-XIM"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-9A-tHK">
-                                <rect key="frame" x="180" y="40" width="15" height="35"/>
+                                <rect key="frame" x="180" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AbF-b1-tyT"/>
                                     <constraint firstAttribute="width" constant="15" id="YIX-05-IZN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="3av-FZ-Chn">
-                                <rect key="frame" x="196" y="40" width="15" height="35"/>
+                                <rect key="frame" x="196" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="Lpa-40-6Uv"/>
                                     <constraint firstAttribute="height" constant="35" id="xF3-2d-02M"/>
@@ -449,7 +449,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp on" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Mp-E6u">
-                                <rect key="frame" x="212" y="40" width="15" height="35"/>
+                                <rect key="frame" x="212" y="40" width="15.000000000000057" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="0m1-k5-BIT"/>
                                     <constraint firstAttribute="height" constant="35" id="axT-xj-RL9"/>
@@ -648,16 +648,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Gn7-RK-Y5M">
-                                <rect key="frame" x="40" y="602" width="295" height="45"/>
+                                <rect key="frame" x="40" y="587" width="295" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iys-fa-P0M">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="60"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="EnF-az-TFs"/>
-                                            <constraint firstAttribute="height" constant="45" id="nKW-C8-oW3"/>
+                                            <constraint firstAttribute="height" constant="60" id="nKW-C8-oW3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="Remove ads">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
