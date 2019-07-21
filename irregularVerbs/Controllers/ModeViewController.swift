@@ -18,10 +18,10 @@ class ModeViewController: UIViewController {
     @IBOutlet private weak var onlySelectedOutlet: UIButton!
     @IBOutlet private weak var removeAdsOutlet: UIButton!
     @IBOutlet private weak var leaderBoardOutlet: UIButton!
-    var gcEnabled = Bool()
-    var gcDefaultLeaderBoard = String()
-    var score = 0
-    let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
+    private var gcEnabled = Bool()
+    private var gcDefaultLeaderBoard = String()
+    private var score = 0
+    private let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,9 +78,9 @@ class ModeViewController: UIViewController {
                 self.addScoreToGameCenter()
                 self.gameCenterLeaderBoardShow()
                 // Get the default leaderboard ID
-                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[weak self] (leaderboardIdentifer, error) in
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[unowned self] (leaderboardIdentifer, error) in
                     if error != nil { print(error ?? "Error")
-                    } else { self?.gcDefaultLeaderBoard = leaderboardIdentifer! }
+                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
                 })
                 
             } else {
@@ -127,5 +127,5 @@ class ModeViewController: UIViewController {
 extension ModeViewController: GKGameCenterControllerDelegate {
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true)
-    }
+        }
 }
