@@ -139,7 +139,9 @@ final class DataManager {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
             let jsonData = try decoder.decode(AllWords.self, from: data)
-            return jsonData.words
+            return jsonData.words.sorted(by: { (word1, word2) -> Bool in
+                word1.firstForm < word2.firstForm
+            })
         } catch {
             debugPrint("error:\(error)")
             return nil

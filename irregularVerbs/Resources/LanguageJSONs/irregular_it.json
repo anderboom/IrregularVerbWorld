@@ -898,6 +898,70 @@
           "second_form":"wrote",
           "third_form":"written",
           "voice":"write"
+      },
+      {
+          "id":"112",
+          "translation":"legare",
+          "first_form":"bind",
+          "second_form":"bound",
+          "third_form":"bound",
+          "voice":"bind"
+      },
+      {
+          "id":"113",
+          "translation":"macinare",
+          "first_form":"grind",
+          "second_form":"ground",
+          "third_form":"ground",
+          "voice":"grind"
+      },
+      {
+          "id":"114",
+          "translation":"cercare",
+          "first_form":"seek",
+          "second_form":"sought",
+          "third_form":"sought",
+          "voice":"seek"
+      },
+      {
+          "id":"115",
+          "translation":"contrarsi",
+          "first_form":"shrink",
+          "second_form":"shrank",
+          "third_form":"shrunk",
+          "voice":"shrink"
+      },
+      {
+          "id":"116",
+          "translation":"girare",
+          "first_form":"spin",
+          "second_form":"spun",
+          "third_form":"spun",
+          "voice":"spin"
+      },
+      {
+          "id":"117",
+          "translation":"scaturire",
+          "first_form":"spring",
+          "second_form":"sprang",
+          "third_form":"sprung",
+          "voice":"spring"
+      },
+      {
+          "id":"118",
+          "translation":"pungere",
+          "first_form":"sting",
+          "second_form":"stung",
+          "third_form":"stung",
+          "voice":"sting"
+      },
+      {
+          "id":"119",
+          "translation":"avvolgere",
+          "first_form":"wind",
+          "second_form":"wound",
+          "third_form":"wound",
+          "voice":"wind"
       }
    ]
 }
