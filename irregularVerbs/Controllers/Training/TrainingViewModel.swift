@@ -37,7 +37,9 @@ struct TrainingViewModel {
         switch iterateMode {
         case .randomly:
             isRestartedFromBeggining = false
+            DataManager.instance.commonScore += 3
         case .consistently(let currentIndex):
+            DataManager.instance.commonScore += 2
             let isLastItem = currentIndex == words.count - 1
             isRestartedFromBeggining = isLastItem
             let newIndex = isLastItem ? 0 : currentIndex + 1
@@ -55,6 +57,15 @@ struct TrainingViewModel {
             return Int.random(in: 0..<arraySize)
         case .consistently(let currentIndex):
             return currentIndex
+        }
+    }
+    
+    private func selectIncrement() -> Int {
+        switch iterateMode {
+        case .randomly:
+            return 3
+        case .consistently:
+            return 2
         }
     }
 }

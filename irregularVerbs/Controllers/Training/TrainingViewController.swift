@@ -247,8 +247,8 @@ class TrainingViewController: UIViewController  {
         
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
             startToFlyStar()
-            DataManager.instance.commonScore += 1
-            scoreLabel.text = String(DataManager.instance.commonScore)
+        
+            
             nextButtonOutlet.isHidden = false
             isFirstFormFilled = false
             isSecondFormFilled = false
@@ -319,6 +319,7 @@ class TrainingViewController: UIViewController  {
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
         let result = viewModel.moveNext()
+        scoreLabel.text = String(DataManager.instance.commonScore)
         if result.isRestartedFromBeggining {
             congratulationPopUp()
         }
