@@ -60,7 +60,7 @@ class ModeViewController: UIViewController {
     
     @IBAction private func gameCenterButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
-        gameCenterLeaderBoardShow()
+       gameCenterLeaderBoardShow()
     }
     
     // MARK: - AUTHENTICATE LOCAL PLAYER
@@ -75,12 +75,14 @@ class ModeViewController: UIViewController {
                 
             } else if (localPlayer.isAuthenticated) {
                 // 2. Player is already authenticated & logged in, load game center
-                self.gcEnabled = true
-                // Get the default leaderboard ID
-                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[unowned self] (leaderboardIdentifer, error) in
-                    if error != nil { print(error ?? "Error")
-                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
-                })
+//                self.gcEnabled = true
+//                // Get the default leaderboard ID
+//                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[unowned self] (leaderboardIdentifer, error) in
+//                    if error != nil { print(error ?? "Error")
+//                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
+//                })
+                
+                print("User is authenticated")
             } else {
                 // 3. Game center is not enabled on the users device
                 self.gcEnabled = false
