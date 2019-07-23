@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import AVFoundation
+import GameKit
 
 class TrainingViewController: UIViewController  {
     // MARK: - Public properties
@@ -43,6 +44,8 @@ class TrainingViewController: UIViewController  {
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
     @IBOutlet private weak var starView: UIImageView!
+    private var score = 0
+    private let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -319,10 +322,24 @@ class TrainingViewController: UIViewController  {
         if result.isRestartedFromBeggining {
             congratulationPopUp()
         }
-        
+        score = DataManager.instance.commonScore
+        addScoreToGameCenter()
         resetContentToInitialState()
         nextButtonOutlet.isHidden = true
         incrementAdCounterAndShowAdIfNeeded()
+    }
+    
+    private func addScoreToGameCenter() {
+        // Submit score to GC leaderboard
+        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+        bestScoreInt.value = Int64(score)
+        GKScore.report([bestScoreInt]) {(error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print("Best Score submitted to your Leaderboard!")
+            }
+        }
     }
     
     private func resetContentToInitialState() {

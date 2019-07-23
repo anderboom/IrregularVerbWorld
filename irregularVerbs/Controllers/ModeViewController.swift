@@ -20,9 +20,8 @@ class ModeViewController: UIViewController {
     @IBOutlet private weak var leaderBoardOutlet: UIButton!
     private var gcEnabled = Bool()
     private var gcDefaultLeaderBoard = String()
-    private var score = 0
     private let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         allOneByOneOutlet.layer.cornerRadius = allOneByOneOutlet.frame.size.height / 5.0
@@ -32,7 +31,7 @@ class ModeViewController: UIViewController {
         removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
         leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
         StoreReviewHelper.checkAndAskForReview()
-        score = DataManager.instance.commonScore
+        authenticateLocalPlayer()
     }
     
     @IBAction private func startAllOneByOnePressed(_ sender: UIButton) {
@@ -61,46 +60,32 @@ class ModeViewController: UIViewController {
     
     @IBAction private func gameCenterButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
-        authenticateLocalPlayer()
+        gameCenterLeaderBoardShow()
     }
     
     // MARK: - AUTHENTICATE LOCAL PLAYER
     private func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.local
-        
+
         localPlayer.authenticateHandler = {[unowned self](ViewController, error) -> Void in
             if((ViewController) != nil) {
+            
                 // 1. Show login if player is not logged in
                 self.present(ViewController!, animated: true, completion: nil)
+                
             } else if (localPlayer.isAuthenticated) {
                 // 2. Player is already authenticated & logged in, load game center
                 self.gcEnabled = true
-                self.addScoreToGameCenter()
-                self.gameCenterLeaderBoardShow()
                 // Get the default leaderboard ID
                 localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[unowned self] (leaderboardIdentifer, error) in
                     if error != nil { print(error ?? "Error")
                     } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
                 })
-                
             } else {
                 // 3. Game center is not enabled on the users device
                 self.gcEnabled = false
                 print("Local player could not be authenticated!")
                 print(error ?? "Error")
-            }
-        }
-    }
-    
-    private func addScoreToGameCenter() {
-        // Submit score to GC leaderboard
-        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
-        bestScoreInt.value = Int64(score)
-        GKScore.report([bestScoreInt]) {(error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            } else {
-                print("Best Score submitted to your Leaderboard!")
             }
         }
     }
@@ -112,7 +97,7 @@ class ModeViewController: UIViewController {
         gcVC.leaderboardIdentifier = LEADERBOARD_ID
         present(gcVC, animated: true, completion: nil)
     }
-    
+
    @IBAction private func removeAdsButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
     }
