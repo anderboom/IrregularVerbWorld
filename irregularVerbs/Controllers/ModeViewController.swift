@@ -74,14 +74,6 @@ class ModeViewController: UIViewController {
                 self.present(ViewController!, animated: true, completion: nil)
                 
             } else if (localPlayer.isAuthenticated) {
-                // 2. Player is already authenticated & logged in, load game center
-//                self.gcEnabled = true
-//                // Get the default leaderboard ID
-//                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: {[unowned self] (leaderboardIdentifer, error) in
-//                    if error != nil { print(error ?? "Error")
-//                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
-//                })
-                
                 print("User is authenticated")
             } else {
                 // 3. Game center is not enabled on the users device

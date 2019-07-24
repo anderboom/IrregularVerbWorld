@@ -37,9 +37,7 @@ struct TrainingViewModel {
         switch iterateMode {
         case .randomly:
             isRestartedFromBeggining = false
-            DataManager.instance.commonScore += 3
         case .consistently(let currentIndex):
-            DataManager.instance.commonScore += 2
             let isLastItem = currentIndex == words.count - 1
             isRestartedFromBeggining = isLastItem
             let newIndex = isLastItem ? 0 : currentIndex + 1
@@ -49,6 +47,15 @@ struct TrainingViewModel {
         saveCurrentIndexChangeAction?(self.currentIndex)
         let nextWord = currentWord
         return (nextWord, isRestartedFromBeggining)
+    }
+    
+    mutating func incrementScoreForMode(){
+        switch iterateMode {
+        case .randomly:
+            DataManager.instance.commonScore += 3
+        case .consistently:
+            DataManager.instance.commonScore += 2
+        }
     }
     
     private static func calculateCurrentIndex(for mode: IterateMode, arraySize: Int) -> Int {
