@@ -122,7 +122,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSj-h2-IcE"/>
-                                    <segue destination="pwz-Jq-wUf" kind="show" id="beg-xZ-4JZ"/>
+                                    <segue destination="pwz-Jq-wUf" kind="show" identifier="MainListSegue" id="beg-xZ-4JZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,9 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Language menu" id="TnS-Mw-tOs">
-                        <barButtonItem key="backBarButtonItem" title="Language " id="MYp-HV-8hr"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Language menu" id="TnS-Mw-tOs"/>
                     <connections>
                         <outlet property="chooseLaguageTextField" destination="5fq-2b-QMq" id="KkA-Yf-d6h"/>
                         <outlet property="confirmButtonOutlet" destination="iC2-Vm-1hr" id="Hdv-6z-njN"/>
@@ -163,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="3668" y="124.58770614692655"/>
         </scene>
-        <!--Learn and listen-->
+        <!--Listen and learn-->
         <scene sceneID="e0q-3q-SJ9">
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="pwz-Jq-wUf" customClass="ListViewController" customModule="irregularVerbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,8 +212,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uhj-f0-rO9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Learn and listen" id="erp-xU-awq">
-                        <barButtonItem key="backBarButtonItem" title="Main List" id="cDf-Ec-uBt"/>
+                    <navigationItem key="navigationItem" title="Listen and learn" id="erp-xU-awq">
+                        <barButtonItem key="backBarButtonItem" title="Main List" id="JZX-k7-RwL"/>
                     </navigationItem>
                     <connections>
                         <outlet property="exerciseButtonOutlet" destination="obR-L4-wcf" id="gf5-uw-Zqy"/>

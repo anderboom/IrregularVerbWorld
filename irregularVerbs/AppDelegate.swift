@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         var controllers: [UIViewController] = [TutorialViewController.instantiateVC()]
+        
         if DataManager.instance.isTutorialChoosen {
             controllers.append(MainMenuViewController.instantiateVC())
             
@@ -48,6 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navigationVC
         self.window = window
         self.window?.makeKeyAndVisible()
+    }
+    
+    func getLanguageCode() -> String {
+        let locale = Locale.current
+        guard let languageCode = locale.languageCode else
+        { return "ua"}
+        return languageCode
     }
 }
 

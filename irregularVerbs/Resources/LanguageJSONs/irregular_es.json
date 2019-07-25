@@ -1,10 +1,10 @@
 {
    "version":1,
-   "language":"ua",
+   "language":"es",
    "data":[
        {
            "id":"0",
-           "translation":"виникати",
+           "translation":"surgir",
            "first_form":"arise",
            "second_form":"arose",
            "third_form":"arisen",
@@ -12,7 +12,7 @@
        },
      {
          "id":"1",
-         "translation":"бути",
+         "translation":"ser, estar",
          "first_form":"be",
          "second_form":"was/were",
          "third_form":"been",
@@ -20,7 +20,7 @@
       },
      {
          "id":"2",
-         "translation":"народитися,нести",
+         "translation":"cargar",
          "first_form":"bear",
          "second_form":"bore",
          "third_form":"born",
@@ -28,7 +28,7 @@
      },
       {
          "id":"3",
-         "translation":"бити",
+         "translation":"golpear",
          "first_form":"beat",
          "second_form":"beat",
          "third_form":"bitten",
@@ -36,7 +36,7 @@
       },
       {
          "id":"4",
-         "translation":"ставати",
+         "translation":"llegar a ser",
          "first_form":"become",
          "second_form":"became",
          "third_form":"become",
@@ -44,7 +44,7 @@
       },
       {
          "id":"5",
-         "translation":"починати",
+         "translation":"comenzar",
          "first_form":"begin",
          "second_form":"began",
          "third_form":"begun",
@@ -52,7 +52,7 @@
       },
       {
          "id":"6",
-         "translation":"згинати",
+         "translation":"doblar, encorvar",
          "first_form":"bend",
          "second_form":"bent",
          "third_form":"bent",
@@ -60,7 +60,7 @@
       },
       {
          "id":"7",
-         "translation":"тримати парі",
+         "translation":"apostar",
          "first_form":"bet",
          "second_form":"bet",
          "third_form":"bet",
@@ -68,7 +68,7 @@
       },
       {
          "id":"8",
-         "translation":"кусати",
+         "translation":"morder",
          "first_form":"bite",
          "second_form":"bit",
          "third_form":"bitten",
@@ -76,7 +76,7 @@
       },
       {
          "id":"9",
-         "translation":"кровоточити",
+         "translation":"sangrar",
          "first_form":"bleed",
          "second_form":"bled",
          "third_form":"bled",
@@ -84,7 +84,7 @@
       },
       {
          "id":"10",
-         "translation":"дути",
+         "translation":"soplar",
          "first_form":"blow",
          "second_form":"blew",
          "third_form":"blown",
@@ -92,7 +92,7 @@
       },
       {
          "id":"11",
-         "translation":"ламати",
+         "translation":"romper,quebrar",
          "first_form":"break",
          "second_form":"broke",
          "third_form":"broken",
@@ -100,7 +100,7 @@
       },
       {
          "id":"12",
-         "translation":"нести",
+         "translation":"traer",
          "first_form":"bring",
          "second_form":"brought",
          "third_form":"brought",
@@ -108,7 +108,7 @@
       },
       {
          "id":"13",
-         "translation":"будувати",
+         "translation":"construir",
          "first_form":"build",
          "second_form":"built",
          "third_form":"built",
@@ -116,7 +116,7 @@
       },
        {
          "id":"14",
-         "translation":"горіти",
+         "translation":"quemar",
          "first_form":"burn",
          "second_form":"burned/burnt",
          "third_form":"burned/burnt",
@@ -124,7 +124,7 @@
       },
       {
          "id":"15",
-         "translation":"купувати",
+         "translation":"comprar",
          "first_form":"buy",
          "second_form":"bought",
          "third_form":"bought",
@@ -132,7 +132,7 @@
       },
       {
           "id":"16",
-          "translation":"могти",
+          "translation":"poder",
           "first_form":"can",
           "second_form":"could",
           "third_form":"could",
@@ -140,7 +140,7 @@
       },
       {
          "id":"17",
-         "translation":"ловити",
+         "translation":"atrapar",
          "first_form":"catch",
          "second_form":"caught",
          "third_form":"caught",
@@ -148,7 +148,7 @@
       },
       {
           "id":"18",
-          "translation":"вибирати",
+          "translation":"elegir,escoger",
           "first_form":"choose",
           "second_form":"choose",
           "third_form":"chosen",
@@ -156,7 +156,7 @@
       },
       {
           "id":"19",
-          "translation":"приходити",
+          "translation":"venir",
           "first_form":"come",
           "second_form":"came",
           "third_form":"come",
@@ -164,7 +164,7 @@
       },
       {
           "id":"20",
-          "translation":"коштувати",
+          "translation":"costar",
           "first_form":"cost",
           "second_form":"cost",
           "third_form":"cost",
@@ -172,7 +172,7 @@
       },
       {
           "id":"21",
-          "translation":"різати",
+          "translation":"cortar",
           "first_form":"cut",
           "second_form":"cut",
           "third_form":"cut",
@@ -180,7 +180,7 @@
       },
       {
           "id":"22",
-          "translation":"мати справу",
+          "translation":"comerciar",
           "first_form":"deal",
           "second_form":"dealt",
           "third_form":"dealt",
@@ -188,7 +188,7 @@
       },
       {
           "id":"23",
-          "translation":"копати",
+          "translation":"cavar",
           "first_form":"dig",
           "second_form":"dug",
           "third_form":"dug",
@@ -196,7 +196,7 @@
       },
       {
           "id":"24",
-          "translation":"робити",
+          "translation":"hacer",
           "first_form":"do",
           "second_form":"did",
           "third_form":"done",
@@ -204,7 +204,7 @@
       },
       {
           "id":"25",
-          "translation":"малювати",
+          "translation":"dibujar",
           "first_form":"draw",
           "second_form":"drew",
           "third_form":"drawn",
@@ -212,7 +212,7 @@
       },
       {
           "id":"26",
-          "translation":"мріяти",
+          "translation":"soñar",
           "first_form":"dream",
           "second_form":"dreamed/dreamt",
           "third_form":"dreamed/dreamt",
@@ -220,7 +220,7 @@
       },
       {
           "id":"27",
-          "translation":"пити",
+          "translation":"beber",
           "first_form":"drink",
           "second_form":"drank",
           "third_form":"drunk",
@@ -228,7 +228,7 @@
       },
       {
           "id":"28",
-          "translation":"керувати",
+          "translation":"conducir",
           "first_form":"drive",
           "second_form":"drove",
           "third_form":"driven",
@@ -236,7 +236,7 @@
       },
       {
           "id":"29",
-          "translation":"їсти",
+          "translation":"comer",
           "first_form":"eat",
           "second_form":"ate",
           "third_form":"eaten",
@@ -244,7 +244,7 @@
       },
       {
           "id":"30",
-          "translation":"падати",
+          "translation":"caer",
           "first_form":"fall",
           "second_form":"fell",
           "third_form":"fallen",
@@ -252,7 +252,7 @@
       },
       {
           "id":"31",
-          "translation":"годувати",
+          "translation":"dar de comer",
           "first_form":"feed",
           "second_form":"fed",
           "third_form":"fed",
@@ -260,7 +260,7 @@
       },
       {
           "id":"32",
-          "translation":"відчувати",
+          "translation":"sentir",
           "first_form":"feel",
           "second_form":"felt",
           "third_form":"felt",
@@ -268,7 +268,7 @@
       },
       {
           "id":"33",
-          "translation":"битися",
+          "translation":"combatir",
           "first_form":"fight",
           "second_form":"fought",
           "third_form":"fought",
@@ -276,7 +276,7 @@
       },
       {
           "id":"34",
-          "translation":"знаходити",
+          "translation":"encontrar",
           "first_form":"find",
           "second_form":"found",
           "third_form":"found",
@@ -284,7 +284,7 @@
       },
       {
           "id":"35",
-          "translation":"літати",
+          "translation":"volar",
           "first_form":"fly",
           "second_form":"flew",
           "third_form":"flown",
@@ -292,7 +292,7 @@
       },
       {
           "id":"36",
-          "translation":"забувати",
+          "translation":"olvidar",
           "first_form":"forget",
           "second_form":"forgot",
           "third_form":"forgotten",
@@ -300,7 +300,7 @@
       },
       {
           "id":"37",
-          "translation":"прощати",
+          "translation":"perdonar",
           "first_form":"forgive",
           "second_form":"forgave",
           "third_form":"forgiven",
@@ -308,7 +308,7 @@
       },
       {
           "id":"38",
-          "translation":"замерзати",
+          "translation":"helar,congelar",
           "first_form":"freeze",
           "second_form":"froze",
           "third_form":"frozen",
@@ -316,7 +316,7 @@
       },
       {
           "id":"39",
-          "translation":"отримувати",
+          "translation":"conseguir",
           "first_form":"get",
           "second_form":"got",
           "third_form":"got",
@@ -324,7 +324,7 @@
       },
       {
           "id":"40",
-          "translation":"давати",
+          "translation":"dar",
           "first_form":"give",
           "second_form":"gave",
           "third_form":"given",
@@ -332,7 +332,7 @@
       },
       {
           "id":"41",
-          "translation":"йти",
+          "translation":"ir",
           "first_form":"go",
           "second_form":"went",
           "third_form":"gone",
@@ -341,7 +341,7 @@
       },
       {
           "id":"42",
-          "translation":"рости",
+          "translation":"crecer",
           "first_form":"grow",
           "second_form":"grew",
           "third_form":"grown",
@@ -349,7 +349,7 @@
       },
       {
           "id":"43",
-          "translation":"вішати",
+          "translation":"colgar",
           "first_form":"hang",
           "second_form":"hung",
           "third_form":"hung",
@@ -357,7 +357,7 @@
       },
       {
           "id":"44",
-          "translation":"мати",
+          "translation":"tener",
           "first_form":"have/has",
           "second_form":"had",
           "third_form":"had",
@@ -365,7 +365,7 @@
       },
       {
           "id":"45",
-          "translation":"чути",
+          "translation":"oír",
           "first_form":"hear",
           "second_form":"heard",
           "third_form":"heard",
@@ -373,7 +373,7 @@
       },
       {
           "id":"46",
-          "translation":"приховувати",
+          "translation":"esconder,ocultar",
           "first_form":"hide",
           "second_form":"hid",
           "third_form":"hidden",
@@ -381,7 +381,7 @@
       },
       {
           "id":"47",
-          "translation":"ударяти",
+          "translation":"golpear",
           "first_form":"hit",
           "second_form":"hit",
           "third_form":"hit",
@@ -389,7 +389,7 @@
       },
       {
           "id":"48",
-          "translation":"тримати",
+          "translation":"agarrar",
           "first_form":"hold",
           "second_form":"held",
           "third_form":"held",
@@ -397,7 +397,7 @@
       },
       {
           "id":"49",
-          "translation":"завдати болю",
+          "translation":"herir",
           "first_form":"hurt",
           "second_form":"hurt",
           "third_form":"hurt",
@@ -405,7 +405,7 @@
       },
       {
           "id":"50",
-          "translation":"тримати",
+          "translation":"guardar,conservar",
           "first_form":"keep",
           "second_form":"kept",
           "third_form":"kept",
@@ -413,7 +413,7 @@
       },
       {
           "id":"51",
-          "translation":"знати",
+          "translation":"saber",
           "first_form":"know",
           "second_form":"knew",
           "third_form":"known",
@@ -421,7 +421,7 @@
       },
       {
           "id":"52",
-          "translation":"лежати",
+          "translation":"poner",
           "first_form":"lay",
           "second_form":"laid",
           "third_form":"laid",
@@ -429,7 +429,7 @@
       },
       {
           "id":"53",
-          "translation":"вести",
+          "translation":"conducir",
           "first_form":"lead",
           "second_form":"led",
           "third_form":"led",
@@ -437,7 +437,7 @@
       },
       {
           "id":"54",
-          "translation":"вчити",
+          "translation":"aprender",
           "first_form":"learn",
           "second_form":"learnt/learned",
           "third_form":"learnt/learned",
@@ -445,7 +445,7 @@
       },
       {
           "id":"55",
-          "translation":"залишати",
+          "translation":"salir",
           "first_form":"leave",
           "second_form":"left",
           "third_form":"left",
@@ -453,7 +453,7 @@
       },
       {
           "id":"56",
-          "translation":"позичати",
+          "translation":"prestar",
           "first_form":"lend",
           "second_form":"lent",
           "third_form":"lent",
@@ -461,7 +461,7 @@
       },
       {
           "id":"57",
-          "translation":"дозволяти",
+          "translation":"permitir",
           "first_form":"let",
           "second_form":"let",
           "third_form":"let",
@@ -469,7 +469,7 @@
       },
       {
           "id":"58",
-          "translation":"лежати",
+          "translation":"echarse",
           "first_form":"lie",
           "second_form":"lay",
           "third_form":"lain",
@@ -477,7 +477,7 @@
       },
       {
           "id":"59",
-          "translation":"брехати",
+          "translation":"mentir",
           "first_form":"lie",
           "second_form":"lied",
           "third_form":"lied",
@@ -485,7 +485,7 @@
       },
       {
           "id":"60",
-          "translation":"висвітлювати",
+          "translation":"encender",
           "first_form":"light",
           "second_form":"lit/lighted",
           "third_form":"lit/lighted",
@@ -493,7 +493,7 @@
       },
       {
           "id":"61",
-          "translation":"загубити",
+          "translation":"perder",
           "first_form":"lose",
           "second_form":"lost",
           "third_form":"lost",
@@ -501,7 +501,7 @@
       },
       {
           "id":"62",
-          "translation":"робити",
+          "translation":"hacer",
           "first_form":"make",
           "second_form":"made",
           "third_form":"made",
@@ -509,7 +509,7 @@
       },
       {
           "id":"63",
-          "translation":"могти",
+          "translation":"poder",
           "first_form":"may",
           "second_form":"might",
           "third_form":"might",
@@ -517,7 +517,7 @@
       },
       {
           "id":"64",
-          "translation":"означати",
+          "translation":"querer decir",
           "first_form":"mean",
           "second_form":"meant",
           "third_form":"meant",
@@ -525,7 +525,7 @@
       },
       {
           "id":"65",
-          "translation":"зустріти",
+          "translation":"conocer",
           "first_form":"meet",
           "second_form":"met",
           "third_form":"met",
@@ -533,7 +533,7 @@
       },
       {
           "id":"66",
-          "translation":"помилятися",
+          "translation":"tomar(por otro)",
           "first_form":"mistake",
           "second_form":"mistook",
           "third_form":"mistaken",
@@ -541,7 +541,7 @@
       },
       {
           "id":"67",
-          "translation":"платити",
+          "translation":"pagar",
           "first_form":"pay",
           "second_form":"paid",
           "third_form":"paid",
@@ -549,7 +549,7 @@
       },
       {
           "id":"68",
-          "translation":"класти",
+          "translation":"poner",
           "first_form":"put",
           "second_form":"put",
           "third_form":"put",
@@ -557,7 +557,7 @@
       },
       {
           "id":"69",
-          "translation":"читати",
+          "translation":"leer",
           "first_form":"read",
           "second_form":"read",
           "third_form":"read",
@@ -565,7 +565,7 @@
       },
       {
           "id":"70",
-          "translation":"їздити",
+          "translation":"montar",
           "first_form":"ride",
           "second_form":"rode",
           "third_form":"ridden",
@@ -573,7 +573,7 @@
       },
       {
           "id":"71",
-          "translation":"дзвонити",
+          "translation":"sonar",
           "first_form":"ring",
           "second_form":"rang",
           "third_form":"rung",
@@ -581,7 +581,7 @@
       },
       {
           "id":"72",
-          "translation":"підніматися",
+          "translation":"subir",
           "first_form":"rise",
           "second_form":"rose",
           "third_form":"risen",
@@ -589,7 +589,7 @@
       },
       {
           "id":"73",
-          "translation":"бігти",
+          "translation":"correr",
           "first_form":"run",
           "second_form":"ran",
           "third_form":"run",
@@ -597,7 +597,7 @@
       },
       {
           "id":"74",
-          "translation":"сказати",
+          "translation":"decir",
           "first_form":"say",
           "second_form":"said",
           "third_form":"said",
@@ -605,7 +605,7 @@
       },
       {
           "id":"75",
-          "translation":"побачити",
+          "translation":"ver",
           "first_form":"see",
           "second_form":"saw",
           "third_form":"seen",
@@ -613,7 +613,7 @@
       },
       {
           "id":"76",
-          "translation":"продавати",
+          "translation":"vender",
           "first_form":"sell",
           "second_form":"sold",
           "third_form":"sold",
@@ -621,7 +621,7 @@
       },
       {
           "id":"77",
-          "translation":"відправляти",
+          "translation":"enviar",
           "first_form":"send",
           "second_form":"sent",
           "third_form":"sent",
@@ -629,7 +629,7 @@
       },
       {
           "id":"78",
-          "translation":"ставити",
+          "translation":"poner",
           "first_form":"set",
           "second_form":"set",
           "third_form":"set",
@@ -637,7 +637,7 @@
       },
       {
           "id":"79",
-          "translation":"трясти",
+          "translation":"sacudir",
           "first_form":"shake",
           "second_form":"shook",
           "third_form":"shaken",
@@ -645,7 +645,7 @@
       },
       {
           "id":"80",
-          "translation":"сяяти",
+          "translation":"brillar",
           "first_form":"shine",
           "second_form":"shone",
           "third_form":"shone",
@@ -653,7 +653,7 @@
       },
       {
           "id":"81",
-          "translation":"стріляти",
+          "translation":"disparar",
           "first_form":"shoot",
           "second_form":"shot",
           "third_form":"shot",
@@ -661,7 +661,7 @@
       },
       {
           "id":"82",
-          "translation":"показувати",
+          "translation":"mostrar",
           "first_form":"show",
           "second_form":"showed",
           "third_form":"shown",
@@ -669,7 +669,7 @@
       },
       {
           "id":"83",
-          "translation":"закривати",
+          "translation":"cerrar",
           "first_form":"shut",
           "second_form":"shut",
           "third_form":"shut",
@@ -677,7 +677,7 @@
       },
       {
           "id":"84",
-          "translation":"співати",
+          "translation":"cantar",
           "first_form":"sing",
           "second_form":"sang",
           "third_form":"sung",
@@ -685,7 +685,7 @@
       },
       {
           "id":"85",
-          "translation":"опускатися",
+          "translation":"hundir(se)",
           "first_form":"sink",
           "second_form":"sank",
           "third_form":"sunk",
@@ -693,7 +693,7 @@
       },
       {
           "id":"86",
-          "translation":"сидіти",
+          "translation":"sentarse",
           "first_form":"sit",
           "second_form":"sat",
           "third_form":"sat",
@@ -701,7 +701,7 @@
       },
       {
           "id":"87",
-          "translation":"спати",
+          "translation":"dormir",
           "first_form":"sleep",
           "second_form":"slept",
           "third_form":"slept",
@@ -709,7 +709,7 @@
       },
       {
           "id":"88",
-          "translation":"пахнути",
+          "translation":"oler",
           "first_form":"smell",
           "second_form":"smelled/smelt",
           "third_form":"smelled/smelt",
@@ -717,7 +717,7 @@
       },
       {
           "id":"89",
-          "translation":"говорити",
+          "translation":"hablar",
           "first_form":"speak",
           "second_form":"spoke",
           "third_form":"spoken",
@@ -725,7 +725,7 @@
       },
       {
           "id":"90",
-          "translation":"вимовляти",
+          "translation":"deletrear",
           "first_form":"spell",
           "second_form":"spelled/spelt",
           "third_form":"spelled/spelt",
@@ -733,7 +733,7 @@
       },
       {
           "id":"91",
-          "translation":"витрачати",
+          "translation":"gastar",
           "first_form":"spend",
           "second_form":"spent",
           "third_form":"spent",
@@ -741,7 +741,7 @@
       },
       {
           "id":"92",
-          "translation":"розщеплювати",
+          "translation":"partir",
           "first_form":"split",
           "second_form":"split",
           "third_form":"split",
@@ -749,7 +749,7 @@
       },
       {
           "id":"93",
-          "translation":"псувати",
+          "translation":"estropear",
           "first_form":"spoil",
           "second_form":"spoiled/spoilt",
           "third_form":"spoiled/spoilt",
@@ -757,7 +757,7 @@
       },
       {
           "id":"94",
-          "translation":"поширюватися",
+          "translation":"extender",
           "first_form":"spread",
           "second_form":"spread",
           "third_form":"spread",
@@ -765,7 +765,7 @@
       },
       {
           "id":"95",
-          "translation":"стояти",
+          "translation":"aguantar",
           "first_form":"stand",
           "second_form":"stood",
           "third_form":"stood",
@@ -773,7 +773,7 @@
       },
       {
           "id":"96",
-          "translation":"красти",
+          "translation":"robar",
           "first_form":"steal",
           "second_form":"stole",
           "third_form":"stolen",
@@ -781,7 +781,7 @@
       },
       {
           "id":"97",
-          "translation":"липнути",
+          "translation":"pegar",
           "first_form":"stick",
           "second_form":"stuck",
           "third_form":"stuck",
@@ -789,7 +789,7 @@
       },
       {
           "id":"98",
-          "translation":"ударяти",
+          "translation":"golpear",
           "first_form":"strike",
           "second_form":"struck",
           "third_form":"struck",
@@ -797,7 +797,7 @@
       },
       {
           "id":"99",
-          "translation":"мести",
+          "translation":"barrer",
           "first_form":"sweep",
           "second_form":"swept",
           "third_form":"swept",
@@ -805,7 +805,7 @@
       },
       {
           "id":"100",
-          "translation":"плавати",
+          "translation":"nadar",
           "first_form":"swim",
           "second_form":"swam",
           "third_form":"swum",
@@ -813,7 +813,7 @@
       },
       {
           "id":"101",
-          "translation":"брати",
+          "translation":"tomar",
           "first_form":"take",
           "second_form":"took",
           "third_form":"taken",
@@ -821,7 +821,7 @@
       },
       {
           "id":"102",
-          "translation":"вчити",
+          "translation":"enseñar",
           "first_form":"teach",
           "second_form":"taught",
           "third_form":"taught",
@@ -829,7 +829,7 @@
       },
       {
           "id":"103",
-          "translation":"рвати",
+          "translation":"rasgar",
           "first_form":"tear",
           "second_form":"tore",
           "third_form":"torn",
@@ -837,7 +837,7 @@
       },
       {
           "id":"104",
-          "translation":"розповісти",
+          "translation":"decir",
           "first_form":"tell",
           "second_form":"told",
           "third_form":"told",
@@ -845,7 +845,7 @@
       },
       {
           "id":"105",
-          "translation":"думати",
+          "translation":"pensar",
           "first_form":"think",
           "second_form":"thought",
           "third_form":"thought",
@@ -853,7 +853,7 @@
       },
       {
           "id":"106",
-          "translation":"кинути",
+          "translation":"arrojar",
           "first_form":"throw",
           "second_form":"threw",
           "third_form":"thrown",
@@ -861,7 +861,7 @@
       },
       {
           "id":"107",
-          "translation":"розуміти",
+          "translation":"entender",
           "first_form":"understand",
           "second_form":"understood",
           "third_form":"understood",
@@ -869,7 +869,7 @@
       },
       {
           "id":"108",
-          "translation":"прокидатися",
+          "translation":"despertar",
           "first_form":"wake",
           "second_form":"woke/waked",
           "third_form":"woken/waked",
@@ -877,7 +877,7 @@
       },
       {
           "id":"109",
-          "translation":"носити одяг",
+          "translation":"llevar puesto",
           "first_form":"wear",
           "second_form":"wore",
           "third_form":"worn",
@@ -885,7 +885,7 @@
       },
       {
           "id":"110",
-          "translation":"перемогти",
+          "translation":"ganar",
           "first_form":"win",
           "second_form":"won",
           "third_form":"won",
@@ -893,7 +893,7 @@
       },
       {
           "id":"111",
-          "translation":"писати",
+          "translation":"escribir",
           "first_form":"write",
           "second_form":"wrote",
           "third_form":"written",
@@ -901,7 +901,7 @@
       },
       {
           "id":"112",
-          "translation":"в'язати",
+          "translation":"enlazar",
           "first_form":"bind",
           "second_form":"bound",
           "third_form":"bound",
@@ -909,7 +909,7 @@
       },
       {
           "id":"113",
-          "translation":"розтерти",
+          "translation":"moler",
           "first_form":"grind",
           "second_form":"ground",
           "third_form":"ground",
@@ -917,7 +917,7 @@
       },
       {
           "id":"114",
-          "translation":"шукати",
+          "translation":"buscar",
           "first_form":"seek",
           "second_form":"sought",
           "third_form":"sought",
@@ -925,7 +925,7 @@
       },
       {
           "id":"115",
-          "translation":"скорочуватися",
+          "translation":"encoger",
           "first_form":"shrink",
           "second_form":"shrank",
           "third_form":"shrunk",
@@ -933,7 +933,7 @@
       },
       {
           "id":"116",
-          "translation":"крутити",
+          "translation":"girar",
           "first_form":"spin",
           "second_form":"spun",
           "third_form":"spun",
@@ -941,7 +941,7 @@
       },
       {
           "id":"117",
-          "translation":"вистрибувати",
+          "translation":"brotar",
           "first_form":"spring",
           "second_form":"sprang",
           "third_form":"sprung",
@@ -949,7 +949,7 @@
       },
       {
           "id":"118",
-          "translation":"жалити",
+          "translation":"picar",
           "first_form":"sting",
           "second_form":"stung",
           "third_form":"stung",
@@ -957,7 +957,7 @@
       },
       {
           "id":"119",
-          "translation":"намотувати",
+          "translation":"devanar",
           "first_form":"wind",
           "second_form":"wound",
           "third_form":"wound",

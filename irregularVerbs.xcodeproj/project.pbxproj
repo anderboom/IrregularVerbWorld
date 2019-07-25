@@ -30,11 +30,11 @@
 		84BA73EC21E2F798008F9BAE /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */; };
 		84C6928E2205F27F00AB18CE /* voice in Resources */ = {isa = PBXBuildFile; fileRef = 84C6928D2205F27F00AB18CE /* voice */; };
 		84CE0344223419EA00EC03EC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CE0343223419EA00EC03EC /* StoreKit.framework */; };
-		84D1AD592284BE8F003BA07A /* irregular_ua.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D1AD582284BE8F003BA07A /* irregular_ua.json */; };
+		84D1AD592284BE8F003BA07A /* irregular_uk.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D1AD582284BE8F003BA07A /* irregular_uk.json */; };
 		84D1AD5B2284BE97003BA07A /* irregular_pl.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D1AD5A2284BE97003BA07A /* irregular_pl.json */; };
 		84D511CE2211894000EC9691 /* irregular_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D511CD2211894000EC9691 /* irregular_de.json */; };
 		84D511D02211894700EC9691 /* irregular_fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D511CF2211894700EC9691 /* irregular_fr.json */; };
-		84D511D222119A4600EC9691 /* irregular_sp.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D511D122119A4600EC9691 /* irregular_sp.json */; };
+		84D511D222119A4600EC9691 /* irregular_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D511D122119A4600EC9691 /* irregular_es.json */; };
 		84D7D58A21DFCD0C006D8D19 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7D58921DFCD0C006D8D19 /* DataManager.swift */; };
 		84DB4CD521DF2BAC0049D287 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB4CD421DF2BAC0049D287 /* Word.swift */; };
 		84DB4CDA21DF32DB0049D287 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB4CD821DF32DB0049D287 /* ListTableViewCell.swift */; };
@@ -76,11 +76,11 @@
 		84BA73EB21E2F798008F9BAE /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		84C6928D2205F27F00AB18CE /* voice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voice; path = irregularVerbs/Resources/voice; sourceTree = SOURCE_ROOT; };
 		84CE0343223419EA00EC03EC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		84D1AD582284BE8F003BA07A /* irregular_ua.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_ua.json; sourceTree = "<group>"; };
+		84D1AD582284BE8F003BA07A /* irregular_uk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_uk.json; sourceTree = "<group>"; };
 		84D1AD5A2284BE97003BA07A /* irregular_pl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_pl.json; sourceTree = "<group>"; };
 		84D511CD2211894000EC9691 /* irregular_de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_de.json; sourceTree = "<group>"; };
 		84D511CF2211894700EC9691 /* irregular_fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_fr.json; sourceTree = "<group>"; };
-		84D511D122119A4600EC9691 /* irregular_sp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_sp.json; sourceTree = "<group>"; };
+		84D511D122119A4600EC9691 /* irregular_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregular_es.json; sourceTree = "<group>"; };
 		84D7D58921DFCD0C006D8D19 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84DB4CD421DF2BAC0049D287 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		84DB4CD821DF32DB0049D287 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -230,11 +230,11 @@
 			isa = PBXGroup;
 			children = (
 				84A5FABB2201A413005A24AE /* irregular_ru.json */,
-				84D1AD582284BE8F003BA07A /* irregular_ua.json */,
+				84D1AD582284BE8F003BA07A /* irregular_uk.json */,
 				84D1AD5A2284BE97003BA07A /* irregular_pl.json */,
 				84D511CD2211894000EC9691 /* irregular_de.json */,
 				84D511CF2211894700EC9691 /* irregular_fr.json */,
-				84D511D122119A4600EC9691 /* irregular_sp.json */,
+				84D511D122119A4600EC9691 /* irregular_es.json */,
 				84F7EB39228832D90049BE95 /* irregular_it.json */,
 			);
 			path = LanguageJSONs;
@@ -373,12 +373,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D511D222119A4600EC9691 /* irregular_sp.json in Resources */,
+				84D511D222119A4600EC9691 /* irregular_es.json in Resources */,
 				84DEF74F21DDFE8B0005E322 /* LaunchScreen.storyboard in Resources */,
 				84A5FABC2201A413005A24AE /* irregular_ru.json in Resources */,
 				84DB4CDB21DF32DB0049D287 /* ListTableViewCell.xib in Resources */,
 				84D511CE2211894000EC9691 /* irregular_de.json in Resources */,
-				84D1AD592284BE8F003BA07A /* irregular_ua.json in Resources */,
+				84D1AD592284BE8F003BA07A /* irregular_uk.json in Resources */,
 				84F7EB3A228832D90049BE95 /* irregular_it.json in Resources */,
 				84E85C5E226982D100010446 /* PurchaseTableViewCell.xib in Resources */,
 				84871E91221D7E5400639012 /* TutorialView.xib in Resources */,

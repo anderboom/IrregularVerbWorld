@@ -18,7 +18,7 @@ enum Constants {
         static let choosedTranslationLanguageKey = "choosedTranslationLanguageKey"
         static let learntWordsDictionary = "learntWordsDictionary"
         static let isTutorialChoosen = "isTutorialChoosen"
-        
+        static let isLanguageLocalized = "isLanguageLocalized"
         static let appOpenedCountKey = "appOpenedCountKey"
     }
     

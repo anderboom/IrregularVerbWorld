@@ -26,6 +26,15 @@ final class DataManager {
         wordsArray = loadWordsFromJson(for: lng) ?? []
     }
     
+    var isLanguageLocalized: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isLanguageLocalized)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.isLanguageLocalized)
+        }
+    }
+    
     var isTutorialChoosen: Bool {
         get {
             return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isTutorialChoosen)
@@ -58,26 +67,18 @@ final class DataManager {
         }
     }
     
-    var currentScore: Int = 0
+//    var currentScore: Int = 0
     
     var commonScore: Int {
-        get {
-            return UserDefaults.standard.integer(forKey: Constants.StorageKeys.score)
-        }
-        set {
-            UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.score)
-        }
+        get { return UserDefaults.standard.integer(forKey: Constants.StorageKeys.score) }
+        set { UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.score) }
     }
     
     var adCounting: Int = 0
     
     var indexValue: Int {
-        get {
-            return UserDefaults.standard.integer(forKey: Constants.StorageKeys.index)
-        }
-        set {
-            UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.index)
-        }
+        get { return UserDefaults.standard.integer(forKey: Constants.StorageKeys.index) }
+        set { UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.index) }
     }
     
     private var learntWordIds: [String] {
