@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import MessageUI
 
 
 class ModeViewController: UIViewController {
@@ -37,7 +38,29 @@ class ModeViewController: UIViewController {
         let imageView = UIImageView(image: UIImage(named: "letter"))
         let buttonItem = UIBarButtonItem(customView: imageView)
         self.navigationItem.rightBarButtonItem = buttonItem
-        
+//        if !MFMailComposeViewController.canSendMail() {
+//            print("Mail services are not available")
+//            return
+//        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"letter"), style: .plain, target: self, action: #selector(sendMail))
+    }
+    
+    @objc private func sendMail () {
+        let mailComposeViewController = configureMailComposer()
+        if MFMailComposeViewController.canSendMail(){
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        }else{
+            print("Can't send email")
+        }
+    }
+  
+    func configureMailComposer() -> MFMailComposeViewController{
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["email_address@example.com"])
+        mailComposeVC.setSubject("Hello World!")
+        mailComposeVC.setMessageBody("Hello from iOS!", isHTML: false)
+        return mailComposeVC
     }
     
     @IBAction private func startAllOneByOnePressed(_ sender: UIButton) {
@@ -113,4 +136,11 @@ extension ModeViewController: GKGameCenterControllerDelegate {
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true)
         }
+}
+
+extension ModeViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
 }
