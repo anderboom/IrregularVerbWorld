@@ -216,9 +216,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Listen and learn" id="erp-xU-awq">
                         <barButtonItem key="backBarButtonItem" title="Main List" id="JZX-k7-RwL"/>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" width="40" style="done" id="n7W-Dy-fbj">
-                            <inset key="imageInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="exerciseButtonOutlet" destination="obR-L4-wcf" id="gf5-uw-Zqy"/>

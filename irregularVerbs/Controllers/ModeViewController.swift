@@ -33,6 +33,11 @@ class ModeViewController: UIViewController {
          allWithSkipping.layer.cornerRadius = allWithSkipping.frame.size.height / 5.0
         StoreReviewHelper.checkAndAskForReview()
         authenticateLocalPlayer()
+        
+        let imageView = UIImageView(image: UIImage(named: "letter"))
+        let buttonItem = UIBarButtonItem(customView: imageView)
+        self.navigationItem.rightBarButtonItem = buttonItem
+        
     }
     
     @IBAction private func startAllOneByOnePressed(_ sender: UIButton) {

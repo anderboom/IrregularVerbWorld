@@ -30,9 +30,6 @@ class ListViewController: UIViewController {
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
                                        alpha: 1.0)
-        let imageView = UIImageView(image: UIImage(named: "letter"))
-        let buttonItem = UIBarButtonItem(customView: imageView)
-        self.navigationItem.rightBarButtonItem = buttonItem
         
     }
     
@@ -69,9 +66,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
+    
+        let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
           DataManager.instance.playSound(word)
           tableView.deselectRow(at: indexPath, animated: true)
+        
        
     }
 }
