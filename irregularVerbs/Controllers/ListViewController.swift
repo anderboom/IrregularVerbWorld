@@ -17,8 +17,9 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+//        self.navigationController?.navigationBar.topItem?.title = "Language"
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.topItem?.title = ""
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
@@ -29,6 +30,10 @@ class ListViewController: UIViewController {
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
                                        alpha: 1.0)
+        let imageView = UIImageView(image: UIImage(named: "letter"))
+        let buttonItem = UIBarButtonItem(customView: imageView)
+        self.navigationItem.rightBarButtonItem = buttonItem
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

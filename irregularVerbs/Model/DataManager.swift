@@ -19,6 +19,8 @@ final class DataManager {
         return loadWordsFromJson(for: language) ?? []
     }()
     private(set) lazy var learnArray = formWordsToLearn()
+    private(set) lazy var skipArray = skipWordsToLearn()
+    
     private var audioPlayer = AVAudioPlayer()
     
     func chooseLanguage(_ lng: TranslationLanguage) {
@@ -36,38 +38,31 @@ final class DataManager {
     }
     
     var isTutorialChoosen: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isTutorialChoosen)
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.isTutorialChoosen)
-        }
+        get { return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isTutorialChoosen) }
+        set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.isTutorialChoosen) }
     }
     
     private(set) var choosedLanguage: TranslationLanguage? {
-        get {
-            guard let key = UserDefaults.standard.string(forKey: Constants.StorageKeys.choosedTranslationLanguageKey) else { return nil }
+        get { guard let key = UserDefaults.standard.string(forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
+                else { return nil }
             return TranslationLanguage(rawValue: key)
         }
-        set {
-            if let value = newValue?.rawValue {
+        set { if let value = newValue?.rawValue {
                 UserDefaults.standard.set(value, forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
-            } else {
-                UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
-            }
+            } else { UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.choosedTranslationLanguageKey) }
         }
     }
     
     var learntWordsIdArray: [String] {
-        get {
-            return UserDefaults.standard.stringArray(forKey: Constants.StorageKeys.learnArrayId) ?? []
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learnArrayId)
+        get { return UserDefaults.standard.stringArray(forKey: Constants.StorageKeys.learnArrayId) ?? [] }
+        set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learnArrayId)
         }
     }
     
-//    var currentScore: Int = 0
+    var skippedWordsIdArray: [String] {
+        get { return UserDefaults.standard.stringArray(forKey: Constants.StorageKeys.skippedtWordsId) ?? [] }
+        set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.skippedtWordsId) }
+    }
     
     var commonScore: Int {
         get { return UserDefaults.standard.integer(forKey: Constants.StorageKeys.score) }
@@ -107,6 +102,18 @@ final class DataManager {
         learntWordsIdArray.remove(at: learntIndex)
     }
     
+    func addWordsToSkippedArray(_ word: Word) {
+        guard !skippedWordsIdArray.contains(word.id) else { return }
+        skipArray.append(word)
+        skippedWordsIdArray.append(word.id)
+    }
+    
+    func deleteFromSkippedWordsIdArray(_ word: Word) {
+        guard let learntIndex = skipArray.firstIndex(of: word) else {return}
+        skipArray.remove(at: learntIndex)
+        skippedWordsIdArray.remove(at: learntIndex)
+    }
+    
     func playSound(_ word: Word) {
         let sound = URL(fileURLWithPath: Bundle.main.path(forResource: word.voice, ofType: "mp3" , inDirectory: "voice") ?? "" )
         do {
@@ -132,6 +139,22 @@ final class DataManager {
             }
         }
         return learnArray
+    }
+    
+    private func skipWordsToLearn() -> [Word] {
+        var skipArray: [Word] = []
+        for word in wordsArray {
+            for id in skippedWordsIdArray {
+                if word.id == id {
+                    skipArray.append(word)
+                    break
+                }
+            }
+            if skippedWordsIdArray.count == skipArray.count {
+                break
+            }
+        }
+        return skipArray
     }
     
     private func loadWordsFromJson(for language: TranslationLanguage) -> [Word]? {

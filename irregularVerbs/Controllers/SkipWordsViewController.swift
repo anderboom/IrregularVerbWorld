@@ -1,14 +1,14 @@
 //
-//  LearnWordsViewController.swift
+//  SkipWordsViewController.swift
 //  irregularVerbs
 //
-//  Created by Admin on 5/22/19.
+//  Created by Admin on 7/25/19.
 //  Copyright © 2019 RK. All rights reserved.
 //
 
 import UIKit
 
-class LearnWordsViewController: UIViewController {
+class SkipWordsViewController: UIViewController {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
@@ -27,13 +27,12 @@ class LearnWordsViewController: UIViewController {
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
                                        alpha: 1.0)
+        
     }
-    
-    
     
     private func alertIfArrayIsEmpty() {
         let alertVC = UIAlertController(title: "Empty list!",
-                                        message: "Back to Main list and choose words to learn",
+                                        message: "Back to Main list and choose words to skip",
                                         preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -41,16 +40,38 @@ class LearnWordsViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    @IBAction private func startPressed(_ sender: UIButton) {
+//    private func getSkippedWordsArray() -> [Word] {
+//        print(DataManager.instance.skippedWordsIdArray)
+//        var words = DataManager.instance.wordsArray
+//        for (index, word) in DataManager.instance.wordsArray.enumerated() {
+//            if DataManager.instance.skippedWordsIdArray.contains(word.id) {
+//                words.remove(at: index)
+//            }
+//        }
+//
+//        return words
+//    }
+    
+    
+    @IBAction func startPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
-        let words = DataManager.instance.learnArray.sorted { (word1, word2) -> Bool in
-            word1.firstForm < word2.firstForm
-        }
-        guard !words.isEmpty else {
+        let wordsToSkip = DataManager.instance.skipArray
+        guard !wordsToSkip.isEmpty else {
             alertIfArrayIsEmpty()
             return
         }
-        let currentIndex = 0
+        
+       var words: [Word] = []
+       let currentIndex = 0
+        
+        for word in DataManager.instance.wordsArray {
+            if DataManager.instance.skipArray.contains(word) {
+                print("skipped word")
+            } else if words.count < DataManager.instance.wordsArray.count - 1 {
+                words.append(word)
+            }
+        }
+        
         let viewModel = TrainingViewModel(words: words,
                                           iterateMode: .consistently(currentIndex: currentIndex))
         startTraining(with: viewModel)
@@ -61,9 +82,10 @@ class LearnWordsViewController: UIViewController {
         destVC.viewModel = viewModel
         navigationController?.pushViewController(destVC, animated: true)
     }
+   
 }
 
-extension LearnWordsViewController: UITableViewDelegate, UITableViewDataSource {
+extension SkipWordsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isSearchActive ? filteredWords.count : DataManager.instance.wordsArray.count
@@ -81,36 +103,36 @@ extension LearnWordsViewController: UITableViewDelegate, UITableViewDataSource {
                                        blue: 246.0/255.0,
                                        alpha: 0.5)
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
-            if DataManager.instance.learntWordsIdArray.contains(word.id) {
-                cell.imageViewCell.image = #imageLiteral(resourceName: "checked on.png")
-            } else {
-                cell.imageViewCell.image = #imageLiteral(resourceName: "checked.png")
-            }
+        if DataManager.instance.skippedWordsIdArray.contains(word.id) {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "skipped")
+        } else {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "checked")
+        }
         cell.update(firstForm: word.firstForm, secondForm: word.secondForm, thirdForm: word.thirdForm, translation: word.translation)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {fatalError("ListTableViewCell creation failed")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {fatalError("ListTableViewCell creation failed")}
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
-      
-            if DataManager.instance.learntWordsIdArray.contains(word.id) {
-                DataManager.instance.deleteFromHistory(word)
-            } else {
-                DataManager.instance.addWord(word)
-            }
-
-        if DataManager.instance.learntWordsIdArray.contains(word.id) {
-            cell.imageViewCell.image = #imageLiteral(resourceName: "checked on.png")
+        
+        if DataManager.instance.skippedWordsIdArray.contains(word.id) {
+            DataManager.instance.deleteFromSkippedWordsIdArray(word)
         } else {
-            cell.imageViewCell.image = #imageLiteral(resourceName: "checked.png")
+            DataManager.instance.addWordsToSkippedArray(word)
+        }
+        
+        if DataManager.instance.skippedWordsIdArray.contains(word.id) {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "checked")
+        } else {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "skipped")
         }
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-extension LearnWordsViewController: UISearchBarDelegate {
+extension SkipWordsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearchActive = !searchText.isEmpty
         filteredWords = []
@@ -128,7 +150,7 @@ extension LearnWordsViewController: UISearchBarDelegate {
     }
 }
 
-extension LearnWordsViewController {
+extension SkipWordsViewController {
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }

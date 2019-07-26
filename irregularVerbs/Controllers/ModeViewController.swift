@@ -14,10 +14,10 @@ class ModeViewController: UIViewController {
 
     @IBOutlet private weak var allOneByOneOutlet: UIButton!
     @IBOutlet private weak var allRandomlyOutlet: UIButton!
-    @IBOutlet private weak var allWithSkippingOutlet: UIButton!
     @IBOutlet private weak var onlySelectedOutlet: UIButton!
     @IBOutlet private weak var removeAdsOutlet: UIButton!
     @IBOutlet private weak var leaderBoardOutlet: UIButton!
+    @IBOutlet private weak var allWithSkipping: UIButton!
     private var gcEnabled = Bool()
     private var gcDefaultLeaderBoard = String()
     private let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
@@ -26,10 +26,11 @@ class ModeViewController: UIViewController {
         super.viewDidLoad()
         allOneByOneOutlet.layer.cornerRadius = allOneByOneOutlet.frame.size.height / 5.0
         allRandomlyOutlet.layer.cornerRadius = allRandomlyOutlet.frame.size.height / 5.0
-        allWithSkippingOutlet.layer.cornerRadius = allWithSkippingOutlet.frame.size.height / 5.0
+        allWithSkipping.layer.cornerRadius = allWithSkipping.frame.size.height / 5.0
         onlySelectedOutlet.layer.cornerRadius = onlySelectedOutlet.frame.size.height / 5.0
         removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
         leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
+         allWithSkipping.layer.cornerRadius = allWithSkipping.frame.size.height / 5.0
         StoreReviewHelper.checkAndAskForReview()
         authenticateLocalPlayer()
     }

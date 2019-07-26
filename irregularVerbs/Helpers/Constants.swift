@@ -20,6 +20,9 @@ enum Constants {
         static let isTutorialChoosen = "isTutorialChoosen"
         static let isLanguageLocalized = "isLanguageLocalized"
         static let appOpenedCountKey = "appOpenedCountKey"
+        static let skippedtWordsId = "skippedtWordsId"
+        
+        
     }
     
     enum AdMob {

@@ -50,6 +50,7 @@ class MainMenuViewController: UIViewController {
         let newLanguage = TranslationLanguage.allCases[selectedIndex]
         DataManager.instance.chooseLanguage(newLanguage)
     }
+    
 }
 
 extension MainMenuViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
