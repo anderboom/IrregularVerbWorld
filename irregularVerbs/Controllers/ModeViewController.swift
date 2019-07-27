@@ -57,9 +57,9 @@ class ModeViewController: UIViewController {
     func configureMailComposer() -> MFMailComposeViewController{
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.mailComposeDelegate = self
-        mailComposeVC.setToRecipients(["email_address@example.com"])
-        mailComposeVC.setSubject("Hello World!")
-        mailComposeVC.setMessageBody("Hello from iOS!", isHTML: false)
+        mailComposeVC.setToRecipients(["irregularverbsworld@gmail.com"])
+        mailComposeVC.setSubject("")
+        mailComposeVC.setMessageBody("", isHTML: false)
         return mailComposeVC
     }
     
