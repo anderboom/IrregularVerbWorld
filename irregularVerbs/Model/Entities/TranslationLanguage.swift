@@ -16,15 +16,7 @@ enum TranslationLanguage: String, CaseIterable {
     }
     
     var locale: String {
-        switch self {
-        case .uk: return "uk"
-        case .ru: return "ru"
-        case .pl: return "pl"
-        case .de: return "de"
-        case .fr: return "fr"
-        case .es: return "es"
-        case .it: return "it"
-        }
+        return self.rawValue
     }
     
     var name: String {
@@ -36,7 +28,6 @@ enum TranslationLanguage: String, CaseIterable {
         case .fr: return "French"
         case .es: return "Spanish"
         case .it: return "Italian"
-            
         }
     }
 }

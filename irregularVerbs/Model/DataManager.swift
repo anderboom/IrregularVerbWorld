@@ -28,26 +28,19 @@ final class DataManager {
         wordsArray = loadWordsFromJson(for: lng) ?? []
     }
     
-    var isLanguageLocalized: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isLanguageLocalized)
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.isLanguageLocalized)
-        }
-    }
-    
     var isTutorialChoosen: Bool {
         get { return UserDefaults.standard.bool(forKey: Constants.StorageKeys.isTutorialChoosen) }
         set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.isTutorialChoosen) }
     }
     
     private(set) var choosedLanguage: TranslationLanguage? {
-        get { guard let key = UserDefaults.standard.string(forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
+        get {
+            guard let key = UserDefaults.standard.string(forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
                 else { return nil }
             return TranslationLanguage(rawValue: key)
         }
-        set { if let value = newValue?.rawValue {
+        set {
+            if let value = newValue?.rawValue {
                 UserDefaults.standard.set(value, forKey: Constants.StorageKeys.choosedTranslationLanguageKey)
             } else { UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.choosedTranslationLanguageKey) }
         }
@@ -55,8 +48,7 @@ final class DataManager {
     
     var learntWordsIdArray: [String] {
         get { return UserDefaults.standard.stringArray(forKey: Constants.StorageKeys.learnArrayId) ?? [] }
-        set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learnArrayId)
-        }
+        set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learnArrayId) }
     }
     
     var skippedWordsIdArray: [String] {

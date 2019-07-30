@@ -18,6 +18,7 @@ class LearnWordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Select words to learn"
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self

@@ -50,12 +50,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.window?.makeKeyAndVisible()
     }
-    
-    func getLanguageCode() -> String {
-        let locale = Locale.current
-        guard let languageCode = locale.languageCode else
-        { return "ua"}
-        return languageCode
-    }
 }
 

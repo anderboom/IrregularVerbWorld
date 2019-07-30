@@ -27,30 +27,20 @@ class MainMenuViewController: UIViewController {
         pickLanguage.selectRow(selectedIndex, inComponent: 0, animated: false)
         chooseLaguageTextField.text = TranslationLanguage.allCases[selectedIndex].name
         chooseLaguageTextField.isEnabled = false
-        checkAndCompareSystemLanguage()
+        
+        confirmButtonOutlet.showsTouchWhenHighlighted = true
     }
     
-    func checkAndCompareSystemLanguage() {
-        let locale = Locale.preferredLanguages.first!
-        let localePrefix = String(locale.prefix(2))
-        for (index, lng) in TranslationLanguage.allCases.enumerated() {
-            if localePrefix == lng.locale, DataManager.instance.isLanguageLocalized == false {
-                let newLanguage = TranslationLanguage.allCases[index]
-                DataManager.instance.chooseLanguage(newLanguage)
-                DataManager.instance.isLanguageLocalized = true
-                performSegue(withIdentifier: "MainListSegue", sender: nil)
-                break
-            }
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction private func confirmButtonPressed(_ sender: UIButton) {
-        sender.showsTouchWhenHighlighted = true
         let selectedIndex = pickLanguage.selectedRow(inComponent: 0)
         let newLanguage = TranslationLanguage.allCases[selectedIndex]
         DataManager.instance.chooseLanguage(newLanguage)
     }
-    
 }
 
 extension MainMenuViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
