@@ -60,7 +60,6 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Siren (5.1.0)
-  - SwiftLint (0.34.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -70,7 +69,6 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Core
   - Siren
-  - SwiftLint
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -86,7 +84,6 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - Siren
-    - SwiftLint
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -101,9 +98,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Siren: 1dbdbd5dccd55865369a83f3d57c8eb818ac1556
-  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: c53e8321959b5a700dbd50113299b6c1f31dfce8
+PODFILE CHECKSUM: 024fef555e0e5d03e71346c4ce933f0cd9cba896
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5

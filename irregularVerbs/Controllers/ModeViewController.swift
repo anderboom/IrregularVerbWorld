@@ -21,7 +21,6 @@ class ModeViewController: UIViewController {
     @IBOutlet private weak var allWithSkipping: UIButton!
     private var gcEnabled = Bool()
     private var gcDefaultLeaderBoard = String()
-    private let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,26 +34,20 @@ class ModeViewController: UIViewController {
         StoreReviewHelper.checkAndAskForReview()
         authenticateLocalPlayer()
         
-        let imageView = UIImageView(image: UIImage(named: "letter"))
-        let buttonItem = UIBarButtonItem(customView: imageView)
-        self.navigationItem.rightBarButtonItem = buttonItem
-//        if !MFMailComposeViewController.canSendMail() {
-//            print("Mail services are not available")
-//            return
-//        }
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"letter"), style: .plain, target: self, action: #selector(sendMail))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "letter"), style: .plain,
+                                                                 target: self, action: #selector(sendMail))
     }
     
-    @objc private func sendMail () {
-        let mailComposeViewController = configureMailComposer()
-        if MFMailComposeViewController.canSendMail(){
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        }else{
+    @objc private func sendMail() {
+        guard MFMailComposeViewController.canSendMail() else {
             print("Can't send email")
+            return
         }
+        let mailComposeViewController = configureMailComposer()
+        self.present(mailComposeViewController, animated: true, completion: nil)
     }
   
-    func configureMailComposer() -> MFMailComposeViewController{
+    private func configureMailComposer() -> MFMailComposeViewController{
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.mailComposeDelegate = self
         mailComposeVC.setToRecipients(["irregularverbsworld@gmail.com"])
@@ -117,7 +110,7 @@ class ModeViewController: UIViewController {
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
         gcVC.viewState = .leaderboards
-        gcVC.leaderboardIdentifier = LEADERBOARD_ID
+        gcVC.leaderboardIdentifier = Constants.GameCenter.leaderboardID
         present(gcVC, animated: true, completion: nil)
     }
 

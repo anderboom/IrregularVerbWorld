@@ -17,28 +17,32 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-//        self.navigationController?.navigationBar.topItem?.title = "Language"
-        self.navigationController?.isNavigationBarHidden = false
+        title = "Listen and learn"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Language", style: .plain,
+                                                           target: self, action: #selector(showLanguageScreen))
+        
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
         tableView.keyboardDismissMode = .onDrag
         tableView.register(ListTableViewCell.nib, forCellReuseIdentifier: ListTableViewCell.identifier)
+        
         exerciseButtonOutlet.layer.cornerRadius = exerciseButtonOutlet.frame.size.height / 5.0
+        exerciseButtonOutlet.showsTouchWhenHighlighted = true
+
         view.backgroundColor = UIColor(red: 236.0/255.0,
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
                                        alpha: 1.0)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        tableView.reloadData()
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
-    @IBAction private func exersiseButtonPressed(_ sender: UIButton) {
-        sender.showsTouchWhenHighlighted = true
+    
+    @objc private func showLanguageScreen() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -66,12 +70,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
-          DataManager.instance.playSound(word)
-          tableView.deselectRow(at: indexPath, animated: true)
-        
-       
+        DataManager.instance.playSound(word)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -79,14 +80,16 @@ extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearchActive = !searchText.isEmpty
         filteredWords = []
+        
+        let lowercasedSearchText = searchText.lowercased()
         for item in DataManager.instance.wordsArray {
-            if item.firstForm.lowercased().contains(searchText.lowercased()) ||
-                item.translation.lowercased().contains(searchText.lowercased())
-                {
+            let isPartOfFirstForm = item.firstForm.lowercased().contains(lowercasedSearchText)
+            let isPartOfTranslation = item.translation.lowercased().contains(lowercasedSearchText)
+            if isPartOfFirstForm || isPartOfTranslation {
                 filteredWords.append(item)
             }
-            tableView.reloadData()
         }
+        tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

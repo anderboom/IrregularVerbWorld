@@ -18,6 +18,7 @@ class SkipWordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Select words to skip"
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
@@ -84,7 +85,6 @@ extension SkipWordsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {fatalError("ListTableViewCell creation failed")}
-//        cell.imageViewCell.image = #imageLiteral(resourceName: "checked.png")
         cell.backgroundColor = UIColor(red: 236.0/255.0,
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,

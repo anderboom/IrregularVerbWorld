@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialViewController: UIViewController, UIScrollViewDelegate {
+class TutorialViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
     private let slides: [TutorialView] = TutorialViewController.createSlides()
@@ -27,6 +27,8 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.alwaysBounceVertical = false
+        
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,18 +68,32 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         return [slide1, slide2, slide3, slide4, slide5]
     }
     
-     func nextButtonPressed() {
+    private func nextButtonPressed() {
         DataManager.instance.isTutorialChoosen = true
-        performSegue(withIdentifier: "MainMenuViewController", sender: nil)
-     }
+        
+        var controllers: [UIViewController] = [MainMenuViewController.instantiateVC()]
+        
+        if DataManager.instance.choosedLanguage != nil {
+            controllers.append(ListViewController.instantiateVC())
+        } else if let locale = Locale.preferredLanguages.first {
+            let localePrefix = String(locale.prefix(2))
+            if let preferredAppLanguage = TranslationLanguage.allCases.first(where: { $0.locale == localePrefix }) {
+                DataManager.instance.chooseLanguage(preferredAppLanguage)
+                controllers.append(ListViewController.instantiateVC())
+            }
+        }
+        navigationController?.setViewControllers(controllers, animated: true)
+    }
     
-    func updateScrollViewContentSize() {
+    private func updateScrollViewContentSize() {
         scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(slides.count), height: scrollView.bounds.height)
         for i in 0..<slides.count {
             slides[i].frame = CGRect(x: scrollView.bounds.width * CGFloat(i), y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
         }
     }
-    
+}
+
+extension TutorialViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)

@@ -49,7 +49,7 @@ struct TrainingViewModel {
         return (nextWord, isRestartedFromBeggining)
     }
     
-    mutating func incrementScoreForMode(){
+    func incrementScoreForMode() {
         switch iterateMode {
         case .randomly:
             DataManager.instance.commonScore += 3
