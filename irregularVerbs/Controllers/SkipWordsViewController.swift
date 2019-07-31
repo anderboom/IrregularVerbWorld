@@ -32,7 +32,7 @@ class SkipWordsViewController: UIViewController {
     
     private func alertIfArrayIsEmpty() {
         let alertVC = UIAlertController(title: "Empty list!",
-                                        message: "Back to Main list and choose words to skip",
+                                        message: "Select words to skip",
                                         preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)

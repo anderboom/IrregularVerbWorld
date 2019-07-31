@@ -33,7 +33,7 @@ class LearnWordsViewController: UIViewController {
     
     private func alertIfArrayIsEmpty() {
         let alertVC = UIAlertController(title: "Empty list!",
-                                        message: "Back to Main list and choose words to learn",
+                                        message: "Select words to learn",
                                         preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)

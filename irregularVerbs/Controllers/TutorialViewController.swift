@@ -37,31 +37,31 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     private static func createSlides() -> [TutorialView] {
         
         let slide1:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide1.imageView.image = UIImage(named: "swipe1")
-        slide1.tutorialLabel.text = "Welcome to the «World of irregular verbs» application!\n" +
-            "Step by step tutorial.\n" + "1. Select the desired language from the list."
+        slide1.imageView.image = UIImage(named: "swipe2")
+        slide1.tutorialLabel.text = "On this screen you can learn and listen to the words."
         slide1.nextButton.isHidden = true
         
         let slide2:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide2.imageView.image = UIImage(named: "swipe2")
-        slide2.tutorialLabel.text = "2. On this screen you can listen and learn words. Tap Exersise button in the Main list. You will open the mode selection menu."
+        slide2.imageView.image = UIImage(named: "swipe3")
+        slide2.tutorialLabel.text = "Select the desired mode. All One by One-you will learn words in the order of the list. All randomly-you will learn words in the random mode. Only selected-you will learn only selected words. All with skipping - you will skip selected words"
+
         slide2.nextButton.isHidden = true
         
         let slide3:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide3.imageView.image = UIImage(named: "swipe3")
-        slide3.tutorialLabel.text = "Select the desired mode. All One by One-you will learn words in the order of the list. All randomly-you will learn words in the random mode. Only selected-you will learn only selected words."
-
+        slide3.imageView.image = UIImage(named: "swipe4")
+        slide3.tutorialLabel.text = "Only selected mode - you will learn only selected words in the training mode. Just check words you want to learn. If you want to remove words from the list -  uncheck required words."
         slide3.nextButton.isHidden = true
         
+        
         let slide4:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide4.imageView.image = UIImage(named: "swipe4")
-        slide4.tutorialLabel.text = "Only selected mode - you will learn only selected words in the training mode. Just check words you want to learn. If you want to remove words from the list -  uncheck required words."
+        slide4.imageView.image = UIImage(named: "swipe5")
+        slide4.tutorialLabel.text = "All with skipping mode - you will skip selected words in the training mode. Just check words you want to skip. If you want to remove words from the list -  uncheck required words."
         slide4.nextButton.isHidden = true
         
         let slide5:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide5.imageView.image = UIImage(named: "swipe5")
+        slide5.imageView.image = UIImage(named: "swipe6")
         slide5.tutorialLabel.text = "Training mode. You can listen to the words (Play button). Tap the buttons  with the desired letters to fill the input fields. If you'll make 5 mistakes, the entered words will be displayed again. Enjoy your learning!"
-        slide5.nextButton.layer.cornerRadius = slide5.nextButton.frame.size.height / 5.0
+        slide5.nextButton.layer.cornerRadius = slide4.nextButton.frame.size.height / 5.0
         slide5.nextButton.isHidden = false
         return [slide1, slide2, slide3, slide4, slide5]
     }
