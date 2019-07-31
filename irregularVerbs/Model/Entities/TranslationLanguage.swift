@@ -30,4 +30,16 @@ enum TranslationLanguage: String, CaseIterable {
         case .it: return "Italian"
         }
     }
+    
+    var flagEmoji: String {
+        switch self {
+        case .uk: return "🇺🇦"
+        case .ru: return "🇷🇺"
+        case .pl: return "🇵🇱"
+        case .de: return "🇩🇪"
+        case .fr: return "🇫🇷"
+        case .es: return "🇪🇸"
+        case .it: return "🇮🇹"
+        }
+    }
 }

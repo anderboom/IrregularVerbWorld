@@ -10,6 +10,7 @@ import Foundation
 import StoreKit
 
 struct StoreReviewHelper {
+    private static var isShownOnce = false
     private static var appOpeningCounter: Int {
         get { return UserDefaults.standard.integer(forKey: Constants.StorageKeys.appOpenedCountKey) }
         set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.appOpenedCountKey) }
@@ -18,14 +19,15 @@ struct StoreReviewHelper {
         appOpeningCounter += 1
     }
     
-    static func checkAndAskForReview() { // call this whenever appropriate
-        // this will not be shown everytime. Apple has some internal logic on how to show this.
+    static func checkAndAskForReview() {
+        guard isShownOnce == false else { return }
+        isShownOnce = true
         let counter = appOpeningCounter
         guard counter > 0 else {
             appOpeningCounter = 1
             return
         }
-        
+
         switch counter {
         case 10, 30:
             StoreReviewHelper().requestReview()

@@ -18,7 +18,10 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Listen and learn"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Language", style: .plain,
+        
+        let flagEmoji = DataManager.instance.choosedLanguage?.flagEmoji ?? ""
+        let languageTitle = " \(flagEmoji)    "
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: languageTitle, style: .plain,
                                                            target: self, action: #selector(showLanguageScreen))
         
         tableView.delegate = self
@@ -30,6 +33,10 @@ class ListViewController: UIViewController {
         exerciseButtonOutlet.layer.cornerRadius = exerciseButtonOutlet.frame.size.height / 5.0
         exerciseButtonOutlet.showsTouchWhenHighlighted = true
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            StoreReviewHelper.checkAndAskForReview()
+        }
+        
         view.backgroundColor = UIColor(red: 236.0/255.0,
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,

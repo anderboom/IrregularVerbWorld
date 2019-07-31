@@ -31,7 +31,6 @@ class ModeViewController: UIViewController {
         removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
         leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
          allWithSkipping.layer.cornerRadius = allWithSkipping.frame.size.height / 5.0
-        StoreReviewHelper.checkAndAskForReview()
         authenticateLocalPlayer()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "letter"), style: .plain,
@@ -51,7 +50,7 @@ class ModeViewController: UIViewController {
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.mailComposeDelegate = self
         mailComposeVC.setToRecipients(["irregularverbsworld@gmail.com"])
-        mailComposeVC.setSubject("")
+        mailComposeVC.setSubject("Suggestions and Recommendations")
         mailComposeVC.setMessageBody("", isHTML: false)
         return mailComposeVC
     }
