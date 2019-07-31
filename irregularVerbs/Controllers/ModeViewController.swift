@@ -10,7 +10,6 @@ import UIKit
 import GameKit
 import MessageUI
 
-
 class ModeViewController: UIViewController {
 
     @IBOutlet private weak var allOneByOneOutlet: UIButton!
@@ -19,18 +18,21 @@ class ModeViewController: UIViewController {
     @IBOutlet private weak var removeAdsOutlet: UIButton!
     @IBOutlet private weak var leaderBoardOutlet: UIButton!
     @IBOutlet private weak var allWithSkipping: UIButton!
-    private var gcEnabled = Bool()
-    private var gcDefaultLeaderBoard = String()
+    private var gcEnabled = false {
+        didSet {
+            leaderBoardOutlet.isEnabled = gcEnabled
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        allOneByOneOutlet.layer.cornerRadius = allOneByOneOutlet.frame.size.height / 5.0
-        allRandomlyOutlet.layer.cornerRadius = allRandomlyOutlet.frame.size.height / 5.0
-        allWithSkipping.layer.cornerRadius = allWithSkipping.frame.size.height / 5.0
-        onlySelectedOutlet.layer.cornerRadius = onlySelectedOutlet.frame.size.height / 5.0
-        removeAdsOutlet.layer.cornerRadius = removeAdsOutlet.frame.size.height / 5.0
-        leaderBoardOutlet.layer.cornerRadius = leaderBoardOutlet.frame.size.height / 5.0
-         allWithSkipping.layer.cornerRadius = allWithSkipping.frame.size.height / 5.0
+        
+        let allButtons: [UIButton] = [
+            allOneByOneOutlet, allRandomlyOutlet, allWithSkipping,
+            onlySelectedOutlet, removeAdsOutlet, leaderBoardOutlet, allWithSkipping
+        ]
+        allButtons.forEach { $0.layer.cornerRadius = $0.frame.height / 5.0 }
+        
         authenticateLocalPlayer()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "letter"), style: .plain,
@@ -42,25 +44,20 @@ class ModeViewController: UIViewController {
             print("Can't send email")
             return
         }
-        let mailComposeViewController = configureMailComposer()
-        self.present(mailComposeViewController, animated: true, completion: nil)
-    }
-  
-    private func configureMailComposer() -> MFMailComposeViewController{
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.mailComposeDelegate = self
         mailComposeVC.setToRecipients(["irregularverbsworld@gmail.com"])
         mailComposeVC.setSubject("Suggestions and Recommendations")
         mailComposeVC.setMessageBody("", isHTML: false)
-        return mailComposeVC
+        self.present(mailComposeVC, animated: true, completion: nil)
     }
     
     @IBAction private func startAllOneByOnePressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
         let words = DataManager.instance.wordsArray
-        let currentIndex = DataManager.instance.indexValue
+        let currentIndex = DataManager.instance.allOneByOneCurrentWordIndex
         let saveNewIndexAction: (Int) -> Void = { newIndex in
-            DataManager.instance.indexValue = newIndex
+            DataManager.instance.allOneByOneCurrentWordIndex = newIndex
         }
         let viewModel = TrainingViewModel(words: words,
                                           iterateMode: .consistently(currentIndex: currentIndex),
@@ -81,31 +78,29 @@ class ModeViewController: UIViewController {
     
     @IBAction private func gameCenterButtonPressed(_ sender: UIButton) {
         sender.showsTouchWhenHighlighted = true
-       gameCenterLeaderBoardShow()
+        showGameCenterLeaderBoard()
     }
     
     // MARK: - AUTHENTICATE LOCAL PLAYER
     private func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.local
-
-        localPlayer.authenticateHandler = {[unowned self](ViewController, error) -> Void in
-            if((ViewController) != nil) {
-            
-                // 1. Show login if player is not logged in
-                self.present(ViewController!, animated: true, completion: nil)
-                
-            } else if (localPlayer.isAuthenticated) {
+        self.gcEnabled = localPlayer.isAuthenticated
+        localPlayer.authenticateHandler = { [weak self] gcAuthVC, error in
+            if localPlayer.isAuthenticated {
                 print("User is authenticated")
+                self?.gcEnabled = true
+            } else if let vc = gcAuthVC {
+                // 1. Show login if player is not logged in
+                self?.present(vc, animated: true, completion: nil)
             } else {
                 // 3. Game center is not enabled on the users device
-                self.gcEnabled = false
-                print("Local player could not be authenticated!")
-                print(error ?? "Error")
+                self?.gcEnabled = false
+                print("Local player could not be authenticated! \(error?.localizedDescription ?? "")")
             }
         }
     }
 
-   private func gameCenterLeaderBoardShow() {
+   private func showGameCenterLeaderBoard() {
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
         gcVC.viewState = .leaderboards
@@ -127,7 +122,7 @@ class ModeViewController: UIViewController {
 extension ModeViewController: GKGameCenterControllerDelegate {
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true)
-        }
+    }
 }
 
 extension ModeViewController: MFMailComposeViewControllerDelegate {

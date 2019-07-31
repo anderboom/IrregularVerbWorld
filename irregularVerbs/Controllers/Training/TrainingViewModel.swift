@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameKit
 
 struct TrainingViewModel {
     enum IterateMode {
@@ -55,6 +56,27 @@ struct TrainingViewModel {
             DataManager.instance.commonScore += 3
         case .consistently:
             DataManager.instance.commonScore += 2
+        }
+        setScoreToGameCenter()
+    }
+    
+    func decrementScoreForMode() {
+        guard DataManager.instance.commonScore > 1 else { return }
+        DataManager.instance.commonScore -= 1
+    }
+    
+    // MARK: - Private methods
+    private func setScoreToGameCenter() {
+        // Submit score to GC leaderboard
+        let score = DataManager.instance.commonScore
+        let bestScoreInt = GKScore(leaderboardIdentifier: Constants.GameCenter.leaderboardID)
+        bestScoreInt.value = Int64(score)
+        GKScore.report([bestScoreInt]) {(error) in
+            if let error = error {
+                print("ERROR: addScoreToGameCenter failed! \(error.localizedDescription)")
+            } else {
+                print("Best Score submitted to your Leaderboard!")
+            }
         }
     }
     

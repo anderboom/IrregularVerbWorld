@@ -12,11 +12,10 @@ enum Constants {
     static let isGotNonConsumable = "isGotNonConsumable"
     
     struct StorageKeys {
-        static let index = "index"
+        static let allOneByOneCurrentWordIndex = "allOneByOneCurrentWordIndex"
         static let score = "score"
         static let learnArrayId = "learnArrayId"
         static let choosedTranslationLanguageKey = "choosedTranslationLanguageKey"
-        static let learntWordsDictionary = "learntWordsDictionary"
         static let isTutorialChoosen = "isTutorialChoosen"
         static let appOpenedCountKey = "appOpenedCountKey"
         static let skippedtWordsId = "skippedtWordsId"

@@ -63,23 +63,9 @@ final class DataManager {
     
     var adCounting: Int = 0
     
-    var indexValue: Int {
-        get { return UserDefaults.standard.integer(forKey: Constants.StorageKeys.index) }
-        set { UserDefaults.standard.set(newValue , forKey: Constants.StorageKeys.index) }
-    }
-    
-    private var learntWordIds: [String] {
-        get {
-            return UserDefaults.standard.array(forKey: Constants.StorageKeys.learntWordsDictionary) as? [String] ?? []
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.learntWordsDictionary)
-        }
-    }
-    
-    func addWordToLearnt(_ word: Word){
-        guard !learntWordIds.contains(word.id) else { return }
-        learntWordIds.append(word.id)
+    var allOneByOneCurrentWordIndex: Int {
+        get { return UserDefaults.standard.integer(forKey: Constants.StorageKeys.allOneByOneCurrentWordIndex) }
+        set { UserDefaults.standard.set(newValue, forKey: Constants.StorageKeys.allOneByOneCurrentWordIndex) }
     }
     
     func addWord(_ word: Word) {
@@ -106,8 +92,12 @@ final class DataManager {
         skippedWordsIdArray.remove(at: learntIndex)
     }
     
+    func playVibration() {
+        AudioServicesPlaySystemSound(1351)
+    }
+    
     func playSound(_ word: Word) {
-        let sound = URL(fileURLWithPath: Bundle.main.path(forResource: word.voice, ofType: "mp3" , inDirectory: "voice") ?? "" )
+        let sound = URL(fileURLWithPath: Bundle.main.path(forResource: word.voice, ofType: "mp3", inDirectory: "voice") ?? "")
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: sound)
             audioPlayer.play()

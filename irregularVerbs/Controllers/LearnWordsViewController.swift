@@ -30,10 +30,8 @@ class LearnWordsViewController: UIViewController {
                                        alpha: 1.0)
     }
     
-    
-    
     private func alertIfArrayIsEmpty() {
-        let alertVC = UIAlertController(title: "Empty list!",
+        let alertVC = UIAlertController(title: nil,
                                         message: "Select words to learn",
                                         preferredStyle: .alert)
         
@@ -76,17 +74,16 @@ extension LearnWordsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {fatalError("ListTableViewCell creation failed")}
-//        cell.imageViewCell.image = #imageLiteral(resourceName: "checked.png")
         cell.backgroundColor = UIColor(red: 236.0/255.0,
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
                                        alpha: 0.5)
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
-            if DataManager.instance.learntWordsIdArray.contains(word.id) {
-                cell.imageViewCell.image = #imageLiteral(resourceName: "check green")
-            } else {
-                cell.imageViewCell.image = #imageLiteral(resourceName: "check gray")
-            }
+        if DataManager.instance.learntWordsIdArray.contains(word.id) {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "check green")
+        } else {
+            cell.imageViewCell.image = #imageLiteral(resourceName: "check gray")
+        }
         cell.update(firstForm: word.firstForm, secondForm: word.secondForm, thirdForm: word.thirdForm, translation: word.translation)
         return cell
     }
@@ -94,12 +91,12 @@ extension LearnWordsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {fatalError("ListTableViewCell creation failed")}
         let word = isSearchActive ? filteredWords[indexPath.row] : DataManager.instance.wordsArray[indexPath.row]
-      
-            if DataManager.instance.learntWordsIdArray.contains(word.id) {
-                DataManager.instance.deleteFromHistory(word)
-            } else {
-                DataManager.instance.addWord(word)
-            }
+        
+        if DataManager.instance.learntWordsIdArray.contains(word.id) {
+            DataManager.instance.deleteFromHistory(word)
+        } else {
+            DataManager.instance.addWord(word)
+        }
 
         if DataManager.instance.learntWordsIdArray.contains(word.id) {
             cell.imageViewCell.image = #imageLiteral(resourceName: "check green")

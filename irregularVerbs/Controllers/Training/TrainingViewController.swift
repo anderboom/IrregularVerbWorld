@@ -8,16 +8,15 @@
 
 import UIKit
 import GoogleMobileAds
-import AVFoundation
-import GameKit
 
 class TrainingViewController: UIViewController  {
+    // MARK: - Private static properties
+    private static let adShowingStep = 120 // show Ads if adCounter % adShowingStep == 0
+    
     // MARK: - Public properties
     var viewModel: TrainingViewModel!
     
     // MARK: - Private properties
-   
-    private var interstitial: GADInterstitial!
     @IBOutlet private weak var playButtonOutlet: UIButton!
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var light0: UIImageView!
@@ -34,6 +33,10 @@ class TrainingViewController: UIViewController  {
     @IBOutlet private weak var infinitiveStackViewOutlet: UIStackView!
     @IBOutlet private weak var pastParticipleStackViewOutlet: UIStackView!
     @IBOutlet private weak var translationLabel: UILabel!
+    @IBOutlet private weak var starView: UIImageView!
+
+    private var interstitial: GADInterstitial!
+
     private var charStep = 0
     private var arrayCharStep = 0
     private var repeatedCharsCounter = 0
@@ -43,16 +46,14 @@ class TrainingViewController: UIViewController  {
     private var isThirdFormFilled = false
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
-    @IBOutlet private weak var starView: UIImageView!
-    private var score = 0
-    private let LEADERBOARD_ID = "com.andrewgusar.irregularVerbsWorld.Scores"
+    private var score: Int { return DataManager.instance.commonScore }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.isHidden = true
-        scoreLabel.text = String(DataManager.instance.commonScore)
+        scoreLabel.text = String(score)
         interstitial = createAndLoadInterstitial()
         resetContentToInitialState()
     }
@@ -101,7 +102,7 @@ class TrainingViewController: UIViewController  {
         makeButtons(words: wordsCharacterArray, stackView1: infinitiveStackView, stackView2: simplePastStackView, stackView3: pastParticipleStackView, action: #selector(pressedButtonAction))
     }
     
-    private func makeButtons(words: String, stackView1: UIStackView, stackView2: UIStackView,stackView3: UIStackView ,action: Selector)  {
+    private func makeButtons(words: String, stackView1: UIStackView, stackView2: UIStackView, stackView3: UIStackView , action: Selector)  {
         let uniqWord = words.orderedSet
         for (index, value) in uniqWord.shuffled().enumerated() {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 48, height: 48))
@@ -248,7 +249,7 @@ class TrainingViewController: UIViewController  {
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
             startToFlyStar()
             viewModel.incrementScoreForMode()
-            scoreLabel.text = String(DataManager.instance.commonScore)
+            scoreLabel.text = String(score)
             nextButtonOutlet.isHidden = false
             isFirstFormFilled = false
             isSecondFormFilled = false
@@ -286,7 +287,7 @@ class TrainingViewController: UIViewController  {
     private func incrementAdCounterAndShowAdIfNeeded() {
         guard !IAPManager.instance.isGotNonConsumable else { return }
         DataManager.instance.adCounting += 1
-        guard DataManager.instance.adCounting % 120 == 0 else { return }
+        guard DataManager.instance.adCounting % TrainingViewController.adShowingStep == 0 else { return }
         guard !interstitial.hasBeenUsed else {
             assertionFailure("ERROR: Interstitial hasBeenUsed. Object is not recreated")
             return
@@ -316,30 +317,14 @@ class TrainingViewController: UIViewController  {
        
     }
     
-    
     @IBAction private func nextButtonPressed(_ sender: Any) {
         let result = viewModel.moveNext()
         if result.isRestartedFromBeggining {
             congratulationPopUp()
         }
-        score = DataManager.instance.commonScore
-        addScoreToGameCenter()
         resetContentToInitialState()
         nextButtonOutlet.isHidden = true
         incrementAdCounterAndShowAdIfNeeded()
-    }
-    
-    private func addScoreToGameCenter() {
-        // Submit score to GC leaderboard
-        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
-        bestScoreInt.value = Int64(score)
-        GKScore.report([bestScoreInt]) {(error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            } else {
-                print("Best Score submitted to your Leaderboard!")
-            }
-        }
     }
     
     private func resetContentToInitialState() {
@@ -354,21 +339,18 @@ class TrainingViewController: UIViewController  {
         addButtonsToStackViews()
         fillTestFieldStackViews()
         switchOnLights()
-        scoreLabel.text = String(DataManager.instance.commonScore)
+        scoreLabel.text = String(score)
     }
     
     private func mistakesProcessing() {
         let lightArray: [UIImageView] = [light0, light1, light2, light3, light4]
         lightArray[mistakesCount - 1].image = #imageLiteral(resourceName: "lamp.png")
-        AudioServicesPlaySystemSound(1351)
+        DataManager.instance.playVibration()
         if mistakesCount == lightArray.count {
             mistakesCount = 0
             alertAboutMistake()
-            if DataManager.instance.commonScore > 1 {
-                DataManager.instance.commonScore -= 1
-            }
-           reloadBecauseOfMistakes()
-            
+            viewModel.decrementScoreForMode()
+            reloadBecauseOfMistakes()
         }
     }
     
