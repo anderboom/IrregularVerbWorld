@@ -21,6 +21,7 @@ class LearnWordsViewController: UIViewController {
         title = "Select words to learn"
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.keyboardDismissMode = .onDrag
         searchBar.delegate = self
         tableView.register(ListTableViewCell.nib, forCellReuseIdentifier: ListTableViewCell.identifier)
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.size.height / 5.0
