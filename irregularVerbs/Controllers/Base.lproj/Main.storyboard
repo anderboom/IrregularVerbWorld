@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrG-xr-Qdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4475.5395683453244" y="907.55395683453241"/>
+            <point key="canvasLocation" x="4528" y="900"/>
         </scene>
         <!--Training View Controller-->
         <scene sceneID="49c-8y-KkG">
@@ -599,7 +599,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5QV-Pb-zYk">
-                                <rect key="frame" x="40" y="69.5" width="295" height="528.5"/>
+                                <rect key="frame" x="40" y="30" width="295" height="617"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Exercise Modes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-GV-UpC">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="44.5"/>
@@ -608,11 +608,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-GY-IbY">
-                                        <rect key="frame" x="0.0" y="64.5" width="295" height="54"/>
+                                        <rect key="frame" x="0.0" y="64.5" width="295" height="72"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="900" constant="54" id="LAZ-Ee-RWU"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="qWb-EW-U1M"/>
+                                            <constraint firstAttribute="height" priority="900" constant="80" id="LAZ-Ee-RWU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="All One by One">
@@ -623,7 +622,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-hy-nQL">
-                                        <rect key="frame" x="0.0" y="138.5" width="295" height="54"/>
+                                        <rect key="frame" x="0.0" y="156.5" width="295" height="72"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="All randomly">
@@ -634,7 +633,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zat-vw-xBu">
-                                        <rect key="frame" x="0.0" y="212.5" width="295" height="54"/>
+                                        <rect key="frame" x="0.0" y="248.5" width="295" height="72.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="Only selected">
@@ -646,7 +645,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNM-jt-uMD">
-                                        <rect key="frame" x="0.0" y="286.5" width="295" height="54"/>
+                                        <rect key="frame" x="0.0" y="341" width="295" height="72"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="All with skipping">
@@ -657,14 +656,14 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6c-LM-Phe">
-                                        <rect key="frame" x="0.0" y="360.5" width="295" height="20"/>
+                                        <rect key="frame" x="0.0" y="433" width="295" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="20" id="Pcz-LU-2wN"/>
+                                            <constraint firstAttribute="height" priority="500" constant="20" id="Pcz-LU-2wN"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-Mu-vI4">
-                                        <rect key="frame" x="0.0" y="400.5" width="295" height="54"/>
+                                        <rect key="frame" x="0.0" y="453" width="295" height="72"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="Leader Board">
@@ -675,7 +674,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iys-fa-P0M">
-                                        <rect key="frame" x="0.0" y="474.5" width="295" height="54"/>
+                                        <rect key="frame" x="0.0" y="545" width="295" height="72"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="Remove Ads">
@@ -700,12 +699,12 @@
                         <color key="backgroundColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5QV-Pb-zYk" firstAttribute="centerY" secondItem="IEq-1l-B1o" secondAttribute="centerY" id="04K-06-iO7"/>
+                            <constraint firstItem="5QV-Pb-zYk" firstAttribute="centerY" secondItem="IEq-1l-B1o" secondAttribute="centerY" priority="750" id="04K-06-iO7"/>
                             <constraint firstItem="QD1-Ur-iCj" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5QV-Pb-zYk" secondAttribute="trailing" constant="40" id="24P-aU-wbh"/>
-                            <constraint firstItem="QD1-Ur-iCj" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5QV-Pb-zYk" secondAttribute="bottom" constant="10" id="2Xl-El-uvy"/>
+                            <constraint firstItem="QD1-Ur-iCj" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5QV-Pb-zYk" secondAttribute="bottom" constant="20" id="2Xl-El-uvy"/>
                             <constraint firstItem="5QV-Pb-zYk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QD1-Ur-iCj" secondAttribute="leading" constant="40" id="3vC-18-rlJ"/>
                             <constraint firstItem="5QV-Pb-zYk" firstAttribute="centerX" secondItem="IEq-1l-B1o" secondAttribute="centerX" id="9wX-w3-Nfr"/>
-                            <constraint firstItem="5QV-Pb-zYk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QD1-Ur-iCj" secondAttribute="top" constant="20" id="Qe8-QU-Epi"/>
+                            <constraint firstItem="5QV-Pb-zYk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QD1-Ur-iCj" secondAttribute="top" constant="10" id="Qe8-QU-Epi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QD1-Ur-iCj"/>
                     </view>
