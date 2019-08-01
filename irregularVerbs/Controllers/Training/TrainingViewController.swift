@@ -46,14 +46,13 @@ class TrainingViewController: UIViewController  {
     private var isThirdFormFilled = false
     private var charCountedDictionary = [String: Int]()
     private var charForWordCountedDictionary = [String: Int]()
-    private var score: Int { return DataManager.instance.commonScore }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height / 5.0
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 5.0
         nextButtonOutlet.isHidden = true
-        scoreLabel.text = String(score)
+        scoreLabel.text = viewModel.scoreText
         interstitial = createAndLoadInterstitial()
         resetContentToInitialState()
     }
@@ -249,7 +248,7 @@ class TrainingViewController: UIViewController  {
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
             startToFlyStar()
             viewModel.incrementScoreForMode()
-            scoreLabel.text = String(score)
+            scoreLabel.text = viewModel.scoreText
             nextButtonOutlet.isHidden = false
             isFirstFormFilled = false
             isSecondFormFilled = false
@@ -339,7 +338,7 @@ class TrainingViewController: UIViewController  {
         addButtonsToStackViews()
         fillTestFieldStackViews()
         switchOnLights()
-        scoreLabel.text = String(score)
+        scoreLabel.text = viewModel.scoreText
     }
     
     private func mistakesProcessing() {

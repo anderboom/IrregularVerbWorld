@@ -21,6 +21,7 @@ struct TrainingViewModel {
     private var iterateMode: IterateMode
     private var currentIndex: Int
     
+    var scoreText: String { return String(DataManager.instance.commonScore) }
     var currentWord: Word {
         return words[currentIndex]
     }
