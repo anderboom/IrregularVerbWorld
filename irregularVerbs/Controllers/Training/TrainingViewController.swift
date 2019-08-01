@@ -147,7 +147,7 @@ class TrainingViewController: UIViewController  {
             if var count = charCountedDictionary[char] {
                 if sender.titleLabel?.text == char {
                     if count == 1 {
-                        sender.isHidden = true
+                        sender.isEnabled = false
                         charCountedDictionary[char] = nil
                     }
                     if count > 1 {
@@ -162,7 +162,7 @@ class TrainingViewController: UIViewController  {
             if var count = charForWordCountedDictionary[char] {
                 if sender.titleLabel?.text == char {
                     if count == 1 {
-                        sender.isHidden = true
+                        sender.isEnabled = false
                         charForWordCountedDictionary[char] = nil
                     }
                     if count > 1 {
