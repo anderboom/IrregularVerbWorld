@@ -31,6 +31,13 @@ class SkipWordsViewController: UIViewController {
                                        blue: 246.0/255.0,
                                        alpha: 1.0)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain,
+                                                            target: self, action: #selector(uncheckWordsToSkip))
+    }
+    
+    @objc func uncheckWordsToSkip() {
+        DataManager.instance.resetSkippedWords()
+        tableView.reloadData()
     }
     
     private func alertIfArrayIsEmpty() {

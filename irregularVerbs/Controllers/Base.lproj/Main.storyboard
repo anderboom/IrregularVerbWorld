@@ -267,7 +267,7 @@
                         <constraints>
                             <constraint firstItem="sfS-Zy-vDI" firstAttribute="top" secondItem="kW0-R0-vcg" secondAttribute="top" id="2um-kN-hoN"/>
                             <constraint firstItem="9b2-rN-JJG" firstAttribute="leading" secondItem="kW0-R0-vcg" secondAttribute="leading" constant="25" id="7gB-LV-cSR"/>
-                            <constraint firstItem="kW0-R0-vcg" firstAttribute="trailing" secondItem="9b2-rN-JJG" secondAttribute="trailing" constant="25" id="AUg-Cb-0NX"/>
+                            <constraint firstItem="kW0-R0-vcg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9b2-rN-JJG" secondAttribute="trailing" constant="25" id="AUg-Cb-0NX"/>
                             <constraint firstItem="kW0-R0-vcg" firstAttribute="bottom" secondItem="9b2-rN-JJG" secondAttribute="bottom" constant="20" id="BWI-Qa-hu7"/>
                             <constraint firstItem="sfS-Zy-vDI" firstAttribute="leading" secondItem="kW0-R0-vcg" secondAttribute="leading" id="Kqi-SV-ZM6"/>
                             <constraint firstItem="kW0-R0-vcg" firstAttribute="trailing" secondItem="sfS-Zy-vDI" secondAttribute="trailing" id="MCC-mj-RuJ"/>
@@ -428,7 +428,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="0Zs-xT-iiS"/>
-                                    <constraint firstAttribute="width" constant="180" id="VHQ-TU-1s0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="VHQ-TU-1s0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Next">

@@ -80,6 +80,11 @@ final class DataManager {
         learntWordsIdArray.remove(at: learntIndex)
     }
     
+    func resetWordsToLearn() {
+        learnArray.removeAll()
+        learntWordsIdArray.removeAll()
+    }
+    
     func addWordsToSkippedArray(_ word: Word) {
         guard !skippedWordsIdArray.contains(word.id) else { return }
         skipArray.append(word)
@@ -90,6 +95,11 @@ final class DataManager {
         guard let learntIndex = skipArray.firstIndex(of: word) else {return}
         skipArray.remove(at: learntIndex)
         skippedWordsIdArray.remove(at: learntIndex)
+    }
+    
+    func resetSkippedWords() {
+        skipArray.removeAll()
+        skippedWordsIdArray.removeAll()
     }
     
     func playVibration() {

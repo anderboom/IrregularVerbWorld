@@ -29,6 +29,14 @@ class LearnWordsViewController: UIViewController {
                                        green: 247.0/255.0,
                                        blue: 246.0/255.0,
                                        alpha: 1.0)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain,
+                                                           target: self, action: #selector(uncheckWordsToLearn))
+    }
+    
+    @objc func uncheckWordsToLearn() {
+        DataManager.instance.resetWordsToLearn()
+        tableView.reloadData()
     }
     
     private func alertIfArrayIsEmpty() {
