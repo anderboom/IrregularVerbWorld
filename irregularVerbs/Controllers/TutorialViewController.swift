@@ -65,12 +65,12 @@ class TutorialViewController: UIViewController {
             "Different training modes",
         ]
         let subtitles = [
-            "test1",
-            "test2",
-            "test3",
-            "test4",
-            "test5",
-            "test6"
+            "Welcome to the `Irregular verbs world` application!",
+            "Learn and listen to irregular english verbs!",
+            "Listen and repeat to remember better!",
+            "Do exercises and memorize new words!",
+            "Collect points and become a champion!",
+            "Use four training modes to improve learning!"
         ]
         
         var slides = [TutorialView]()
