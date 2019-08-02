@@ -17,7 +17,13 @@ class TutorialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        slides.forEach { scrollView.addSubview($0) }
+        slides.forEach { scrollView.addSubview($0)
+            view.backgroundColor = UIColor(red: 236.0/255.0,
+                                           green: 247.0/255.0,
+                                           blue: 246.0/255.0,
+                                           alpha: 1.0)
+            
+        }
 
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
