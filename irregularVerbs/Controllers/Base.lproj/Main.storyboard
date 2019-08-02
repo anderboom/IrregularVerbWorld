@@ -19,38 +19,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="76E-lT-AQ6">
-                                <rect key="frame" x="168" y="595" width="39" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="CeO-bv-s0h"/>
-                                    <constraint firstAttribute="width" constant="39" id="Rrh-xD-dbD"/>
-                                </constraints>
-                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <color key="currentPageIndicatorTintColor" red="0.61614459749999995" green="0.8483585119" blue="0.82064300779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="168" y="614" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-kI-PhT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="516"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiI-1L-X2g">
+                                <rect key="frame" x="82.5" y="546" width="210" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VxR-vj-c7r"/>
+                                    <constraint firstAttribute="width" constant="210" id="YyA-Qy-clI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="fZR-AX-HVe" eventType="touchUpInside" id="FMt-B7-NUz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WFx-kI-PhT" firstAttribute="leading" secondItem="fs3-aa-hFO" secondAttribute="leading" id="CUU-ut-ZwK"/>
-                            <constraint firstItem="Pyg-2w-7Zi" firstAttribute="bottom" secondItem="76E-lT-AQ6" secondAttribute="bottom" constant="35" id="Kks-OQ-ivx"/>
+                            <constraint firstItem="LiI-1L-X2g" firstAttribute="top" secondItem="WFx-kI-PhT" secondAttribute="bottom" id="Kge-mS-1Ds"/>
+                            <constraint firstAttribute="bottom" secondItem="76E-lT-AQ6" secondAttribute="bottom" constant="16" id="Kks-OQ-ivx"/>
+                            <constraint firstItem="76E-lT-AQ6" firstAttribute="top" secondItem="LiI-1L-X2g" secondAttribute="bottom" constant="24" id="UM3-hz-GKH"/>
                             <constraint firstAttribute="trailing" secondItem="WFx-kI-PhT" secondAttribute="trailing" id="Y9S-bu-sfw"/>
-                            <constraint firstItem="WFx-kI-PhT" firstAttribute="top" secondItem="fs3-aa-hFO" secondAttribute="top" id="ZNn-LK-ePr"/>
                             <constraint firstItem="76E-lT-AQ6" firstAttribute="centerX" secondItem="fs3-aa-hFO" secondAttribute="centerX" id="Zkl-pK-Sf9"/>
-                            <constraint firstAttribute="bottom" secondItem="WFx-kI-PhT" secondAttribute="bottom" id="fkL-PX-gfH"/>
+                            <constraint firstItem="WFx-kI-PhT" firstAttribute="top" secondItem="Pyg-2w-7Zi" secondAttribute="top" constant="10" id="qJT-DI-wsf"/>
+                            <constraint firstItem="LiI-1L-X2g" firstAttribute="centerX" secondItem="fs3-aa-hFO" secondAttribute="centerX" id="t1Z-fd-z1e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pyg-2w-7Zi"/>
                     </view>
                     <navigationItem key="navigationItem" id="3PT-pZ-UeB"/>
                     <connections>
+                        <outlet property="nextButton" destination="LiI-1L-X2g" id="092-4L-DKV"/>
                         <outlet property="pageControl" destination="76E-lT-AQ6" id="7wd-DN-6w6"/>
                         <outlet property="scrollView" destination="WFx-kI-PhT" id="WjB-gP-k97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgq-gc-0ZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3668" y="-648"/>
+            <point key="canvasLocation" x="3668" y="-648.12593703148434"/>
         </scene>
         <!--Language menu-->
         <scene sceneID="tne-QT-ifu">

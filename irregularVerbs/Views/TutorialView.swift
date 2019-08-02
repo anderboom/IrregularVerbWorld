@@ -9,14 +9,17 @@
 import UIKit
 
 class TutorialView: UIView {
+    static func make() -> TutorialView {
+        return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.first as! TutorialView
+    }
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var tutorialLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
-    var nextButtonPress: (() -> Void)?
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
-        nextButtonPress?()
-        
+    func update(title: String, subtitle: String, image: UIImage) {
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
+        imageView.image = image
     }
 }

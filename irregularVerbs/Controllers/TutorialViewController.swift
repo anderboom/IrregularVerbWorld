@@ -11,18 +11,30 @@ import UIKit
 class TutorialViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var nextButton: UIButton!
+
     private let slides: [TutorialView] = TutorialViewController.createSlides()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        slides.last?.nextButtonPress = { [weak self] in
-            self?.nextButtonPressed()
-        }
         slides.forEach { scrollView.addSubview($0) }
 
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
-        view.bringSubviewToFront(pageControl)
+        
+        let image = UIImage.outlinedEllipse(size: CGSize(width: 7.0, height: 7.0), color: .black)
+        self.pageControl.pageIndicatorTintColor = UIColor(patternImage: image!)
+        self.pageControl.currentPageIndicatorTintColor = .black
+
+        // по абсолютно непонятный причинам не системный цвет не применяется и всегда белое отображается.
+//        let buttonColor = UIColor(red: 57, green: 122, blue: 190, alpha: 1)
+        let buttonColor = UIColor.black
+        nextButton.tintColor = buttonColor
+        nextButton.layer.cornerRadius = 5.0
+        nextButton.layer.borderWidth = 2.0
+        nextButton.layer.borderColor = buttonColor.cgColor
+        nextButton.setTitleColor(buttonColor, for: .normal)
+        nextButton.isHidden = true
         
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
@@ -38,37 +50,35 @@ class TutorialViewController: UIViewController {
     
     private static func createSlides() -> [TutorialView] {
         
-        let slide1:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide1.imageView.image = UIImage(named: "swipe2")
-        slide1.tutorialLabel.text = "On this screen you can learn and listen to the words."
-        slide1.nextButton.isHidden = true
+        let titles = [
+            "A wide variety of irregular verbs",
+            "Easy to learn",
+            "Listen & Repeat",
+            "Exercise",
+            "Compete with others.\nEarn stars",
+            "Different training modes",
+        ]
+        let subtitles = [
+            "test1",
+            "test2",
+            "test3",
+            "test4",
+            "test5",
+            "test6"
+        ]
         
-        let slide2:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide2.imageView.image = UIImage(named: "swipe3")
-        slide2.tutorialLabel.text = "Select the desired mode. All One by One-you will learn words in the order of the list. All randomly-you will learn words in the random mode. Only selected-you will learn only selected words. All with skipping - you will skip selected words"
-
-        slide2.nextButton.isHidden = true
+        var slides = [TutorialView]()
+        for i in 0...5 {
+            let image = UIImage(named: "tutorial_im\(i + 1)")!
+            let slide = TutorialView.make()
+            slide.update(title: titles[i], subtitle: subtitles[i], image: image)
+            slides.append(slide)
+        }
         
-        let slide3:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide3.imageView.image = UIImage(named: "swipe4")
-        slide3.tutorialLabel.text = "Only selected mode - you will learn only selected words in the training mode. Just check words you want to learn. If you want to remove words from the list -  uncheck required words."
-        slide3.nextButton.isHidden = true
-        
-        
-        let slide4:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide4.imageView.image = UIImage(named: "swipe5")
-        slide4.tutorialLabel.text = "All with skipping mode - you will skip selected words in the training mode. Just check words you want to skip. If you want to remove words from the list -  uncheck required words."
-        slide4.nextButton.isHidden = true
-        
-        let slide5:TutorialView = Bundle.main.loadNibNamed("TutorialView", owner: self, options: nil)?.first as! TutorialView
-        slide5.imageView.image = UIImage(named: "swipe6")
-        slide5.tutorialLabel.text = "Training mode. You can listen to the words (Play button). Tap the buttons  with the desired letters to fill the input fields. If you'll make 5 mistakes, the entered words will be displayed again. Enjoy your learning!"
-        slide5.nextButton.layer.cornerRadius = slide4.nextButton.frame.size.height / 5.0
-        slide5.nextButton.isHidden = false
-        return [slide1, slide2, slide3, slide4, slide5]
+        return slides
     }
     
-    private func nextButtonPressed() {
+    @IBAction private func nextButtonPressed(_ sender: Any) {
         DataManager.instance.isTutorialChoosen = true
         
         var controllers: [UIViewController] = [MainMenuViewController.instantiateVC()]
@@ -95,39 +105,57 @@ class TutorialViewController: UIViewController {
 
 extension TutorialViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        pageControl.currentPage = Int(pageIndex)
-        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
+        let pageIndex = Int(round(scrollView.contentOffset.x / view.frame.width))
+        pageControl.currentPage = pageIndex
+        nextButton.isHidden = pageIndex != slides.count - 1
         
-        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-        
-        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-            
-            slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-            slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
-            
-        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-            slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-            slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
-            
-        } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-            slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
-            
-        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-            slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-            slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
-        }
+//        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
+//        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
+//        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
+//        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
+//        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
+//        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
+//
+//        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
+//
+//        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
+//
+//            slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
+//            slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
+//
+//        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
+//            slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
+//            slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
+//
+//        } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
+//            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
+//            slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
+//
+//        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
+//            slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
+//            slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
+//        }
     }
 }
 
-extension TutorialViewController {
-    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+private extension UIImage {
+    /// Creates a circular outline image.
+    static func outlinedEllipse(size: CGSize, color: UIColor, lineWidth: CGFloat = 1.0) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        
+        context.setStrokeColor(color.cgColor)
+        context.setLineWidth(lineWidth)
+        // Inset the rect to account for the fact that strokes are
+        // centred on the bounds of the shape.
+        let rect = CGRect(origin: .zero, size: size).insetBy(dx: lineWidth * 0.5, dy: lineWidth * 0.5)
+        context.addEllipse(in: rect)
+        context.strokePath()
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
