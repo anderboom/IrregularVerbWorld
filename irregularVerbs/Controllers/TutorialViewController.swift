@@ -105,36 +105,28 @@ class TutorialViewController: UIViewController {
 
 extension TutorialViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = Int(round(scrollView.contentOffset.x / view.frame.width))
+        let xOffsetGlobalInPercents = scrollView.contentOffset.x / view.frame.width
+        let pageIndex = Int(round(xOffsetGlobalInPercents))
         pageControl.currentPage = pageIndex
         nextButton.isHidden = pageIndex != slides.count - 1
         
-//        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-//        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-//        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-//        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-//        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-//        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-//
-//        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-//
-//        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-//
-//            slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-//            slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
-//
-//        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-//            slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-//            slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
-//
-//        } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-//            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-//            slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
-//
-//        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-//            slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-//            slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
-//        }
+        let scaleSpeed: CGFloat = 0.5
+        let minScale: CGFloat = 0.5
+        
+        let xOffset = xOffsetGlobalInPercents - CGFloat(pageIndex)
+        if xOffset > 0 {
+            guard pageIndex < slides.count - 1 else { return }
+            let firstPageScale = 1 - xOffset * scaleSpeed
+            let secondPageScale = minScale + xOffset * scaleSpeed
+            slides[pageIndex].imageView.transform = CGAffineTransform(scaleX: firstPageScale, y: firstPageScale)
+            slides[pageIndex + 1].imageView.transform = CGAffineTransform(scaleX: secondPageScale, y: secondPageScale)
+        } else {
+            guard pageIndex > 0 else { return }
+            let firstPageScale = minScale - xOffset * scaleSpeed
+            let secondPageScale = 1 + xOffset * scaleSpeed
+            slides[pageIndex - 1].imageView.transform = CGAffineTransform(scaleX: firstPageScale, y: firstPageScale)
+            slides[pageIndex].imageView.transform = CGAffineTransform(scaleX: secondPageScale, y: secondPageScale)
+        }
     }
 }
 
