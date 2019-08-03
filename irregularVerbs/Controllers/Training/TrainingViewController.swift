@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class TrainingViewController: UIViewController  {
     // MARK: - Private static properties
-    private static let adShowingStep = 120 // show Ads if adCounter % adShowingStep == 0
+    private static let adShowingStep = 3 // show Ads if adCounter % adShowingStep == 0
     
     // MARK: - Public properties
     var viewModel: TrainingViewModel!
@@ -318,12 +318,13 @@ class TrainingViewController: UIViewController  {
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
         let result = viewModel.moveNext()
+        incrementAdCounterAndShowAdIfNeeded()
         if result.isRestartedFromBeggining {
             congratulationPopUp()
         }
         resetContentToInitialState()
         nextButtonOutlet.isHidden = true
-        incrementAdCounterAndShowAdIfNeeded()
+        
     }
     
     private func resetContentToInitialState() {
