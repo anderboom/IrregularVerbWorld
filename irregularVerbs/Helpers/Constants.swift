@@ -16,7 +16,7 @@ enum Constants {
         static let score = "score"
         static let learnArrayId = "learnArrayId"
         static let choosedTranslationLanguageKey = "choosedTranslationLanguageKey"
-        static let isTutorialChoosen = "isTutorialChoosen"
+        static let isTutorialChoosen = "isTutorial2.0Choosen"
         static let appOpenedCountKey = "appOpenedCountKey"
         static let skippedtWordsId = "skippedtWordsId"
     }
