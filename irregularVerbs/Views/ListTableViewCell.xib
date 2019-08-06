@@ -20,23 +20,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HEL-Bo-3xs">
-                        <rect key="frame" x="21" y="16" width="239" height="20.5"/>
+                        <rect key="frame" x="16" y="16" width="254" height="19.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seD-VY-sZC">
-                                <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="78" height="19.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-b0-ZMr">
-                                <rect key="frame" x="83" y="0.0" width="73" height="20.5"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <rect key="frame" x="88" y="0.0" width="78" height="19.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ss-B5-vjr">
-                                <rect key="frame" x="166" y="0.0" width="73" height="20.5"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <rect key="frame" x="176" y="0.0" width="78" height="19.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,13 +55,13 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Делать" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUS-Wz-7AG">
-                        <rect key="frame" x="36" y="36.5" width="57" height="22"/>
+                        <rect key="frame" x="36" y="35.5" width="57" height="27.5"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                         <color key="textColor" red="0.8483585119" green="0.461078897149518" blue="0.27220310682602172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-button white" translatesAutoresizingMaskIntoConstraints="NO" id="G0H-Bg-4xq">
-                        <rect key="frame" x="265" y="19" width="45" height="45"/>
+                        <rect key="frame" x="270" y="14.5" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="QxY-iJ-Oa5"/>
                             <constraint firstAttribute="width" constant="45" id="if9-Na-zTm"/>
@@ -70,11 +70,10 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="G0H-Bg-4xq" firstAttribute="leading" secondItem="0ss-B5-vjr" secondAttribute="trailing" constant="5" id="05H-wF-7b1"/>
+                    <constraint firstItem="G0H-Bg-4xq" firstAttribute="leading" secondItem="0ss-B5-vjr" secondAttribute="trailing" id="05H-wF-7b1"/>
                     <constraint firstItem="dUS-Wz-7AG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="5nP-e3-hZ3"/>
-                    <constraint firstAttribute="bottom" secondItem="G0H-Bg-4xq" secondAttribute="bottom" constant="5" id="ArG-He-t6b"/>
-                    <constraint firstItem="HEL-Bo-3xs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="KIy-Gq-uUY"/>
-                    <constraint firstAttribute="trailing" secondItem="G0H-Bg-4xq" secondAttribute="trailing" constant="10" id="Yd5-pL-kic"/>
+                    <constraint firstItem="HEL-Bo-3xs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="KIy-Gq-uUY"/>
+                    <constraint firstAttribute="trailing" secondItem="G0H-Bg-4xq" secondAttribute="trailing" constant="5" id="Yd5-pL-kic"/>
                     <constraint firstItem="G0H-Bg-4xq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bTt-en-F8Z"/>
                     <constraint firstItem="dUS-Wz-7AG" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="cd5-c4-1fR"/>
                     <constraint firstItem="HEL-Bo-3xs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="t3M-0a-9sM"/>

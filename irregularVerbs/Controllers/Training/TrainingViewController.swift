@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class TrainingViewController: UIViewController  {
     // MARK: - Private static properties
-    private static let adShowingStep = 3 // show Ads if adCounter % adShowingStep == 0
+    private static let adShowingStep = 100 // show Ads if adCounter % adShowingStep == 0
     
     // MARK: - Public properties
     var viewModel: TrainingViewModel!
