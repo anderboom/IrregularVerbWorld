@@ -31,7 +31,12 @@ struct TrainingViewModel {
         self.iterateMode = iterateMode
         self.saveCurrentIndexChangeAction = saveCurrentIndexChangeAction
         
-        self.currentIndex = TrainingViewModel.calculateCurrentIndex(for: iterateMode, arraySize: words.count)
+        switch iterateMode {
+        case .randomly:
+            self.currentIndex = Int.random(in: 0..<words.count)
+        case .consistently(let index):
+            self.currentIndex = index
+        }
     }
     
     mutating func moveNext() -> (nextWord: Word, isRestartedFromBeggining: Bool) {
@@ -39,13 +44,19 @@ struct TrainingViewModel {
         switch iterateMode {
         case .randomly:
             isRestartedFromBeggining = false
+            
+            var newIndex = -1
+            repeat {
+                newIndex = Int.random(in: 0..<words.count)
+            } while newIndex == self.currentIndex
+            self.currentIndex = newIndex
         case .consistently(let currentIndex):
             let isLastItem = currentIndex == words.count - 1
             isRestartedFromBeggining = isLastItem
             let newIndex = isLastItem ? 0 : currentIndex + 1
             iterateMode = .consistently(currentIndex: newIndex)
+            self.currentIndex = newIndex
         }
-        self.currentIndex = TrainingViewModel.calculateCurrentIndex(for: iterateMode, arraySize: words.count)
         saveCurrentIndexChangeAction?(self.currentIndex)
         let nextWord = currentWord
         return (nextWord, isRestartedFromBeggining)
@@ -78,15 +89,6 @@ struct TrainingViewModel {
             } else {
                 print("Best Score submitted to your Leaderboard!")
             }
-        }
-    }
-    
-    private static func calculateCurrentIndex(for mode: IterateMode, arraySize: Int) -> Int {
-        switch mode {
-        case .randomly:
-            return Int.random(in: 0..<arraySize)
-        case .consistently(let currentIndex):
-            return currentIndex
         }
     }
     
