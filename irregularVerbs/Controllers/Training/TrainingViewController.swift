@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class TrainingViewController: UIViewController  {
     // MARK: - Private static properties
-    private static let adShowingStep = 100 // show Ads if adCounter % adShowingStep == 0
+    private static let adShowingStep = 200 // show Ads if adCounter % adShowingStep == 0
     
     // MARK: - Public properties
     var viewModel: TrainingViewModel!
@@ -305,16 +305,19 @@ class TrainingViewController: UIViewController  {
     
     private func startToFlyStar() {
         let move = CGAffineTransform(translationX: -self.view.bounds.width / 2, y: 30 * 10)
+        let starsCount = viewModel.selectIncrement()
         starView.transform = move
-        UIView.animate(withDuration: 1.7, delay: 0,
+        UIView.animate(withDuration: 0.8, delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0.7,
                        options: .curveEaseInOut,
                        animations: {
+                        UIView.setAnimationRepeatCount(Float(starsCount))
                         self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
        
     }
+    
     
     @IBAction private func nextButtonPressed(_ sender: Any) {
         let result = viewModel.moveNext()
