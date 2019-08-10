@@ -92,7 +92,7 @@ struct TrainingViewModel {
         }
     }
     
-    mutating func selectIncrement() -> Int {
+    func selectIncrement() -> Int {
         switch iterateMode {
         case .randomly:
             return 3

@@ -246,10 +246,14 @@ class TrainingViewController: UIViewController  {
         }
         
         if isFirstFormFilled, isSecondFormFilled, isThirdFormFilled {
-            startToFlyStar()
+            scoreLabel.text = ""
             viewModel.incrementScoreForMode()
-            scoreLabel.text = viewModel.scoreText
-            nextButtonOutlet.isHidden = false
+            startToFlyStar()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+                self.scoreLabel.text = self.viewModel.scoreText
+                self.nextButtonOutlet.isHidden = false
+                
+            }
             isFirstFormFilled = false
             isSecondFormFilled = false
             isThirdFormFilled = false
@@ -304,18 +308,19 @@ class TrainingViewController: UIViewController  {
     }
     
     private func startToFlyStar() {
+        
         let move = CGAffineTransform(translationX: -self.view.bounds.width / 2, y: 30 * 10)
         let starsCount = viewModel.selectIncrement()
         starView.transform = move
-        UIView.animate(withDuration: 0.8, delay: 0,
+            UIView.animate(withDuration: 0.8, delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0.7,
                        options: .curveEaseInOut,
                        animations: {
                         UIView.setAnimationRepeatCount(Float(starsCount))
                         self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
-        }, completion: nil)
-       
+                       }, completion: nil)
+        
     }
     
     
