@@ -325,15 +325,18 @@ class TrainingViewController: UIViewController  {
     }
     
     private func startStarIfMistakes() {
-        let move = CGAffineTransform(translationX: 0.0, y: -100.0)
-        starView.transform = move
-        UIView.animate(withDuration: 2.0, delay: 0,
+        UIView.animate(withDuration: 1.5, delay: 0,
                        usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,
-                       options: .curveEaseOut,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseIn,
                        animations: {
-                        self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
-        }, completion: nil)
+                        let rotate = CGAffineTransform(rotationAngle: CGFloat.pi)
+                        let translate = CGAffineTransform(translationX: -100, y: -self.starView.frame.maxY)
+                        let finalTransform = rotate.concatenating(translate)
+                        self.starView.transform = finalTransform
+        }, completion: { _ in
+            self.starView.transform = .identity
+        })
     }
     
     
