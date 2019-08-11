@@ -249,10 +249,9 @@ class TrainingViewController: UIViewController  {
             scoreLabel.text = ""
             viewModel.incrementScoreForMode()
             startToFlyStar()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 self.scoreLabel.text = self.viewModel.scoreText
                 self.nextButtonOutlet.isHidden = false
-                
             }
             isFirstFormFilled = false
             isSecondFormFilled = false
@@ -309,19 +308,23 @@ class TrainingViewController: UIViewController  {
     }
     
     private func startToFlyStar() {
-        
-        let move = CGAffineTransform(translationX: -self.view.bounds.width / 2, y: 30 * 10)
         let starsCount = viewModel.selectIncrement()
-        starView.transform = move
-            UIView.animate(withDuration: 0.8, delay: 0,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0.7,
-                       options: .curveEaseIn,
-                       animations: {
-                        UIView.setAnimationRepeatCount(Float(starsCount))
-                        self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
-                       }, completion: nil)
-        
+        for i in 0..<starsCount {
+            let animatedStarImageView = UIImageView(image: #imageLiteral(resourceName: "star"))
+            animatedStarImageView.contentMode = .scaleAspectFit
+            animatedStarImageView.frame = starView.frame
+            animatedStarImageView.center = nextButtonOutlet.center
+            view.addSubview(animatedStarImageView)
+            UIView.animate(withDuration: 0.8, delay: 0.2 * Double(i),
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 0.7,
+                           options: .curveEaseIn,
+                           animations: {
+                            animatedStarImageView.center = self.starView.center
+            }, completion: { _ in
+                animatedStarImageView.removeFromSuperview()
+            })
+        }
     }
     
     private func startStarIfMistakes() {
