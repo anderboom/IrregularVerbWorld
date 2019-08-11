@@ -282,6 +282,7 @@ class TrainingViewController: UIViewController  {
     }
     
     private func reloadBecauseOfMistakes() {
+        startStarIfMistakes()
         charStep = 0
         arrayCharStep = 0
         resetContentToInitialState()
@@ -315,12 +316,24 @@ class TrainingViewController: UIViewController  {
             UIView.animate(withDuration: 0.8, delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0.7,
-                       options: .curveEaseInOut,
+                       options: .curveEaseIn,
                        animations: {
                         UIView.setAnimationRepeatCount(Float(starsCount))
                         self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
                        }, completion: nil)
         
+    }
+    
+    private func startStarIfMistakes() {
+        let move = CGAffineTransform(translationX: 0.0, y: -100.0)
+        starView.transform = move
+        UIView.animate(withDuration: 2.0, delay: 0,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 1.0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.starView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
     }
     
     
