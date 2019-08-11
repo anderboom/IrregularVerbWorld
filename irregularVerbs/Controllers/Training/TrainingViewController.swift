@@ -328,8 +328,8 @@ class TrainingViewController: UIViewController  {
     }
     
     private func startStarIfMistakes() {
-        let move = CGAffineTransform(translationX: 0.0, y: -100.0)
-        starView.transform = move
+//        let move = CGAffineTransform(translationX: 0.0, y: -100.0)
+//        starView.transform = move
         UIView.animate(withDuration: 1.5, delay: 0,
                        usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 0.8,
