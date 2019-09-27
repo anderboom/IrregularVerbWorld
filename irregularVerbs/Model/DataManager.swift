@@ -21,7 +21,7 @@ final class DataManager {
     private(set) lazy var learnArray = formWordsToLearn()
     private(set) lazy var skipArray = skipWordsToLearn()
     
-    private var audioPlayer = AVAudioPlayer()
+    private var audioPlayer: AVAudioPlayer!
     
     func chooseLanguage(_ lng: TranslationLanguage) {
         choosedLanguage = lng
